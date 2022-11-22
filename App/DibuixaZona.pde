@@ -12,7 +12,7 @@ void dibuixaZonaLogo(){
 void dibuixaSideBar(){
   pushStyle();
     fill(50,200,100);
-    rect(marginH, 2*marginV + logoSize, sidebarWidth, sidebarHeight);
+    rect(marginH, 2*marginV + 2*logoSize/3, sidebarWidth, sidebarHeight);
     fill(0);
     text("SIDEBAR", marginH + sidebarWidth/2, marginV + logoSize + sidebarHeight/2);  
   popStyle();
@@ -30,7 +30,7 @@ void dibuixaBanner(){
 void dibuixaColumna1(){
   pushStyle();
     fill(200, 200, 50);
-    rect(2*marginH + sidebarWidth, 2*marginV + bannerHeight, columnWidth, columnHeight);
+    rect(2*marginH + sidebarWidth, 2*marginV + 2*logoSize/3+75, columnWidth, columnHeight);
     fill(0);
     text("COLUMN 1", 2*marginH + sidebarWidth +columnWidth/2, 2*marginV + bannerHeight + columnHeight/2);
   popStyle();

@@ -6,8 +6,8 @@ float marginH = 20,
       marginV = 20;
 
 // Dimensions Zona Lateral
-float sidebarWidth  = 300, 
-      sidebarHeight = 800;
+float sidebarWidth  = 290, 
+      sidebarHeight = 850;
 
 // Dimensions Logo
 float logoSize  = 250;
@@ -17,8 +17,8 @@ float bannerWidth  = 1920-2*marginH,
       bannerHeight = 150;
       
 // Dimensions Columnes
-float columnWidth  = 505,
-      columnHeight = 720;
+float columnWidth  = 1570,
+      columnHeight = 775;
       
 // Fitxer amb informació de Mides d'objectes de la GUI
 float midaTitol = 60;
