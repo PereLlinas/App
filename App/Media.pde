@@ -10,7 +10,7 @@ PImage[] imgs;
 void setMedias(){
     this.imgs = new PImage[3];
     this.imgs[0] = loadImage(URL_IMGS+"Logo IES Manacor.jpg");
-    this.imgs[1] = loadImage(URL_IMGS+"Logo IES Manacor 2.jpg");
+    this.imgs[1] = loadImage(URL_IMGS+"Logo IES Manacor 2.png");
     
 }
   

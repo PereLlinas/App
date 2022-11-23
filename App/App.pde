@@ -18,9 +18,9 @@ void setup() {
 
 
 void draw() {
- // HOME();
+  HOME();
   LOGIN();
-
+  FOLDERS();
   println("X: "+mouseX+", Y:"+mouseY);
 }
 

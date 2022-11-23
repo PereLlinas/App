@@ -1,21 +1,13 @@
 // FUNCIONS DE DIBUIX DE LES ZONES
 
+
+//INICI i FOLDES
 void dibuixaZonaLogo(){
   pushStyle();
     fill(200,50,100);
     rect(2*marginH, 4*marginV, logoSize, logoSize);
     fill(0);
     text("LOGO", marginH + logoSize/2, marginV + logoSize/2);
-  popStyle();
-}
-
-void dibuixaZonaLogo2(){
-  pushStyle();
-    fill(200,50,100);
-    rectMode(CENTER);
-    rect(width/2, height/2-200, logoSize, logoSize);
-    fill(0); textAlign(CENTER);
-    text("LOGO", width/2, height/2-200);
   popStyle();
 }
 
@@ -37,7 +29,7 @@ void dibuixaBanner(){
   popStyle();
 }
 
-void dibuixaColumna1(){
+void dibuixaZonaCarpetes(){
   pushStyle();
     fill(200, 200, 50);
     rect(2*marginH + sidebarWidth, 2*marginV + 2*logoSize/3+75, columnWidth, columnHeight);
@@ -55,7 +47,7 @@ void dibuixaColumna2(){
   popStyle();
 }
 
-void dibuixaColumna12(){
+void dibuixaZonaCarpetes2(){
   pushStyle();
     fill(200, 200, 50);
     rect(2*marginH + sidebarWidth, 2*marginV + bannerHeight, 2*columnWidth + marginH, columnHeight);
@@ -77,4 +69,14 @@ void dibuixaLogin(){
   rectMode(CENTER);
   rect(width/2, height/2, 300, 50);
   image(getLogoIES(), 2*marginH, 2*marginV, 200, 100);
+}
+
+void dibuixaZonaLogo2(){
+  pushStyle();
+    fill(200,50,100);
+    rectMode(CENTER);
+    rect(width/2, height/2-200, logoSize, logoSize);
+    fill(0); textAlign(CENTER);
+    text("LOGO", width/2, height/2-200);
+  popStyle();
 }

@@ -2,7 +2,7 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
   dibuixaBanner();
   dibuixaSideBar();
   dibuixaZonaLogo();
-  dibuixaColumna1();
+  dibuixaZonaCarpetes();
 }
 
 void WORKSPACE() {
@@ -12,7 +12,7 @@ void FOLDERS() { // + botó CREATE + Textos + POP-UPS
   dibuixaBanner();
   dibuixaSideBar();
   dibuixaZonaLogo();
-  dibuixaColumna1();
+  dibuixaZonaCarpetes();
 }
 
 void LOGIN (){
