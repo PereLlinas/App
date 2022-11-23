@@ -18,8 +18,8 @@ void setup() {
 
 
 void draw() {
-  HOME();
-
+ // HOME();
+  LOGIN();
 
   println("X: "+mouseX+", Y:"+mouseY);
 }

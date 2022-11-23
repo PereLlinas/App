@@ -9,6 +9,16 @@ void dibuixaZonaLogo(){
   popStyle();
 }
 
+void dibuixaZonaLogo2(){
+  pushStyle();
+    fill(200,50,100);
+    rectMode(CENTER);
+    rect(width/2, height/2-200, logoSize, logoSize);
+    fill(0); textAlign(CENTER);
+    text("LOGO", width/2, height/2-200);
+  popStyle();
+}
+
 void dibuixaSideBar(){
   pushStyle();
     fill(50,200,100);
@@ -61,4 +71,9 @@ void dibuixaColumna3(){
     fill(0);
     text("COLUMN 3", 4*marginH + sidebarWidth + 2*columnWidth +columnWidth/2, 2*marginV + bannerHeight + columnHeight/2); 
   popStyle();
+}
+
+void dibuixaLogin(){
+  rectMode(CENTER);
+  rect(width/2, height/2, 300, 50);
 }
