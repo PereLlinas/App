@@ -8,8 +8,9 @@ PImage[] imgs;
   
 // Estableix les imatges de l'App
 void setMedias(){
-    this.imgs = new PImage[2];
+    this.imgs = new PImage[3];
     this.imgs[0] = loadImage(URL_IMGS+"Logo IES Manacor.jpg");
+    this.imgs[1] = loadImage(URL_IMGS+"Logo IES Manacor 2.jpg");
     
 }
   
@@ -21,6 +22,11 @@ int getNumImatges(){
 // Getter de la imatge del logo
 PImage getLogo(){
   return  this.imgs[0];
+}
+
+// Getter de la imatge del logo
+PImage getLogoIES(){
+  return  this.imgs[1];
 }
   
 // Getter de la imatge del banner

@@ -76,4 +76,5 @@ void dibuixaColumna3(){
 void dibuixaLogin(){
   rectMode(CENTER);
   rect(width/2, height/2, 300, 50);
+  image(getLogoIES(), 2*marginH, 2*marginV, 200, 100);
 }
