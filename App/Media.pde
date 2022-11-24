@@ -31,7 +31,7 @@ PImage getLogoIES(){
   
 // Getter de la imatge del banner
 PImage getBanner(){
-  return  this.imgs[1];
+  return  this.imgs[2];
 }
   
 /*// Getter de la imatge de la icona

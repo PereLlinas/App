@@ -1,7 +1,7 @@
 // FUNCIONS DE DIBUIX DE LES ZONES
 
 
-//INICI i FOLDES
+//INICI i FOLDERS
 void dibuixaZonaLogo(){
   pushStyle();
     fill(200,50,100);
