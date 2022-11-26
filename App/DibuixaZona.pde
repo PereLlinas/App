@@ -34,25 +34,7 @@ void dibuixaZonaCarpetes(){
     fill(200, 200, 50);
     rect(2*marginH + sidebarWidth, 2*marginV + 2*logoSize/3+75, columnWidth, columnHeight);
     fill(0);
-    text("COLUMN 1", 2*marginH + sidebarWidth +columnWidth/2, 2*marginV + bannerHeight + columnHeight/2);
-  popStyle();
-}
-
-void dibuixaColumna2(){
-  pushStyle();
-    fill(200, 200, 50);
-    rect(3*marginH + sidebarWidth + columnWidth, 2*marginV + bannerHeight, columnWidth, columnHeight);
-    fill(0);
-    text("COLUMN 2", 3*marginH + sidebarWidth + columnWidth +columnWidth/2, 2*marginV + bannerHeight + columnHeight/2);
-  popStyle();
-}
-
-void dibuixaZonaCarpetes2(){
-  pushStyle();
-    fill(200, 200, 50);
-    rect(2*marginH + sidebarWidth, 2*marginV + bannerHeight, 2*columnWidth + marginH, columnHeight);
-    fill(0);
-    text("COLUMN 1i2", 3*marginH + sidebarWidth + columnWidth, 2*marginV + bannerHeight + columnHeight/2);
+    text("Zona carpetes", 2*marginH + sidebarWidth +columnWidth/2, 2*marginV + bannerHeight + columnHeight/2);
   popStyle();
 }
 
@@ -61,6 +43,18 @@ void dibuixaLogin(){
   rectMode(CENTER);
   rect(width/2, height/2, 300, 50);
   image(getLogoIES(), 2*marginH, 2*marginV, 200, 100);
+  TextField userText, passText;
+   userText = new TextField(width/2, height/2, 300, 50);
+   passText = new TextField(width/2, (height/2)+70, 300, 50);
+   
+   fill(0); textSize(48); textAlign(LEFT);
+   textSize(24); 
+   text("Username: ", width/2, height/2);
+   text("Password: ", width/2, (height/2)+70);
+   
+   // Dibuixa els camps de text
+   userText.display();
+   passText.display();
 }
 
 void dibuixaZonaLogo2(){
