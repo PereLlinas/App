@@ -8,6 +8,7 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
 void WORKSPACE() {
   dibuixaBanner();
   dibuixaSideBar();
+  dibuixaProjeccions();
 }
 
 void FOLDERS() { // + botó CREATE + Textos + POP-UPS

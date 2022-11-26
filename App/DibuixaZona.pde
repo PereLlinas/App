@@ -56,15 +56,7 @@ void dibuixaZonaCarpetes2(){
   popStyle();
 }
 
-void dibuixaColumna3(){
-  pushStyle();
-    fill(200, 200, 50);
-    rect(4*marginH + sidebarWidth + 2*columnWidth, 2*marginV + bannerHeight, columnWidth, columnHeight);
-    fill(0);
-    text("COLUMN 3", 4*marginH + sidebarWidth + 2*columnWidth +columnWidth/2, 2*marginV + bannerHeight + columnHeight/2); 
-  popStyle();
-}
-
+//LOGIN/REGISTER
 void dibuixaLogin(){
   rectMode(CENTER);
   rect(width/2, height/2, 300, 50);
@@ -79,4 +71,16 @@ void dibuixaZonaLogo2(){
     fill(0); textAlign(CENTER);
     text("LOGO", width/2, height/2-200);
   popStyle();
+}
+
+//WORKSPACE
+void dibuixaProjeccions(){
+  pushStyle();
+  rect(1900-4*logoSize/3, 190, 4*logoSize/3, logoSize);
+    fill(0); textAlign(CENTER);
+    text("PROJECCIONS", width/2, height/2-200);
+  popStyle();
+  
+  
+  
 }
