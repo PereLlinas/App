@@ -1,4 +1,5 @@
 void HOME() { // + botó CREATE + Textos + POP-UPS
+  background(217, 215, 197);
   dibuixaBanner();
   dibuixaSideBar();
   dibuixaZonaLogo();

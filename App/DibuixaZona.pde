@@ -13,16 +13,16 @@ void dibuixaZonaLogo(){
 
 void dibuixaSideBar(){
   pushStyle();
-    fill(50,200,100);
+    fill(166,130,86);
     rect(marginH, 2*marginV + 2*logoSize/3, sidebarWidth, sidebarHeight);
-    fill(0);
+    fill(0); textAlign(CENTER);
     text("SIDEBAR", marginH + sidebarWidth/2, marginV + logoSize + sidebarHeight/2);  
   popStyle();
 }
 
 void dibuixaBanner(){
   pushStyle();
-    fill(240, 100, 50);
+    fill(81, 101, 140); noStroke();
     rect(marginH, marginV, bannerWidth, bannerHeight);
     fill(0);
     text("BANNER", marginH + bannerWidth/2, bannerHeight/2+marginV);
