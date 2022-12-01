@@ -69,3 +69,11 @@ PImage getImgAt(int i){
 void displayImg(int i, float x, float y, float w, float h){    
     image(getImgAt(i), x, y, w, h);
 }
+
+void dibuixaLogoIES(){
+  pushStyle();
+  rectMode(CENTER);
+  rect(width/2, height/2, 300, 50);
+  image(getLogoIES(), 2*marginH, 2*marginV, 200, 100);
+  popStyle();
+}

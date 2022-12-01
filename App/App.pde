@@ -6,6 +6,7 @@ void setup() {
   // Dimensions de l'App
   fullScreen();
   setMedias();
+  setGUI();
 }
 
 void draw() {
@@ -15,5 +16,5 @@ void draw() {
     case WORKSPACE: WORKSPACE();break;
     case FOLDERS: FOLDERS();break;
   }
-  println("X: "+mouseX+", Y:"+mouseY);
+  //println("X: "+mouseX+", Y:"+mouseY);
 }

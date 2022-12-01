@@ -24,9 +24,8 @@ class TextField {
       this.x = x; this.y = y; this.w = w; this.h = h;
    }
   
-  // Dibuixa el Camp de Text
   void display() {
-
+    pushStyle();
       if (selected) {
          fill(selectedColor);
       } else {
@@ -40,6 +39,7 @@ class TextField {
       fill(fgColor);
       textSize(textSize);
       text(text, x + 5, y + textSize);
+      popStyle();
    }
    
    // Afegeix, lleva el text que es tecleja
@@ -80,10 +80,9 @@ class TextField {
 
    // Indica si el ratolí està sobre el camp de text
    boolean mouseOverTextField() {
-      if (mouseX >= this.x && mouseX <= this.x + this.w) {
-         if (mouseY >= this.y && mouseY <= this.y + this.h) {
+      if (mouseX >= this.x && mouseX <= this.x + this.w && 
+          mouseY >= this.y && mouseY <= this.y + this.h) {
             return true;
-         }
       }
       return false;
    }
@@ -92,9 +91,9 @@ class TextField {
    // Deselecciona el camp de text si pitjam a fora
    void isPressed() {
       if (mouseOverTextField()) {
-         selected = true;
+         this.selected = true;
       } else {
-         selected = false;
+         this.selected = false;
       }
    }
 }

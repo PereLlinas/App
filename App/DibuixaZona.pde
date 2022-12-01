@@ -40,21 +40,10 @@ void dibuixaZonaCarpetes(){
 
 //LOGIN/REGISTER
 void dibuixaLogin(){
-  rectMode(CENTER);
-  rect(width/2, height/2, 300, 50);
-  image(getLogoIES(), 2*marginH, 2*marginV, 200, 100);
-  TextField userText, passText;
-   userText = new TextField(width/2, height/2, 300, 50);
-   passText = new TextField(width/2, (height/2)+70, 300, 50);
-   
-   fill(0); textSize(48); textAlign(LEFT);
-   textSize(24); 
-   text("Username: ", width/2, height/2);
-   text("Password: ", width/2, (height/2)+70);
-   
-   // Dibuixa els camps de text
-   userText.display();
-   passText.display();
+  dibuixaLogoIES();
+  userText.display();
+  passText.display();
+  loginButton.display();
 }
 
 void dibuixaZonaLogo2(){
