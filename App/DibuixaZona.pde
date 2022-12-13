@@ -61,7 +61,7 @@ void dibuixaProjeccions(){
   pushStyle();
   rect(1900-4*logoSize/3, 190, 4*logoSize/3, logoSize);
     fill(0); textAlign(CENTER);
-    text("PROJECCIONS", width/2, height/2-200);
+    text("PROJECCIONS", (1900-4*logoSize/3)+(4*logoSize/3)/2, 190+logoSize/2);
   popStyle();
   
   

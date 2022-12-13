@@ -1,6 +1,6 @@
 
 enum PANTALLA {LOGIN, HOME, WORKSPACE, FOLDERS};
-PANTALLA pantalla=PANTALLA.LOGIN;
+PANTALLA pantalla=PANTALLA.HOME;
 
 void setup() {
   // Dimensions de l'App
@@ -16,5 +16,5 @@ void draw() {
     case WORKSPACE: WORKSPACE();break;
     case FOLDERS: FOLDERS();break;
   }
-  //println("X: "+mouseX+", Y:"+mouseY);
+  println("X: "+mouseX+", Y:"+mouseY);
 }

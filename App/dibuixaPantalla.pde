@@ -4,9 +4,11 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
   dibuixaSideBar();
   dibuixaZonaLogo();
   dibuixaZonaCarpetes();
+  createButton.display();
 }
 
 void WORKSPACE() {
+  background(255);
   dibuixaBanner();
   dibuixaSideBar();
   dibuixaProjeccions();
