@@ -1,16 +1,17 @@
 void HOME() { // + botó CREATE + Textos + POP-UPS
   background(217, 215, 197);
   dibuixaBanner();
-  dibuixaSideBar();
+  dibuixaSideBar(); 
   dibuixaZonaLogo();
   dibuixaZonaCarpetes();
   createButton.display();
+  //afegir cards per cada creació
 }
 
 void WORKSPACE() {
   background(255);
-  dibuixaBanner();
-  dibuixaSideBar();
+  dibuixaBanner(); 
+  dibuixaSideBar(); //pop-ups que se generin a una altura concreta
   dibuixaProjeccions();
 }
 

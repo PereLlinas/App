@@ -97,3 +97,13 @@ class TextField {
       }
    }
 }
+
+// Comprova si el login és correcte
+boolean comprovaLogin() {
+   if ( userText.text.equals("admin") && 
+        passText.text.equals("1234")) {
+      return true;
+   } else {
+      return false;
+   }
+}

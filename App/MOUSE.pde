@@ -8,7 +8,7 @@ void mousePressed() {
   if (pantalla==PANTALLA.LOGIN) {
     userText.isPressed();
     passText.isPressed();
-    if (loginButton.mouseOverButton()) {
+    if (loginButton.mouseOverButton()&&comprovaLogin()) {
       pantalla = PANTALLA.HOME;
     }
   }
