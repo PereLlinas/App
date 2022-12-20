@@ -15,5 +15,6 @@ void draw() {
     case WORKSPACE: WORKSPACE();break;
     case FOLDERS: FOLDERS();break;
   }
+  
   println("X: "+mouseX+", Y:"+mouseY);
 }
