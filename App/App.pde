@@ -1,5 +1,5 @@
 enum PANTALLA {LOGIN, HOME, WORKSPACE, FOLDERS};
-PANTALLA pantalla=PANTALLA.HOME;
+PANTALLA pantalla=PANTALLA.LOGIN;
 
 void setup() {
   // Dimensions de l'App
