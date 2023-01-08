@@ -1,5 +1,5 @@
-enum PANTALLA {LOGIN, HOME, WORKSPACE1, FOLDERS};
-PANTALLA pantalla=PANTALLA.WORKSPACE1;
+enum PANTALLA {LOGIN, HOME, WORKSPACE1, WORKSPACE2, FOLDERS};
+PANTALLA pantalla=PANTALLA.HOME;
 
 //càmera (origen de coordenades se posa al centre)
 import peasy.*;
@@ -20,6 +20,7 @@ void draw() {
     case LOGIN: LOGIN();break;
     case FOLDERS: FOLDERS();break;
     case WORKSPACE1: WORKSPACE1();break;
+    case WORKSPACE2: WORKSPACE2();break;
   }
   
   println("X: "+mouseX+", Y:"+mouseY);

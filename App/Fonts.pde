@@ -2,6 +2,7 @@
   
 // Array de tipografies
 PFont[] fonts;
+PFont titol, subtitol, paragraf;
   
 // Estableix les fonts de l'App
 void setFonts(){
@@ -9,6 +10,9 @@ void setFonts(){
     this.fonts[0] = createFont("CaviarDreams.ttf", midaTitol);
     this.fonts[1] = createFont("Louis George Cafe.ttf", midaSubtitol);
     this.fonts[2] = createFont("Champagne & Limousines.ttf", midaParagraf);
+    titol=this.fonts[0];
+    subtitol=this.fonts[1];
+    paragraf=this.fonts[2];
 }
   
   // Getter del número de fonts

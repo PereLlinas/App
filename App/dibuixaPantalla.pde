@@ -6,13 +6,17 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
   dibuixaZonaLogo();
   dibuixaZonaCarpetes();
   createButton.display();
+  pushStyle();
+  fill(0); /*textFont(titol)*/; textSize(50);
+  text("APP Name", 335, 250);
+  popStyle();
   //afegir cards per cada creació
   jcam.endHUD();
 }
 
 void WORKSPACE1() {
   jcam.beginHUD();
-  background(255);
+  background(217, 215, 197, 150);
   dibuixaBanner();
   dibuixaSideBar(); //pop-ups que se generin a una altura concreta
   dibuixaProjeccions();
@@ -35,7 +39,7 @@ void WORKSPACE1() {
 
 void WORKSPACE2() {
   jcam.beginHUD();
-  background(255);
+  background(217, 215, 197);
   dibuixaBanner();
   dibuixaSideBar(); //pop-ups que se generin a una altura concreta
   dibuixaProjeccions();

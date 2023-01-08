@@ -62,9 +62,19 @@ void setWORKSPACE1() {
   r=new Recta("r", C, D);
 }
 
+void setColors(){
+  color blau=color(81,101,140);
+  color beige=color(217, 215, 197);
+  color clar=color(166, 130, 86);
+  color obscur=color(146, 120, 87);
+  color granate=color(140, 57, 38);
+}
+
+
 void setGUI ( ) {
   setTextFields();
   setButtons();
   setWORKSPACE1();
+  setColors();
   /*setCheckboxes();*/
 }

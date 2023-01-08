@@ -30,7 +30,7 @@ void dibuixaBanner(){
 
 void dibuixaZonaCarpetes(){
   pushStyle();
-    fill(200, 200, 50);
+    fill(217, 215, 197); stroke(166, 130, 86, 200); strokeWeight(7);
     rect(2*marginH + sidebarWidth, 2*marginV + 2*logoSize/3+75, columnWidth, columnHeight);
     fill(0);
     text("Zona carpetes", 2*marginH + sidebarWidth +columnWidth/2, 2*marginV + bannerHeight + columnHeight/2);
@@ -58,6 +58,7 @@ void dibuixaZonaLogo2(){
 //WORKSPACE1
 void dibuixaProjeccions(){
   pushStyle();
+  stroke(217, 215, 197); fill(255); strokeWeight(10);
   rect(1900-4*logoSize/3, 190, 4*logoSize/3, logoSize);
     fill(0); textAlign(CENTER);
     text("PROJECCIONS", (1900-4*logoSize/3)+(4*logoSize/3)/2, 190+logoSize/2);
