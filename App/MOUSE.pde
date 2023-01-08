@@ -4,7 +4,7 @@ void mousePressed() {
   // Elements comuns a totes les pantalles
   // sidebar
 
-  //enum PANTALLA {LOGIN, HOME, WORKSPACE, FOLDERS};
+  //enum PANTALLA {LOGIN, HOME, WORKSPACE1, FOLDERS};
   if (pantalla==PANTALLA.LOGIN) {
     userText.isPressed();
     passText.isPressed();
@@ -14,7 +14,7 @@ void mousePressed() {
   }
   if (pantalla==PANTALLA.HOME) {
     if (createButton.mouseOverButton()) {
-      pantalla=PANTALLA.WORKSPACE;
+      pantalla=PANTALLA.WORKSPACE1;
     }
   }
 }

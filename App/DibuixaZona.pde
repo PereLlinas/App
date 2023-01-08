@@ -1,6 +1,5 @@
 // FUNCIONS DE DIBUIX DE LES ZONES
 
-
 //INICI i FOLDERS
 void dibuixaZonaLogo(){
   pushStyle();
@@ -13,7 +12,7 @@ void dibuixaZonaLogo(){
 
 void dibuixaSideBar(){
   pushStyle();
-    fill(166,130,86);
+    fill(166,130,86); noStroke();
     rect(marginH, 2*marginV + 2*logoSize/3, sidebarWidth, sidebarHeight);
     fill(0); textAlign(CENTER);
     text("SIDEBAR", marginH + sidebarWidth/2, marginV + logoSize + sidebarHeight/2);  
@@ -56,7 +55,7 @@ void dibuixaZonaLogo2(){
   popStyle();
 }
 
-//WORKSPACE
+//WORKSPACE1
 void dibuixaProjeccions(){
   pushStyle();
   rect(1900-4*logoSize/3, 190, 4*logoSize/3, logoSize);
