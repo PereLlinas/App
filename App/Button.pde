@@ -1,4 +1,4 @@
-// Classe Botó
+// Classe Botó. Canviar constructor (o emplear setters i getters) perquè es colors són terribles i han de ser diferents en cada cas.
 
 class Button {
 

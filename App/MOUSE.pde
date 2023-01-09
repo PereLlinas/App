@@ -16,6 +16,18 @@ void mousePressed() {
     if (createButton.mouseOverButton()) {
       pantalla=PANTALLA.WORKSPACE1;
     }
+    if (HOME.mouseOverButton()) {
+      pantalla=PANTALLA.HOME;
+    }
+    if (FAQS.mouseOverButton()) {
+      pantalla=PANTALLA.MULTIPLE;
+    }
+    if (ABOUTUS.mouseOverButton()) {
+      pantalla=PANTALLA.MULTIPLE;
+    }
+    if (TUTORIAL.mouseOverButton()) {
+      pantalla=PANTALLA.MULTIPLE;
+    }
   }
 }
 

@@ -6,6 +6,11 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
   dibuixaZonaLogo();
   dibuixaZonaCarpetes();
   createButton.display();
+  createFolderButton.display();
+  HOME.display();
+  FAQS.display();
+  ABOUTUS.display();
+  TUTORIAL.display();
   pushStyle();
   fill(0); /*textFont(titol)*/; textSize(50);
   text("APP Name", 335, 250);
@@ -59,16 +64,17 @@ void WORKSPACE2() {
   PP.display();
   LT.display();
 }
+void MULTIPLE(){
+  if (FAQS.mouseOverButton()) {
 
-void FOLDERS() { // + botó CREATE + Textos + POP-UPS
-  jcam.beginHUD();
-  dibuixaBanner();
-  dibuixaSideBar();
-  dibuixaZonaLogo();
-  dibuixaZonaCarpetes();
-  jcam.endHUD();
+    }
+    if (ABOUTUS.mouseOverButton()) {
+
+    }
+    if (TUTORIAL.mouseOverButton()) {
+
+    }
 }
-
 void LOGIN () {
   jcam.beginHUD();
   background(217, 215, 197);

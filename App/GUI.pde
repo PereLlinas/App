@@ -1,6 +1,6 @@
 TextField userText, passText;
 
-Button loginButton, createButton, createFolderButton;
+Button loginButton, createButton, createFolderButton, FAQS, TUTORIAL, ABOUTUS, HOME;
 
 //WORKSPACE1 Exclusive
 Punt ph1, ph2, ph3, ph4, pv1, pv2, pv3, pv4, pp1, pp2, pp3, pp4, plt1, plt2, plt3;
@@ -25,7 +25,11 @@ void setTextFields() {
 void setButtons() {
   loginButton = new Button("LOGIN", width/2-200/2, (height/2)+140, 200, 50);
   createButton=new Button("CREATE", 1900-200, 280-80, 200, 50);
-  //createFolderButton=new Button("CREATE FOLDER"
+  createFolderButton=new Button("CREATE FOLDER", marginH+(sidebarWidth/2)-100, 990, 200, 50);
+  HOME=new Button("HOME", 4*marginH+logoSize, marginV+(bannerHeight/2)-50, 350, 100);
+  FAQS=new Button("FAQ's", (4*marginH+logoSize)+400, marginV+(bannerHeight/2)-50, 350, 100);
+  ABOUTUS=new Button("ABOUT US", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100);
+  TUTORIAL=new Button("TUTORIAL", (4*marginH+logoSize)+1200, marginV+(bannerHeight/2)-50, 350, 100);
 }
 
 void setWORKSPACE1() {
