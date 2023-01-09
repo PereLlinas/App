@@ -67,15 +67,32 @@ void WORKSPACE2() {
   LT.display();
 }
 void MULTIPLE() {
+  jcam.beginHUD();
   if (FAQS.mouseOverButton()) {
     background(100);
+    dibuixaBanner();
+    HOME.display();
+    FAQS.display();
+    ABOUTUS.display();
+    TUTORIAL.display();
   }
   if (ABOUTUS.mouseOverButton()) {
     background(200);
+    dibuixaBanner();
+    HOME.display();
+    FAQS.display();
+    ABOUTUS.display();
+    TUTORIAL.display();
   }
   if (TUTORIAL.mouseOverButton()) {
     background(50);
+    dibuixaBanner();
+    HOME.display();
+    FAQS.display();
+    ABOUTUS.display();
+    TUTORIAL.display();
   }
+  jcam.endHUD();
 }
 void LOGIN () {
   jcam.beginHUD();
