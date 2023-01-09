@@ -12,7 +12,9 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
   ABOUTUS.display();
   TUTORIAL.display();
   pushStyle();
-  fill(0); /*textFont(titol)*/; textSize(50);
+  fill(0); /*textFont(titol)*/
+  ;
+  textSize(50);
   text("APP Name", 335, 250);
   popStyle();
   //afegir cards per cada creació
@@ -64,16 +66,16 @@ void WORKSPACE2() {
   PP.display();
   LT.display();
 }
-void MULTIPLE(){
+void MULTIPLE() {
   if (FAQS.mouseOverButton()) {
-
-    }
-    if (ABOUTUS.mouseOverButton()) {
-
-    }
-    if (TUTORIAL.mouseOverButton()) {
-
-    }
+    background(100);
+  }
+  if (ABOUTUS.mouseOverButton()) {
+    background(200);
+  }
+  if (TUTORIAL.mouseOverButton()) {
+    background(50);
+  }
 }
 void LOGIN () {
   jcam.beginHUD();
