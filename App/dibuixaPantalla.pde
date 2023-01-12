@@ -12,9 +12,7 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
   ABOUTUS.display();
   TUTORIAL.display();
   pushStyle();
-  fill(0); /*textFont(titol)*/
-  ;
-  textSize(50);
+  fill(0); textFont(getFirstFont());
   text("APP Name", 335, 250);
   popStyle();
   //afegir cards per cada creació
@@ -66,38 +64,43 @@ void WORKSPACE2() {
   PP.display();
   LT.display();
 }
-void MULTIPLE() {
+void FAQS() {
   jcam.beginHUD();
-  if (FAQS.mouseOverButton()) {
+    background(150);
+    dibuixaBanner();
+    HOME.display();
+    FAQS.display();
+    ABOUTUS.display();
+    TUTORIAL.display();
+  jcam.endHUD();
+}
+
+void TUTORIAL() {
+  jcam.beginHUD();
+    background(230);
+    dibuixaBanner();
+    HOME.display();
+    FAQS.display();
+    ABOUTUS.display();
+    TUTORIAL.display();
+  jcam.endHUD();
+}
+
+void ABOUTUS() {
+  jcam.beginHUD();
     background(100);
     dibuixaBanner();
     HOME.display();
     FAQS.display();
     ABOUTUS.display();
     TUTORIAL.display();
-  }
-  if (ABOUTUS.mouseOverButton()) {
-    background(200);
-    dibuixaBanner();
-    HOME.display();
-    FAQS.display();
-    ABOUTUS.display();
-    TUTORIAL.display();
-  }
-  if (TUTORIAL.mouseOverButton()) {
-    background(50);
-    dibuixaBanner();
-    HOME.display();
-    FAQS.display();
-    ABOUTUS.display();
-    TUTORIAL.display();
-  }
   jcam.endHUD();
 }
+
 void LOGIN () {
   jcam.beginHUD();
   background(217, 215, 197);
   dibuixaZonaLogo2();
-  dibuixaLogin(); //se pot posar una vegada i modificar height fora haver de cridar sa funció??
+  dibuixaLogin();
   jcam.endHUD();
 }

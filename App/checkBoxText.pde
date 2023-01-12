@@ -24,7 +24,6 @@ class CheckBoxText {
     this.checkedColor = color(180);
     this.texte = "";
   }
-  
   CheckBoxText(String t, float x, float y, float w, float h){
     this.texte = t;
     this.x = x;this.y = y;

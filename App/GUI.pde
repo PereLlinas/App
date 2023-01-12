@@ -17,6 +17,8 @@ Pla ALFA;
 //Recta
 Recta r;
 
+color fonsPantalla = color(255);
+
 void setTextFields() {
   userText = new TextField(width/2-300/2, height/2, 300, 50);
   passText = new TextField(width/2-300/2, (height/2)+70, 300, 50);

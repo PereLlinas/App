@@ -1,4 +1,4 @@
-enum PANTALLA {LOGIN, HOME, WORKSPACE1, WORKSPACE2, MULTIPLE};
+enum PANTALLA {LOGIN, HOME, WORKSPACE1, WORKSPACE2, FAQS, ABOUTUS, TUTORIAL};
 PANTALLA pantalla=PANTALLA.HOME;
 
 //càmera (origen de coordenades se posa al centre)
@@ -16,9 +16,13 @@ void setup() {
 
 void draw() {
   switch(pantalla){
+    
     case HOME: HOME();break;
     case LOGIN: LOGIN();break;
-    case MULTIPLE: MULTIPLE();break;//aquesta pantalla necessita un if per poder canviar lo que s'hi posi en funció d'es botó seleccionat.
+    case FAQS: FAQS();break;
+    case ABOUTUS: ABOUTUS();break;
+    case TUTORIAL: TUTORIAL();break;
+    
     case WORKSPACE1: WORKSPACE1();break;
     case WORKSPACE2: WORKSPACE2();break;
   }

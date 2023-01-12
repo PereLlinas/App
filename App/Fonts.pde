@@ -22,23 +22,24 @@ void setFonts(){
   
   // Getter de la font primaria
   PFont getFirstFont(){
-    return  this.fonts[0];
+    return this.fonts[0];
   }
   
   // Getter del font secundaria
   PFont getSecondFont(){
-    return  this.fonts[1];
+    return this.fonts[1];
   }
   
   // Getter del la font terciaria
   PFont getThirdFont(){
-    return  this.fonts[2];
+    return this.fonts[2];
   }
   
   // Getter de la font i-èssima
   PFont getFontAt(int i){
     return this.fonts[i];
   }
+  
   
   
   // Dibuixa les font de l'App
