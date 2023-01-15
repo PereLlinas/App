@@ -2,6 +2,8 @@ TextField userText, passText;
 
 Button loginButton, createButton, createFolderButton, FAQS, TUTORIAL, ABOUTUS, HOME;
 
+Levels levels;
+
 //WORKSPACE1 Exclusive
 Punt ph1, ph2, ph3, ph4, pv1, pv2, pv3, pv4, pp1, pp2, pp3, pp4, plt1, plt2, plt3;
 
@@ -33,7 +35,9 @@ void setButtons() {
   ABOUTUS=new Button("ABOUT US", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100);
   TUTORIAL=new Button("TUTORIAL", (4*marginH+logoSize)+1200, marginV+(bannerHeight/2)-50, 350, 100);
 }
-
+void setLevels(){
+ levels=new Levels("Level 1", "", "", "Level 2", "", ""); 
+}
 void setWORKSPACE1() {
   ph1=new Punt("PH", 1200, 800, 0, 1, 255);
   ph2=new Punt("", 1200, -800, 0, 1, 255);
@@ -82,5 +86,6 @@ void setGUI ( ) {
   setButtons();
   setWORKSPACE1();
   setColors();
+  setLevels();
   /*setCheckboxes();*/
 }

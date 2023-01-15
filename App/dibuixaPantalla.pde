@@ -5,6 +5,7 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
   dibuixaSideBar();
   dibuixaZonaLogo();
   dibuixaZonaCarpetes();
+  setLevels();
   createButton.display();
   createFolderButton.display();
   HOME.display();
@@ -12,7 +13,7 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
   ABOUTUS.display();
   TUTORIAL.display();
   pushStyle();
-  fill(0); textFont(getFirstFont());
+  fill(0); //textFont(getSecondFont());
   text("APP Name", 335, 250);
   popStyle();
   //afegir cards per cada creació
@@ -26,12 +27,7 @@ void WORKSPACE1() {
   dibuixaSideBar(); //pop-ups que se generin a una altura concreta
   dibuixaProjeccions();
   jcam.endHUD();
-  //Display elements creats
-  A.display();
-  B.display();
-  C.display();
-  ALFA.display();
-  r.display();
+
   //Display plans i punts base
   ph1.display();
   pv1.display();
