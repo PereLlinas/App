@@ -21,13 +21,8 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
 }
 
 void WORKSPACE1() {
-  jcam.beginHUD();
-  background(217, 215, 197, 150);
-  dibuixaBanner();
-  dibuixaSideBar(); //pop-ups que se generin a una altura concreta
-  dibuixaProjeccions();
-  jcam.endHUD();
-
+background(217, 215, 197, 150);
+  
   //Display plans i punts base
   ph1.display();
   pv1.display();
@@ -36,21 +31,25 @@ void WORKSPACE1() {
   PV.display();
   PP.display();
   LT.display();
+  
+  jcam.beginHUD();
+  //ELEMENTS DECORATIUS
+  dibuixaBanner();
+  dibuixaSideBar(); //pop-ups que se generin a una altura concreta
+  dibuixaZonaLogo();
+  dibuixaProjeccions();
+  //BOTONS
+  SAVE.display(); //pendent
+  PRINT.display(); //pendent
+  TUTORIAL.display(); //pendent
+  NAME.display(); //pendent
+  addElement.display(); //pendent
+  jcam.endHUD();
 }
 
 void WORKSPACE2() {
-  jcam.beginHUD();
-  background(217, 215, 197);
-  dibuixaBanner();
-  dibuixaSideBar(); //pop-ups que se generin a una altura concreta
-  dibuixaProjeccions();
-  jcam.endHUD();
-  //Display elements creats
-  A.display();
-  B.display();
-  C.display();
-  ALFA.display();
-  r.display();
+  background(217, 215, 197, 150);
+  
   //Display plans i punts base
   ph1.display();
   pv1.display();
@@ -59,6 +58,17 @@ void WORKSPACE2() {
   PV.display();
   PP.display();
   LT.display();
+  
+  jcam.beginHUD();
+  dibuixaBanner();
+  dibuixaSideBar(); //pop-ups que se generin a una altura concreta
+  dibuixaZonaLogo();
+  dibuixaProjeccions();
+  SAVE.display(); //pendent
+  PRINT.display(); //pendent
+  TUTORIAL.display(); //pendent
+  NAME.display(); //pendent
+  jcam.endHUD();
 }
 void FAQS() {
   jcam.beginHUD();

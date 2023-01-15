@@ -10,7 +10,7 @@ void mousePressed() {
     fonsPantalla = color(255, 0, 0);
   }
 
-  //enum PANTALLA {LOGIN, HOME, WORKSPACE1, FOLDERS};
+  //enum PANTALLA {LOGIN, HOME, WORKSPACE1, WORKSPACE2, ABOUTUS, FAQS, TUTORIAL};
   if (pantalla==PANTALLA.LOGIN) {
     userText.isPressed();
     passText.isPressed();
@@ -18,8 +18,9 @@ void mousePressed() {
       pantalla = PANTALLA.HOME;
     }
   } else if (pantalla==PANTALLA.HOME) {
+
     if (createButton.mouseOverButton()) {
-        pantalla=PANTALLA.WORKSPACE1;
+      pantalla=PANTALLA.WORKSPACE1;
     } else if (FAQS.mouseOverButton()) {
       pantalla=PANTALLA.FAQS;
     } else if (ABOUTUS.mouseOverButton()) {
@@ -28,6 +29,7 @@ void mousePressed() {
       pantalla=PANTALLA.TUTORIAL;
     }
   } else if (pantalla==PANTALLA.ABOUTUS) {
+
     if (FAQS.mouseOverButton()) {
       pantalla=PANTALLA.FAQS;
     } else if (ABOUTUS.mouseOverButton()) {
@@ -36,6 +38,7 @@ void mousePressed() {
       pantalla=PANTALLA.TUTORIAL;
     }
   } else if (pantalla==PANTALLA.TUTORIAL) {
+
     if (FAQS.mouseOverButton()) {
       pantalla=PANTALLA.FAQS;
     } else if (ABOUTUS.mouseOverButton()) {
@@ -44,6 +47,7 @@ void mousePressed() {
       pantalla=PANTALLA.TUTORIAL;
     }
   } else if (pantalla==PANTALLA.FAQS) {
+
     if (FAQS.mouseOverButton()) {
       pantalla=PANTALLA.FAQS;
     } else if (ABOUTUS.mouseOverButton()) {
@@ -51,6 +55,7 @@ void mousePressed() {
     } else if (TUTORIAL.mouseOverButton()) {
       pantalla=PANTALLA.TUTORIAL;
     }
+  } else if (pantalla==PANTALLA.WORKSPACE1||pantalla==PANTALLA.WORKSPACE2) {
   }
 }
 
