@@ -28,11 +28,11 @@ void setButtons() {
   SAVE=new Button("SAVE", (4*marginH+logoSize)+400, marginV+(bannerHeight/2)-50, 350, 100);
   NAME=new Button("NAME", (4*marginH+logoSize), marginV+(bannerHeight/2)-50, 350, 100);
   PRINT=new Button("PRINT PROJECTIONS", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100);
-  addElement=new Button("ADD ELEMENT", marginH+(sidebarWidth/2)-100, 990, 200, 50);
-  addPoint
-  addRect
-  addPlane
-  addFigure
+  addElement=new Button("ADD ELEMENT", marginH+(sidebarWidth/2)-100, 350, 200, 50);
+  addPoint=new Button ("ADD POINT", marginH+(sidebarWidth/2)-100, 520, 200, 50);
+  addRect=new Button ("ADD RECT", marginH+(sidebarWidth/2)-100, (2*sidebarHeight/4+logoSize+marginV), 200, 50);
+  addPlane=new Button ("ADD PLANE", marginH+(sidebarWidth/2)-100, (3*sidebarHeight/4+logoSize+marginV), 200, 50);
+  addFigure=new Button ("ADD FIGURE", marginH+(sidebarWidth/2)-100,(sidebarHeight+logoSize+marginV), 200, 50);
 }
 void setLevels() {
   levels=new Levels("Level 1", "", "", "Level 2", "", "");

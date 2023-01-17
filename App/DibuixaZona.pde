@@ -1,6 +1,6 @@
 // FUNCIONS DE DIBUIX DE LES ZONES
 
-//INICI i FOLDERS
+//HOME
 void dibuixaZonaLogo(){
   pushStyle();
     fill(200,50,100);
@@ -62,5 +62,12 @@ void dibuixaProjeccions(){
   rect(1900-4*logoSize/3, 190, 4*logoSize/3, logoSize);
     fill(0); textAlign(CENTER);
     text("PROJECCIONS", (1900-4*logoSize/3)+(4*logoSize/3)/2, 190+logoSize/2);
+  popStyle();
+}
+
+void popupElements(){
+  pushStyle();
+  rectMode(CENTER); fill(166, 130, 86); 
+  rect(0, 0, 1000, 800);
   popStyle();
 }

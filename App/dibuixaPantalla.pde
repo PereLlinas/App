@@ -21,8 +21,8 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
 }
 
 void WORKSPACE1() {
-background(217, 215, 197, 150);
-  
+  background(217, 215, 197, 150);
+
   //Display plans i punts base
   ph1.display();
   pv1.display();
@@ -31,25 +31,29 @@ background(217, 215, 197, 150);
   PV.display();
   PP.display();
   LT.display();
-  
+
   jcam.beginHUD();
   //ELEMENTS DECORATIUS
   dibuixaBanner();
   dibuixaSideBar(); //pop-ups que se generin a una altura concreta
   dibuixaZonaLogo();
   dibuixaProjeccions();
+
   //BOTONS
   SAVE.display(); //pendent
   PRINT.display(); //pendent
   TUTORIAL.display(); //pendent
   NAME.display(); //pendent
   addElement.display(); //pendent
+  // addRect.display();
+  // addPoint.display();
+  //addPlane.display();
   jcam.endHUD();
 }
 
 void WORKSPACE2() {
   background(217, 215, 197, 150);
-  
+
   //Display plans i punts base
   ph1.display();
   pv1.display();
@@ -58,7 +62,7 @@ void WORKSPACE2() {
   PV.display();
   PP.display();
   LT.display();
-  
+
   jcam.beginHUD();
   dibuixaBanner();
   dibuixaSideBar(); //pop-ups que se generin a una altura concreta
@@ -72,34 +76,37 @@ void WORKSPACE2() {
 }
 void FAQS() {
   jcam.beginHUD();
-    background(150);
-    dibuixaBanner();
-    HOME.display();
-    FAQS.display();
-    ABOUTUS.display();
-    TUTORIAL.display();
+  background(150);
+  dibuixaBanner();
+  dibuixaZonaLogo();
+  HOME.display();
+  FAQS.display();
+  ABOUTUS.display();
+  TUTORIAL.display();
   jcam.endHUD();
 }
 
 void TUTORIAL() {
   jcam.beginHUD();
-    background(230);
-    dibuixaBanner();
-    HOME.display();
-    FAQS.display();
-    ABOUTUS.display();
-    TUTORIAL.display();
+  background(230);
+  dibuixaBanner();
+  dibuixaZonaLogo();
+  HOME.display();
+  FAQS.display();
+  ABOUTUS.display();
+  TUTORIAL.display();
   jcam.endHUD();
 }
 
 void ABOUTUS() {
   jcam.beginHUD();
-    background(100);
-    dibuixaBanner();
-    HOME.display();
-    FAQS.display();
-    ABOUTUS.display();
-    TUTORIAL.display();
+  background(100);
+  dibuixaBanner();
+  dibuixaZonaLogo();
+  HOME.display();
+  FAQS.display();
+  ABOUTUS.display();
+  TUTORIAL.display();
   jcam.endHUD();
 }
 
