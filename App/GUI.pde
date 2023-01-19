@@ -1,5 +1,7 @@
 TextField userText, passText;
 
+Tria tria1;
+
 Button loginButton, createButton, createFolderButton, FAQS, TUTORIAL, ABOUTUS, 
 HOME, PRINT, SAVE, NAME, addElement, addPoint, addRect, addPlane, addFigure, level1, level2;
 
@@ -10,6 +12,12 @@ Punt ph1, ph2, ph3, ph4, pv1, pv2, pv3, pv4, pp1, pp2, pp3, pp4, plt1, plt2, plt
 Pla PH, PV, PP, LT;
 
 color fonsPantalla = color(255);
+
+void setTria(){
+  float Theight=800.0;
+  float Twidth=400.0;
+  tria1=new Tria("ADD ELEMENT", "", (width/2)-(Theight/2), (height/2)-(Twidth/2), Theight, Twidth);
+}
 
 void setTextFields() {
   userText = new TextField(width/2-300/2, height/2, 300, 50);
@@ -74,6 +82,6 @@ void setGUI ( ) {
   setButtons();
   setWORKSPACE1();
   setColors();
-  setLevels();
+  setTria();
   /*setCheckboxes();*/
 }
