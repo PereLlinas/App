@@ -21,7 +21,6 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
 
 void WORKSPACE1() {
   background(217, 215, 197, 150);
-
   //Display plans i punts base
   ph1.display();
   pv1.display();
@@ -30,6 +29,7 @@ void WORKSPACE1() {
   PV.display();
   PP.display();
   LT.display();
+  
 
   jcam.beginHUD();
   //ELEMENTS DECORATIUS
@@ -47,6 +47,7 @@ void WORKSPACE1() {
   // addRect.display(); checkboxSelector
   // addPoint.display(); positionField
   //addPlane.display(); checkboxSelector
+  tria1.display();
   jcam.endHUD();
 }
 
