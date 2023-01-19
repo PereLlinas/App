@@ -5,7 +5,6 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
   dibuixaSideBar();
   dibuixaZonaLogo();
   dibuixaZonaCarpetes();
-  setLevels();
   createButton.display();
   createFolderButton.display();
   HOME.display();
@@ -43,11 +42,11 @@ void WORKSPACE1() {
   SAVE.display(); //pendent
   PRINT.display(); //pendent
   TUTORIAL.display(); //pendent
-  NAME.display(); //pendent
+  NAME.display(); //fer setter per canviar es nom d'es boto i ja
   addElement.display(); //pendent
-  // addRect.display();
-  // addPoint.display();
-  //addPlane.display();
+  // addRect.display(); checkboxSelector
+  // addPoint.display(); positionField
+  //addPlane.display(); checkboxSelector
   jcam.endHUD();
 }
 

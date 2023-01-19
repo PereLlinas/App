@@ -1,5 +1,5 @@
 enum PANTALLA {LOGIN, HOME, WORKSPACE1, WORKSPACE2, FAQS, ABOUTUS, TUTORIAL};
-PANTALLA pantalla=PANTALLA.FAQS;
+PANTALLA pantalla=PANTALLA.HOME;
 
 //càmera (origen de coordenades se posa al centre)
 import peasy.*;
@@ -9,7 +9,7 @@ float zoomValue=1000.0;
 void setup() {
   // Dimensions de l'App
   fullScreen(P3D);
-  jcam=new PeasyCam(this, 2000); //profunditat màx.
+  jcam=new PeasyCam(this, 3000); //profunditat màx.
   setMedias();
   setGUI();
 }

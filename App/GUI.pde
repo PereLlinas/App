@@ -1,9 +1,8 @@
 TextField userText, passText;
 
 Button loginButton, createButton, createFolderButton, FAQS, TUTORIAL, ABOUTUS, 
-HOME, PRINT, SAVE, NAME, addElement, addPoint, addRect, addPlane, addFigure;
+HOME, PRINT, SAVE, NAME, addElement, addPoint, addRect, addPlane, addFigure, level1, level2;
 
-Levels levels;
 
 //WORKSPACE1 Exclusive
 Punt ph1, ph2, ph3, ph4, pv1, pv2, pv3, pv4, pp1, pp2, pp3, pp4, plt1, plt2, plt3;
@@ -34,9 +33,7 @@ void setButtons() {
   addPlane=new Button ("ADD PLANE", marginH+(sidebarWidth/2)-100, (3*sidebarHeight/4+logoSize+marginV), 200, 50);
   addFigure=new Button ("ADD FIGURE", marginH+(sidebarWidth/2)-100,(sidebarHeight+logoSize+marginV), 200, 50);
 }
-void setLevels() {
-  levels=new Levels("Level 1", "", "", "Level 2", "", "");
-}
+
 void setWORKSPACE1() {
   ph1=new Punt("PH", 1200, 800, 0, 1, 255);
   ph2=new Punt("", 1200, -800, 0, 1, 255);
