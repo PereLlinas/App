@@ -56,10 +56,20 @@ void mousePressed() {
       pantalla=PANTALLA.TUTORIAL;
     }
   } else if (pantalla==PANTALLA.WORKSPACE1) {
-      if (addElement.mouseOverButton()) {
-        tria1.visible = true;
+    if (addElement.mouseOverButton()) {
+      tria1.visible = true;
+      addPoint.enabled=false;
+      addLine.enabled=false;
+      addPlane.enabled=false;
+      if (addPoint.mouseOverButton()) {
+        PF.visible = true;
+        
+      }
     }
   } else if (pantalla==PANTALLA.WORKSPACE2) {
+    if (addElement.mouseOverButton()) {
+      tria1.visible = true;
+    }
   }
 }
 

@@ -2,8 +2,10 @@ TextField userText, passText;
 
 Tria tria1;
 
+PositionField PF;
+
 Button loginButton, createButton, createFolderButton, FAQS, TUTORIAL, ABOUTUS, 
-HOME, PRINT, SAVE, NAME, addElement, addPoint, addRect, addPlane, addFigure, level1, level2;
+HOME, PRINT, SAVE, NAME, addElement, addPoint, addLine, addPlane, addFigure, level1, level2;
 
 
 //WORKSPACE1 Exclusive
@@ -12,6 +14,11 @@ Punt ph1, ph2, ph3, ph4, pv1, pv2, pv3, pv4, pp1, pp2, pp3, pp4, plt1, plt2, plt
 Pla PH, PV, PP, LT;
 
 color fonsPantalla = color(255);
+
+void setPositionField(){
+    int w=600, h=300;
+  PF=new PositionField((width/2)-(w/2), (height/2)-(h/2), w, h);
+}
 
 void setTria(){
   float Theight=800.0;
@@ -37,7 +44,7 @@ void setButtons() {
   PRINT=new Button("PRINT PROJECTIONS", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100);
   addElement=new Button("ADD ELEMENT", marginH+(sidebarWidth/2)-100, 350, 200, 50);
   addPoint=new Button ("ADD POINT", marginH+(sidebarWidth/2)-100, 520, 200, 50);
-  addRect=new Button ("ADD RECT", marginH+(sidebarWidth/2)-100, (2*sidebarHeight/4+logoSize+marginV), 200, 50);
+  addLine=new Button ("ADD Line", marginH+(sidebarWidth/2)-100, (2*sidebarHeight/4+logoSize+marginV), 200, 50);
   addPlane=new Button ("ADD PLANE", marginH+(sidebarWidth/2)-100, (3*sidebarHeight/4+logoSize+marginV), 200, 50);
   addFigure=new Button ("ADD FIGURE", marginH+(sidebarWidth/2)-100,(sidebarHeight+logoSize+marginV), 200, 50);
 }
@@ -83,5 +90,6 @@ void setGUI ( ) {
   setWORKSPACE1();
   setColors();
   setTria();
+  setPositionField();
   /*setCheckboxes();*/
 }

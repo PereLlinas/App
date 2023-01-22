@@ -44,10 +44,11 @@ void WORKSPACE1() {
   TUTORIAL.display(); //pendent
   NAME.display(); //fer setter per canviar es nom d'es boto i ja
   addElement.display(); //pendent
-  // addRect.display(); checkboxSelector
+  // addRect.display(); checkboxSelector, esperar a arrayList
   // addPoint.display(); positionField
-  //addPlane.display(); checkboxSelector
+  //addPlane.display(); checkboxSelector, esperar a arrayList
   tria1.display();
+  PF.display();
   jcam.endHUD();
 }
 
