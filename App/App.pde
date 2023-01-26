@@ -12,6 +12,7 @@ void setup() {
   jcam=new PeasyCam(this, 3000); //profunditat màx.
   setMedias();
   setGUI();
+  setPunts();
 }
 
 void draw() {

@@ -4,8 +4,24 @@ Tria tria1;
 
 PositionField PF;
 
-Button loginButton, createButton, createFolderButton, FAQS, TUTORIAL, ABOUTUS, 
-HOME, PRINT, SAVE, NAME, addElement, addPoint, addLine, addPlane, addFigure, level1, level2;
+Button loginButton, createButton, createFolderButton, FAQS, TUTORIAL, ABOUTUS,
+  HOME, PRINT, SAVE, NAME, addElement, addPoint, addLine, addPlane, addFigure, level1, level2;
+
+// PUNTS
+int numPunts;
+Punt[] punts;
+
+void setPunts() {
+  numPunts=0;
+  punts = new Punt[10];
+}
+
+void savePunt(float x, float y, float z) {
+  if (numPunts<punts.length) {
+    punts[numPunts] = new Punt("A", x, y, z,50, color(255));
+    numPunts++;
+  }
+}
 
 
 //WORKSPACE1 Exclusive
@@ -15,12 +31,12 @@ Pla PH, PV, PP, LT;
 
 color fonsPantalla = color(255);
 
-void setPositionField(){
-    int w=600, h=300;
+void setPositionField() {
+  int w=600, h=300;
   PF=new PositionField((width/2)-(w/2), (height/2)-(h/2), w, h);
 }
 
-void setTria(){
+void setTria() {
   float Theight=800.0;
   float Twidth=400.0;
   tria1=new Tria("ADD ELEMENT", "", (width/2)-(Theight/2), (height/2)-(Twidth/2), Theight, Twidth);
@@ -46,7 +62,7 @@ void setButtons() {
   addPoint=new Button ("ADD POINT", marginH+(sidebarWidth/2)-100, 520, 200, 50);
   addLine=new Button ("ADD Line", marginH+(sidebarWidth/2)-100, (2*sidebarHeight/4+logoSize+marginV), 200, 50);
   addPlane=new Button ("ADD PLANE", marginH+(sidebarWidth/2)-100, (3*sidebarHeight/4+logoSize+marginV), 200, 50);
-  addFigure=new Button ("ADD FIGURE", marginH+(sidebarWidth/2)-100,(sidebarHeight+logoSize+marginV), 200, 50);
+  addFigure=new Button ("ADD FIGURE", marginH+(sidebarWidth/2)-100, (sidebarHeight+logoSize+marginV), 200, 50);
 }
 
 void setWORKSPACE1() {

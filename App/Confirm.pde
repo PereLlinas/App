@@ -5,8 +5,7 @@ class Confirm {
   
  // Propietats
  PImage img;
- String title;
- String message;
+ String title, message;
  
  Button level1, level2;
  float buttonW = 200, buttonH = 80;

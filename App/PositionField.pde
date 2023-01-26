@@ -5,7 +5,7 @@ class PositionField {
   // Propietats del camp de temps
   int x, y, h, w;
   TextPositionField[] tf;
-  boolean visible  = true;
+  boolean visible  = false;
 
   // Constructor
   PositionField(int x, int y, int w, int h) {
@@ -21,11 +21,13 @@ class PositionField {
 
   // Dibuixa el Camp de Text
   void display() {
+    pushStyle();
     if (this.visible) {
       for (int i=0; i<tf.length; i++) {
         tf[i].display();
       }
     }
+    popStyle();
   }
 
   // Escritura en algun dels camps de texte
@@ -44,5 +46,13 @@ class PositionField {
         tf[i].isPressed();
       }
     }
+  }
+  
+  float[] getPosition(){
+    float[] position = new float[3];
+    position[0] = Float.parseFloat(tf[0].text);
+    position[1] = Float.parseFloat(tf[1].text);
+    position[2] = Float.parseFloat(tf[2].text);
+    return position;
   }
 }

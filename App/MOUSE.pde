@@ -58,13 +58,13 @@ void mousePressed() {
   } else if (pantalla==PANTALLA.WORKSPACE1) {
     if (addElement.mouseOverButton()) {
       tria1.visible = true;
-      addPoint.enabled=false;
-      addLine.enabled=false;
-      addPlane.enabled=false;
-      if (addPoint.mouseOverButton()) {
-        PF.visible = true;
-        
-      }
+    }
+    else if(tria1.addPoint.mouseOverButton()){
+      tria1.visible = false;
+      PF.visible=true;
+    }
+    else if(PF.visible){
+       PF.isPressed();
     }
   } else if (pantalla==PANTALLA.WORKSPACE2) {
     if (addElement.mouseOverButton()) {
@@ -78,5 +78,10 @@ void keyPressed() {
   if (pantalla==PANTALLA.LOGIN) {
     userText.keyPressed(key, (int)keyCode);
     passText.keyPressed(key, (int)keyCode);
+  }
+  else if(pantalla==PANTALLA.WORKSPACE1){
+    if(PF.visible){
+         PF.keyPressed(key, (int)keyCode);
+    }
   }
 }

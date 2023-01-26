@@ -21,7 +21,7 @@ class TextPositionField {
   boolean selected = false;
    
   // Constructor
-  TextPositionField(String lt, float x, float y, float w,float h) {
+  TextPositionField(String lt, float x, float y, float w, float h) {
       this.labelText = lt;
       this.x = x; this.y = y; 
       this.w = w; this.h = h;

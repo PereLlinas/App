@@ -96,6 +96,5 @@ class CheckBoxList {
       }
     }
     return items;
-  }
-  
+  }  
 }
