@@ -5,6 +5,7 @@ class PositionField {
   // Propietats del camp de temps
   int x, y, h, w;
   TextPositionField[] tf;
+  Button close;
   boolean visible  = false;
 
   // Constructor
@@ -17,12 +18,18 @@ class PositionField {
     tf[0] = new TextPositionField("X", x, y, w/3.1, h);
     tf[1] = new TextPositionField("Y", x + w/3, y, w/3.1, h);
     tf[2] = new TextPositionField("Z", x + 2*w/3, y, w/3.1, h);
+    this.close=new Button("X", 1130-5, 410-15, 30, 30);
   }
 
   // Dibuixa el Camp de Text
   void display() {
     pushStyle();
     if (this.visible) {
+      fill(166, 130, 86);
+      strokeWeight(10);
+      stroke(166, 130, 86, 450);
+      rect((width/2)-200, (height/2)-150, 400, 300);
+      close.display();
       for (int i=0; i<tf.length; i++) {
         tf[i].display();
       }
@@ -47,8 +54,8 @@ class PositionField {
       }
     }
   }
-  
-  float[] getPosition(){
+
+  float[] getPosition() {
     float[] position = new float[3];
     position[0] = Float.parseFloat(tf[0].text);
     position[1] = Float.parseFloat(tf[1].text);

@@ -65,6 +65,9 @@ void mousePressed() {
     }
     else if(PF.visible){
        PF.isPressed();
+       if(close){
+         
+       }
     }
   } else if (pantalla==PANTALLA.WORKSPACE2) {
     if (addElement.mouseOverButton()) {

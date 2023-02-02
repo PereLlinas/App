@@ -32,7 +32,7 @@ Pla PH, PV, PP, LT;
 color fonsPantalla = color(255);
 
 void setPositionField() {
-  int w=600, h=300;
+  int w=300, h=200;
   PF=new PositionField((width/2)-(w/2), (height/2)-(h/2), w, h);
 }
 
