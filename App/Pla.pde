@@ -7,7 +7,6 @@ class Pla {
 
   //Constructor
   Pla(Punt...p) {
-    //super(n, x, y, z, r);
     this.numPunts = p.length;
     this.punts=new Punt [p.length];
     for (int i=0; i<p.length; i++) {
