@@ -7,11 +7,11 @@ class Tria {
   PImage img;
   String title;
   String message;
-
-  Button addPoint, addLine, addPlane;
+  boolean v  = false;
+  Button[] buttons={null, null, null, null};
+  Button addPoint, addLine, addPlane, close;
   float buttonH = 80;
 
-  boolean visible  = false;
 
   // Constructor
 
@@ -22,6 +22,8 @@ class Tria {
     this.y = y;
     this.w = w;
     this.h = h;
+    //boolean per poder activar/desactivar es popup
+    this.v=v;
 
     float m = 50;
     float wButton = (w - 4*m)/3;
@@ -31,10 +33,15 @@ class Tria {
     this.addLine = new Button("ADD LINE", x + 2*m + wButton,
       y + h - buttonH*1.5,
       wButton, buttonH);
-
     this.addPlane = new Button("ADD PLANE", x + 3*m +2*wButton,
       y + h - buttonH*1.5,
       wButton, buttonH);
+    this.close=new Button("", 1330-15, 370-15, 30, 30);
+    
+    this.buttons[0]=this.addPoint;
+    this.buttons[1]=this.addLine;
+    this.buttons[2]=this.addPlane;
+    this.buttons[3]=this.close;
   }
 
   //Setters
@@ -54,11 +61,11 @@ class Tria {
     this.message = message;
   }
 
-  // Dibuixa el Confirm
+  // Dibuixa el Tria
 
   void display() {
 
-    if (this.visible) {
+    if (this.v) {
       float b = 40;
 
       pushStyle();
@@ -87,7 +94,17 @@ class Tria {
       addPoint.display();
       addLine.display();
       addPlane.display();
+      close.display();
       popStyle();
+    }
+  }
+
+
+  void isPressed() {
+    if (this.v) {
+      for (int i=0; i<buttons.length; i++) {
+        //buttons[i].isPressed();
+      }
     }
   }
 }

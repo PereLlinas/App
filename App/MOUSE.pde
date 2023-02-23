@@ -57,34 +57,25 @@ void mousePressed() {
     }
   } else if (pantalla==PANTALLA.WORKSPACE1) {
     if (addElement.mouseOverButton()) {
-      tria1.visible = true;
-    }
-    else if(tria1.addPoint.mouseOverButton()){
-      tria1.visible = false;
+      tria1.v = true;
+    } else if (tria1.addPoint.mouseOverButton()) {
+      println("jcam");
+      enableCamera=false;
+      jcam.setActive(enableCamera);
+      tria1.v = false;
       PF.visible=true;
-    }
-    else if(PF.visible){
-       PF.isPressed();
-       if(close){
-         
-       }
+    } else if (PF.visible) {
+
+      PF.isPressed();
+      if (PF.closePF.mouseOverButton()) {
+        PF.visible=false;
+        enableCamera=true;
+        jcam.setActive(enableCamera);
+      }
     }
   } else if (pantalla==PANTALLA.WORKSPACE2) {
     if (addElement.mouseOverButton()) {
-      tria1.visible = true;
-    }
-  }
-}
-
-void keyPressed() {
-
-  if (pantalla==PANTALLA.LOGIN) {
-    userText.keyPressed(key, (int)keyCode);
-    passText.keyPressed(key, (int)keyCode);
-  }
-  else if(pantalla==PANTALLA.WORKSPACE1){
-    if(PF.visible){
-         PF.keyPressed(key, (int)keyCode);
+      tria1.v = true;
     }
   }
 }

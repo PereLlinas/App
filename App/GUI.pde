@@ -1,3 +1,8 @@
+//PGraphics per ses figures (fer-ne dos: PH i PV amb ses coordenades reals i
+//després ajustar cadascun a la meitat d'es tamany d'es requadre que tenc
+//creat per ses projeccions (donar-li background perquè sino és transparent))
+//https://processing.org/reference/PGraphics.html
+
 TextField userText, passText;
 
 Tria tria1;
@@ -5,7 +10,8 @@ Tria tria1;
 PositionField PF;
 
 Button loginButton, createButton, createFolderButton, FAQS, TUTORIAL, ABOUTUS,
-  HOME, PRINT, SAVE, NAME, addElement, addPoint, addLine, addPlane, addFigure, level1, level2;
+  HOME, PRINT, SAVE, NAME, addElement, addPoint, addLine, addPlane, addFigure,
+  level1, level2, closeAdd;
 
 // PUNTS
 int numPunts;
@@ -18,7 +24,7 @@ void setPunts() {
 
 void savePunt(float x, float y, float z) {
   if (numPunts<punts.length) {
-    punts[numPunts] = new Punt("A", x, y, z,50, color(255));
+    punts[numPunts] = new Punt("A", x, y, z, 50, color(255));
     numPunts++;
   }
 }

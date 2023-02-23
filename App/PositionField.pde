@@ -5,8 +5,8 @@ class PositionField {
   // Propietats del camp de temps
   int x, y, h, w;
   TextPositionField[] tf;
-  Button close;
   boolean visible  = false;
+  Button closePF;
 
   // Constructor
   PositionField(int x, int y, int w, int h) {
@@ -18,7 +18,7 @@ class PositionField {
     tf[0] = new TextPositionField("X", x, y, w/3.1, h);
     tf[1] = new TextPositionField("Y", x + w/3, y, w/3.1, h);
     tf[2] = new TextPositionField("Z", x + 2*w/3, y, w/3.1, h);
-    this.close=new Button("X", 1130-5, 410-15, 30, 30);
+    this.closePF=new Button("", 1130-5, 410-15, 30, 30);
   }
 
   // Dibuixa el Camp de Text
@@ -29,10 +29,10 @@ class PositionField {
       strokeWeight(10);
       stroke(166, 130, 86, 450);
       rect((width/2)-200, (height/2)-150, 400, 300);
-      close.display();
       for (int i=0; i<tf.length; i++) {
         tf[i].display();
       }
+      closePF.display();
     }
     popStyle();
   }

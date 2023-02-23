@@ -20,29 +20,15 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
 }
 
 void WORKSPACE1() {
-  if (!PF.visible) {
-    background(217, 215, 197, 150);
-    //Display plans i punts base
-    ph1.display();
-    pv1.display();
-    pp1.display();
-    PH.display();
-    PV.display();
-    PP.display();
-    LT.display();
-  } else if (PF.visible) {
-    jcam.beginHUD();
-    background(217, 215, 197, 150);
-    //Display plans i punts base
-    ph1.display();
-    pv1.display();
-    pp1.display();
-    PH.display();
-    PV.display();
-    PP.display();
-    LT.display();
-    jcam.endHUD();
-  }
+  background(217, 215, 197, 150);
+  //Display plans i punts base
+  ph1.display();
+  pv1.display();
+  pp1.display();
+  PH.display();
+  PV.display();
+  PP.display();
+  LT.display();
 
   jcam.beginHUD();
   //ELEMENTS DECORATIUS
