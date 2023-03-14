@@ -5,8 +5,9 @@ class PositionField {
   // Propietats del camp de temps
   int x, y, h, w;
   TextPositionField[] tf;
+  TextField name;
   boolean visible  = false;
-  Button closePF;
+  Button closePF, save;
 
   // Constructor
   PositionField(int x, int y, int w, int h) {
@@ -18,7 +19,9 @@ class PositionField {
     tf[0] = new TextPositionField("X", x, y, w/3.1, h);
     tf[1] = new TextPositionField("Y", x + w/3, y, w/3.1, h);
     tf[2] = new TextPositionField("Z", x + 2*w/3, y, w/3.1, h);
-    this.closePF=new Button("", 1130-5, 410-15, 30, 30);
+    name = new TextField((width/2)-(300/2), 340, 300, 45);
+    this.closePF=new Button("X", 1130-5, 315-15, 30, 30);
+    this.save=new Button("save", 1130-5, 315-15, 30, 30);
   }
 
   // Dibuixa el Camp de Text
@@ -28,11 +31,12 @@ class PositionField {
       fill(166, 130, 86);
       strokeWeight(10);
       stroke(166, 130, 86, 450);
-      rect((width/2)-200, (height/2)-150, 400, 300);
+      rect((width/2)-200, (height/2)-250, 400, 355);
       for (int i=0; i<tf.length; i++) {
         tf[i].display();
       }
       closePF.display();
+      name.display();
     }
     popStyle();
   }
@@ -42,6 +46,7 @@ class PositionField {
     if (this.visible) {
       for (int i=0; i<tf.length; i++) {
         tf[i].keyPressed(key, keyCode);
+        name.keyPressed(key, keyCode);
       }
     }
   }
@@ -51,6 +56,7 @@ class PositionField {
     if (this.visible) {
       for (int i=0; i<tf.length; i++) {
         tf[i].isPressed();
+        name.isPressed();
       }
     }
   }
