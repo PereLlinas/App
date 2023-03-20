@@ -4,10 +4,10 @@ class PositionField {
 
   // Propietats del camp de temps
   int x, y, h, w;
-  TextPositionField[] tf;
+  TextPositionField[] tpf;
   TextField name;
   boolean visible  = false;
-  Button closePF, save;
+  Button closePF, add;
 
   // Constructor
   PositionField(int x, int y, int w, int h) {
@@ -15,13 +15,13 @@ class PositionField {
     this.y = y;
     this.w = w;
     this.h = h;
-    tf = new TextPositionField[3];
-    tf[0] = new TextPositionField("X", x, y, w/3.1, h);
-    tf[1] = new TextPositionField("Y", x + w/3, y, w/3.1, h);
-    tf[2] = new TextPositionField("Z", x + 2*w/3, y, w/3.1, h);
-    name = new TextField((width/2)-(300/2), 340, 300, 45);
+    tpf = new TextPositionField[3];
+    tpf[0] = new TextPositionField("X", x, y+50, w/3.1, h);
+    tpf[1] = new TextPositionField("Y", x + w/3, y+50, w/3.1, h);
+    tpf[2] = new TextPositionField("Z", x + 2*w/3, y+50, w/3.1, h);
+    name = new TextField((width/2)-(300/2), 340+50, 300, 50);
     this.closePF=new Button("X", 1130-5, 315-15, 30, 30);
-    this.save=new Button("save", 1130-5, 315-15, 30, 30);
+    this.add=new Button("ADD POINT", 1100-75, 710, 110, 50);
   }
 
   // Dibuixa el Camp de Text
@@ -31,12 +31,13 @@ class PositionField {
       fill(166, 130, 86);
       strokeWeight(10);
       stroke(166, 130, 86, 450);
-      rect((width/2)-200, (height/2)-250, 400, 355);
-      for (int i=0; i<tf.length; i++) {
-        tf[i].display();
+      rect((width/2)-200, (height/2)-250, 400, 490);
+      for (int i=0; i<tpf.length; i++) {
+        tpf[i].display();
       }
       closePF.display();
       name.display();
+      add.display();
     }
     popStyle();
   }
@@ -44,8 +45,8 @@ class PositionField {
   // Escritura en algun dels camps de texte
   void keyPressed(char key, int keyCode) {
     if (this.visible) {
-      for (int i=0; i<tf.length; i++) {
-        tf[i].keyPressed(key, keyCode);
+      for (int i=0; i<tpf.length; i++) {
+        tpf[i].keyPressed(key, keyCode);
         name.keyPressed(key, keyCode);
       }
     }
@@ -54,8 +55,8 @@ class PositionField {
   // Click sobre algun dels camps de texte
   void isPressed() {
     if (this.visible) {
-      for (int i=0; i<tf.length; i++) {
-        tf[i].isPressed();
+      for (int i=0; i<tpf.length; i++) {
+        tpf[i].isPressed();
         name.isPressed();
       }
     }
@@ -63,9 +64,9 @@ class PositionField {
 
   float[] getPosition() {
     float[] position = new float[3];
-    position[0] = Float.parseFloat(tf[0].text);
-    position[1] = Float.parseFloat(tf[1].text);
-    position[2] = Float.parseFloat(tf[2].text);
+    position[0] = Float.parseFloat(tpf[0].text);
+    position[1] = Float.parseFloat(tpf[1].text);
+    position[2] = Float.parseFloat(tpf[2].text);
     return position;
   }
 }
