@@ -31,6 +31,10 @@ class Button {
   void setEnabled(boolean b) {
     this.enabled = b;
   }
+  
+  void setButtonName(String t) {
+    this.textBoto = t;
+  } 
 
   // Dibuixa el botó
   void display() {

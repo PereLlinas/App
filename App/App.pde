@@ -13,6 +13,7 @@ void setup() {
   setMedias();
   setGUI();
   setPunts();
+  connexioBBDD();
 }
 
 void draw() {

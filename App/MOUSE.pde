@@ -56,6 +56,12 @@ void mousePressed() {
       pantalla=PANTALLA.TUTORIAL;
     }
   } else if (pantalla==PANTALLA.WORKSPACE1) {
+    /*  NAME.isPressed;
+     if(NAME.mouseOverButton()){
+     //TextPositionField(String lt, float x, float y, float w, float h) {
+     
+     NAME.setButtonName()
+     }*/    //falta un else a lo de després
     if (addElement.mouseOverButton()) {
       tria1.v = true;
     } else if (tria1.addPoint.mouseOverButton()) {
@@ -65,17 +71,18 @@ void mousePressed() {
       tria1.v = false;
       PF.visible=true;
     } else if (PF.visible) {
-
       PF.isPressed();
-      if (PF.closePF.mouseOverButton()) {
-        PF.visible=false;
-        enableCamera=true;
-        jcam.setActive(enableCamera);
-      }
+    }
+    if (PF.closePF.mouseOverButton()) {
+      PF.visible=false;
+      enableCamera=true;
+      jcam.setActive(enableCamera);
+    }
+    if (PF.add.mouseOverButton){
+      //aquí se fa s'insert de ses dades
     }
   } else if (pantalla==PANTALLA.WORKSPACE2) {
     if (addElement.mouseOverButton()) {
       tria1.v = true;
     }
   }
-}
