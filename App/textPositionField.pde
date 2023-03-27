@@ -41,10 +41,10 @@ class TextPositionField {
       rect(x, y, w, h, 5);
       
       fill(fgColor);
-      textSize(textSize); textAlign(CENTER);
+      textSize(textSize); textAlign(LEFT);
       text(text, x + w/2, y + textSize +5);
       
-      fill(0); textAlign(CENTER);
+      fill(0); textAlign(LEFT);
       text(labelText, x + w/2, y - textSize/2);
    }
    

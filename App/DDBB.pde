@@ -33,3 +33,9 @@ void insertLevel(String idLevel, String nomLevel){
   println(q);
   msql.query(q);
 }
+
+void insertPoint(String nomPunto, String x, String y, String z, String figura_idFigura){
+  String q = "INSERT INTO punto (nomPunto, x, y, z, figura_idFigura) VALUES ('"+nomPunto+"', '"+x+"', '"+y+"', '"+z+"', '"+figura_idFigura+"')";
+  println(q);
+  msql.query(q);
+}

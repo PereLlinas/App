@@ -78,11 +78,18 @@ void mousePressed() {
       enableCamera=true;
       jcam.setActive(enableCamera);
     }
-    if (PF.add.mouseOverButton){
+    if (PF.add.mouseOverButton()) {
       //aquí se fa s'insert de ses dades
+      String idFigura = "1";
+      String nombrePunto = PF.name.text;
+      String x = PF.tpf[0].text;
+      String y = PF.tpf[0].text;
+      String z = PF.tpf[0].text;
+      insertPoint(nombrePunto, x, y, z, idFigura);
     }
   } else if (pantalla==PANTALLA.WORKSPACE2) {
     if (addElement.mouseOverButton()) {
       tria1.v = true;
     }
   }
+}
