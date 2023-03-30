@@ -32,5 +32,5 @@ void draw() {
     case WORKSPACE2: WORKSPACE2();break;
   }
   
-  println("X: "+mouseX+", Y:"+mouseY);
+  //println("X: "+mouseX+", Y:"+mouseY);
 }

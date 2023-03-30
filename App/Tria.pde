@@ -9,7 +9,7 @@ class Tria {
   String message;
   boolean v  = false;
   Button[] buttons={null, null, null, null};
-  Button addPoint, addLine, addPlane, close;
+  Button addPoint, addRect, addPlane, addFigure, close;
   float buttonH = 80;
 
 
@@ -30,16 +30,16 @@ class Tria {
     this.addPoint = new Button("ADD POINT", x + m,
       y + h - buttonH*1.5,
       wButton, buttonH);
-    this.addLine = new Button("ADD LINE", x + 2*m + wButton,
+    this.addRect = new Button("ADD LINE", x + 2*m + wButton,
       y + h - buttonH*1.5,
       wButton, buttonH);
     this.addPlane = new Button("ADD PLANE", x + 3*m +2*wButton,
       y + h - buttonH*1.5,
       wButton, buttonH);
-    this.close=new Button("", 1330-15, 370-15, 30, 30);
+    this.close=new Button("X", 1330-15, 370-15, 30, 30);
     
     this.buttons[0]=this.addPoint;
-    this.buttons[1]=this.addLine;
+    this.buttons[1]=this.addRect;
     this.buttons[2]=this.addPlane;
     this.buttons[3]=this.close;
   }
@@ -48,7 +48,7 @@ class Tria {
 
   void setTextButtons(String txt1, String txt2, String txt3) {
     this.addPoint.textBoto = txt1;
-    this.addLine.textBoto = txt2;
+    this.addRect.textBoto = txt2;
     this.addPlane.textBoto = txt3;
   }
 
@@ -65,7 +65,7 @@ class Tria {
 
   void display() {
 
-    if (this.v) {
+    if (this.v) { //v=true
       float b = 40;
 
       pushStyle();
@@ -92,7 +92,7 @@ class Tria {
 
       // Botons d'opcions
       addPoint.display();
-      addLine.display();
+      addRect.display();
       addPlane.display();
       close.display();
       popStyle();
