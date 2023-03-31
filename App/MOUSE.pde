@@ -20,7 +20,7 @@ void mousePressed() {
   } else if (pantalla==PANTALLA.HOME) {
 
     if (createButton.mouseOverButton()) {
-      pantalla=PANTALLA.WORKSPACE1;
+      pantalla=PANTALLA.WORKSPACE1; //AFEGIR OPCIONALITAT ENTRE NIVELLS
     } else if (FAQS.mouseOverButton()) {
       pantalla=PANTALLA.FAQS;
     } else if (ABOUTUS.mouseOverButton()) {
@@ -61,66 +61,67 @@ void mousePressed() {
     if (addElement.mouseOverButton()) {
       enableCamera=false;
       jcam.setActive(enableCamera);
-      tria1.v = false;
+      //ES VALOR D'ES BOLLEÀ DEPEN D'ES NIVELL TRIAT A N'ES CREATE BUTTON DE SA PANTALLA HOME
+      tria1.v = true;
       tria1.c = false;
 
-    }
+      //START APARTAT ADDPOINT
+      if (tria1.addPoint.mouseOverButton()) {
+        println("jcam");
+        enableCamera=false;
+        jcam.setActive(enableCamera);
+        tria1.v = true;
+        PF.visible=true;
+      } else if (PF.visible) {
+        PF.isPressed(); //QUEDA ALGO PER FER?
 
-    //START APARTAT ADD POINT
-    else if (tria1.addPoint.mouseOverButton()) {
-      println("jcam");
-      enableCamera=false;
-      jcam.setActive(enableCamera);
-      tria1.v = false;
-      PF.visible=true;
-    } else if (PF.visible) {
-      PF.isPressed(); //QUEDA ALGO PER FER?
-      
-      if (PF.closePF.mouseOverButton()) { //No s'executa
-      PF.visible=false;
-      tria1.v=true;
-      tria1.c=true;
-      println("executed");
+        if (PF.closePF.mouseOverButton()) { //No s'executa
+          PF.visible=false;
+          tria1.v=true;
+          tria1.c=true;
+          println("executed");
+        } else if (PF.add.mouseOverButton()) {
+          //aquí se fa s'insert de ses dades
+          /*  String idFigura = "1";
+           String nombrePunto = PF.name.text;
+           String x = PF.tpf[0].text;
+           String y = PF.tpf[0].text;
+           String z = PF.tpf[0].text;
+           insertPoint(nombrePunto, x, y, z, idFigura);*/
+        }
       }
-      
-    } else if (PF.add.mouseOverButton()) {
-      //aquí se fa s'insert de ses dades
-      String idFigura = "1";
-      String nombrePunto = PF.name.text;
-      String x = PF.tpf[0].text;
-      String y = PF.tpf[0].text;
-      String z = PF.tpf[0].text;
-      insertPoint(nombrePunto, x, y, z, idFigura);
-    }
 
-    //END APARTAT ADDPOINT
 
-    //START APARTAT ADDRECT
-    else if (tria1.addRect.mouseOverButton()) {
-      //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
-      //INSERT FIGURA
-    }
-    //END APARTAT ADDRECT
 
-    //START APARTAT ADDPLANE
-    else if (tria1.addPlane.mouseOverButton()) {
-      //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
-      //INSERT FIGURA
-    }
-    //END APARTAT ADDPLANE
+      //END APARTAT ADDPOINT
 
-    //AFEGIR APARTAT ADD FIGURE A WORKSPACE2
-    else if (tria1.close.mouseOverButton()) {
-      tria1.v=false; //TANCAR ES TRIA1
-      enableCamera=true;
-      jcam.setActive(enableCamera);
+      //START APARTAT ADDRECT
+      else if (tria1.addRect.mouseOverButton()) {
+        //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
+        //INSERT FIGURA
+      }
+      //END APARTAT ADDRECT
+
+      //START APARTAT ADDPLANE
+      else if (tria1.addPlane.mouseOverButton()) {
+        //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
+        //INSERT FIGURA
+      }
+      //END APARTAT ADDPLANE
+
+      //AFEGIR APARTAT ADD FIGURE A WORKSPACE2
+      else if (tria1.close.mouseOverButton()) {
+        tria1.v=false; //TANCAR ES TRIA1
+        enableCamera=true;
+        jcam.setActive(enableCamera);
+      }
     }
-  } 
-  
+  }
+
   //WORKSPACE2
   else if (pantalla==PANTALLA.WORKSPACE2) {
-      if (addElement.mouseOverButton()) {
-        tria1.v = true;
-      }
+    if (addElement.mouseOverButton()) {
+      tria1.v = true;
     }
+  }
 }

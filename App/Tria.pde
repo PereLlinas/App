@@ -9,7 +9,7 @@ class Tria {
   String message;
   boolean v  = false;
   boolean c  = false;
-  Button[] buttons={null, null, null, null};
+  Button[] buttons={null, null, null, null, null};
   Button addPoint, addRect, addPlane, addFigure, close;
   float buttonH = 80;
 
@@ -28,49 +28,51 @@ class Tria {
 
     float m = 50;
     float wButton = (w - 4*m)/3;
-    
+
     //BOTONS LVL1
-    if (this.v || this.c) { 
-    this.addPoint = new Button("ADD POINT", x + m,
-      y + h - buttonH*1.5,
-      wButton, buttonH);
-    this.addRect = new Button("ADD LINE", x + 2*m + wButton,
-      y + h - buttonH*1.5,
-      wButton, buttonH);
-    this.addPlane = new Button("ADD PLANE", x + 3*m +2*wButton,
-      y + h - buttonH*1.5,
-      wButton, buttonH);
+    if (this.v || this.c) {
+      this.addPoint = new Button("ADD POINT", x + m,
+        y + h - buttonH*1.5,
+        wButton, buttonH);
+      this.addRect = new Button("ADD LINE", x + 2*m + wButton,
+        y + h - buttonH*1.5,
+        wButton, buttonH);
+      this.addPlane = new Button("ADD PLANE", x + 3*m +2*wButton,
+        y + h - buttonH*1.5,
+        wButton, buttonH);
     }
     //BOTONS LVL2
-    else if (this.v==false || this.c==false) { 
+    else if (this.v || this.c==false) {
       this.addPoint = new Button("ADD POINT", x + m,
-      y + h - buttonH*1.5,
-      wButton, buttonH);
-    this.addRect = new Button("ADD LINE", x + 2*m + wButton,
-      y + h - buttonH*1.5,
-      wButton, buttonH);
-    this.addPlane = new Button("ADD PLANE", x + 3*m +2*wButton,
-      y + h - buttonH*1.5,
-      wButton, buttonH);
-    this.addFigure = new Button("ADD FIGURE", x + 3*m +2*wButton,
-      y + h - buttonH*1.5,
-      wButton, buttonH);
-    this.close=new Button("X", 1330-15, 370-15, 30, 30);
+        y + h - buttonH*1.5,
+        wButton, buttonH);
+      this.addRect = new Button("ADD LINE", x + 2*m + wButton,
+        y + h - buttonH*1.5,
+        wButton, buttonH);
+      this.addPlane = new Button("ADD PLANE", x + 3*m +2*wButton,
+        y + h - buttonH*1.5,
+        wButton, buttonH);
+      this.addFigure = new Button("ADD FIGURE", x + 3*m +2*wButton,
+        y + h - buttonH*1.5,
+        wButton, buttonH);
+      this.close=new Button("X", 1330-15, 370-15, 30, 30);
     }
-  
+
 
     this.buttons[0]=this.addPoint;
     this.buttons[1]=this.addRect;
     this.buttons[2]=this.addPlane;
-    this.buttons[3]=this.close;
+    this.buttons[3]=this.addFigure;
+    this.buttons[4]=this.close;
   }
 
   //Setters
 
-  void setTextButtons(String txt1, String txt2, String txt3) {
+  void setTextButtons(String txt1, String txt2, String txt3, String txt4) {
     this.addPoint.textBoto = txt1;
     this.addRect.textBoto = txt2;
     this.addPlane.textBoto = txt3;
+    this.addFigure.textBoto = txt3;
   }
 
   void setImage(PImage img) {
@@ -156,7 +158,7 @@ class Tria {
   void isPressed() {
     if (this.v) {
       for (int i=0; i<buttons.length; i++) {
-        //buttons[i].isPressed();
+        buttons[i].mouseOverButton();
       }
     }
   }
