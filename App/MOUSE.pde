@@ -61,7 +61,9 @@ void mousePressed() {
     if (addElement.mouseOverButton()) {
       enableCamera=false;
       jcam.setActive(enableCamera);
-      tria1.v = true;
+      tria1.v = false;
+      tria1.c = false;
+
     }
 
     //START APARTAT ADD POINT
@@ -77,6 +79,7 @@ void mousePressed() {
       if (PF.closePF.mouseOverButton()) { //No s'executa
       PF.visible=false;
       tria1.v=true;
+      tria1.c=true;
       println("executed");
       }
       
