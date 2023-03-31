@@ -61,24 +61,19 @@ void mousePressed() {
     if (addElement.mouseOverButton()) {
       enableCamera=false;
       jcam.setActive(enableCamera);
-      //ES VALOR D'ES BOLLEÀ DEPEN D'ES NIVELL TRIAT A N'ES CREATE BUTTON DE SA PANTALLA HOME
-      tria1.v = true;
-      tria1.c = false;
+      tria1.v=true;
 
       //START APARTAT ADDPOINT
       if (tria1.addPoint.mouseOverButton()) {
         println("jcam");
         enableCamera=false;
         jcam.setActive(enableCamera);
-        tria1.v = true;
+        PF.display();
         PF.visible=true;
-      } else if (PF.visible) {
-        PF.isPressed(); //QUEDA ALGO PER FER?
 
         if (PF.closePF.mouseOverButton()) { //No s'executa
           PF.visible=false;
-          tria1.v=true;
-          tria1.c=true;
+
           println("executed");
         } else if (PF.add.mouseOverButton()) {
           //aquí se fa s'insert de ses dades
@@ -90,38 +85,38 @@ void mousePressed() {
            insertPoint(nombrePunto, x, y, z, idFigura);*/
         }
       }
+    }
 
 
+    //END APARTAT ADDPOINT
 
-      //END APARTAT ADDPOINT
+    //START APARTAT ADDRECT
+    else if (tria1.addRect.mouseOverButton()) {
+      //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
+      //INSERT FIGURA
+    }
+    //END APARTAT ADDRECT
 
-      //START APARTAT ADDRECT
-      else if (tria1.addRect.mouseOverButton()) {
-        //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
-        //INSERT FIGURA
-      }
-      //END APARTAT ADDRECT
+    //START APARTAT ADDPLANE
+    else if (tria1.addPlane.mouseOverButton()) {
+      //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
+      //INSERT FIGURA
+    }
+    //END APARTAT ADDPLANE
 
-      //START APARTAT ADDPLANE
-      else if (tria1.addPlane.mouseOverButton()) {
-        //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
-        //INSERT FIGURA
-      }
-      //END APARTAT ADDPLANE
-
-      //AFEGIR APARTAT ADD FIGURE A WORKSPACE2
-      else if (tria1.close.mouseOverButton()) {
-        tria1.v=false; //TANCAR ES TRIA1
-        enableCamera=true;
-        jcam.setActive(enableCamera);
-      }
+    //AFEGIR APARTAT ADD FIGURE A WORKSPACE2
+    else if (tria1.close.mouseOverButton()) {
+      tria1.v=false; //TANCAR ES TRIA1
+      enableCamera=true;
+      jcam.setActive(enableCamera);
     }
   }
+
 
   //WORKSPACE2
   else if (pantalla==PANTALLA.WORKSPACE2) {
     if (addElement.mouseOverButton()) {
-      tria1.v = true;
+      //tria2.v = true;
     }
   }
 }

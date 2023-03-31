@@ -4,6 +4,7 @@ import de.bezier.data.sql.mapper.*;
 enum PANTALLA {LOGIN, HOME, WORKSPACE1, WORKSPACE2, FAQS, ABOUTUS, TUTORIAL};
 PANTALLA pantalla=PANTALLA.WORKSPACE1;
 
+
 //càmera (origen de coordenades se posa al centre)
 import peasy.*;
 PeasyCam jcam;

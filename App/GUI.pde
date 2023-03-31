@@ -5,7 +5,7 @@
 
 TextField userText, passText;
 
-Tria tria1;
+Tria1 tria1;
 
 PositionField PF;
 
@@ -45,7 +45,7 @@ void setPositionField() {
 void setTria() {
   float Theight=800.0;
   float Twidth=400.0;
-  tria1=new Tria("ADD ELEMENT", "", (width/2)-(Theight/2), (height/2)-(Twidth/2), Theight, Twidth);
+  tria1=new Tria1("ADD ELEMENT", "", (width/2)-(Theight/2), (height/2)-(Twidth/2), Theight, Twidth);
 }
 
 void setTextFields() {
