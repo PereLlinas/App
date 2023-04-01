@@ -64,13 +64,14 @@ void mousePressed() {
       tria1.v=true;
 
       //START APARTAT ADDPOINT
-      if (tria1.addPoint.mouseOverButton()) {
+      if (tria1.addPoint1.mouseOverButton()) {
         println("jcam");
         enableCamera=false;
         jcam.setActive(enableCamera);
-        PF.display();
+        //S'hauria d'obrir es PositionField i no ho fa
+        tria1.v=false;
         PF.visible=true;
-
+        PF.display();
         if (PF.closePF.mouseOverButton()) { //No s'executa
           PF.visible=false;
 
@@ -91,14 +92,14 @@ void mousePressed() {
     //END APARTAT ADDPOINT
 
     //START APARTAT ADDRECT
-    else if (tria1.addRect.mouseOverButton()) {
+    else if (tria1.addRect1.mouseOverButton()) {
       //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
       //INSERT FIGURA
     }
     //END APARTAT ADDRECT
 
     //START APARTAT ADDPLANE
-    else if (tria1.addPlane.mouseOverButton()) {
+    else if (tria1.addPlane1.mouseOverButton()) {
       //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
       //INSERT FIGURA
     }
