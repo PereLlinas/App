@@ -8,6 +8,7 @@ void keyPressed() {
   } else if (pantalla==PANTALLA.WORKSPACE1) {
     if (PF.visible) {
       PF.keyPressed(key, (int)keyCode);
+      PF.name.keyPressed(key, keyCode);
     }
   }
 }

@@ -22,13 +22,16 @@ class PositionField {
     name = new TextField((width/2)-(300/2), 340+50, 300, 50);
     this.closePF=new Button("X", 1130-5, 315-15, 30, 30);
     this.add=new Button("ADD POINT", 1100-75, 710, 105, 55);
+
+    //INSERT
+    
+    //insertPoint(nombrePunto, x, y, z, idFigura);
   }
 
   // Dibuixa el Camp de Text
   void display() {
     pushStyle();
     if (this.visible) {
-      println("illes dins un riu això és lo que som"); //hauria de sortir a sa consola i no ho fa
       fill(166, 130, 86);
       strokeWeight(10);
       stroke(166, 130, 86, 450);
@@ -59,7 +62,7 @@ class PositionField {
       for (int i=0; i<tpf.length; i++) {
         tpf[i].isPressed();
       }
-      name.keyPressed(key, keyCode);
+      name.isPressed();
     }
   }
 

@@ -15,7 +15,7 @@ void connexioBBDD(){
     //useUnicode=true&character_set_server=utf8mb4&useLegacyDatetimeCode=false
     
     // Establim la connexió
-    msql = new MySQL( this, "localhost", database, user, pass );
+    msql = new MySQL( this, "localhost", database, user, pass);
     
     // Si la connexió s'ha establert
     if (msql.connect()){

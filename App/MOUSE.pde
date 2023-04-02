@@ -77,9 +77,9 @@ void mousePressed() {
       PF.visible=false;
     }
     // CLICK SOBRE EL BOTÓ ADD DEL PF
-    else if (PF.visible && PF.add.mouseOverButton()) { //ARREGLAR TEXTPOSITIONFIELD QUE NO EL DETECTA
+    else if (PF.visible && PF.add.mouseOverButton()) { 
       //aquí se fa s'insert de ses dades
-      /*  String idFigura = "1";
+       /*String idFigura = "1";
        String nombrePunto = PF.name.text;
        String x = PF.tpf[0].text;
        String y = PF.tpf[0].text;
