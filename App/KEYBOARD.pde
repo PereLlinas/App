@@ -10,10 +10,4 @@ void keyPressed() {
       PF.keyPressed(key, (int)keyCode);
     }
   }
-  
-  /*if(key=='e' || key=='E'){
-    enableCamera = !enableCamera;
-    jcam.setActive(enableCamera);
-    println("CAMERA ACTIVE: "+enableCamera);
-  }*/
 }

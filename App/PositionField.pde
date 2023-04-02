@@ -28,6 +28,7 @@ class PositionField {
   void display() {
     pushStyle();
     if (this.visible) {
+      println("illes dins un riu això és lo que som"); //hauria de sortir a sa consola i no ho fa
       fill(166, 130, 86);
       strokeWeight(10);
       stroke(166, 130, 86, 450);
@@ -47,8 +48,8 @@ class PositionField {
     if (this.visible) {
       for (int i=0; i<tpf.length; i++) {
         tpf[i].keyPressed(key, keyCode);
-        name.keyPressed(key, keyCode);
       }
+      name.keyPressed(key, keyCode);
     }
   }
 
@@ -57,8 +58,8 @@ class PositionField {
     if (this.visible) {
       for (int i=0; i<tpf.length; i++) {
         tpf[i].isPressed();
-        name.isPressed();
       }
+      name.keyPressed(key, keyCode);
     }
   }
 

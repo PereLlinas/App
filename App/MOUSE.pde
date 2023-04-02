@@ -58,56 +58,54 @@ void mousePressed() {
     //WORKSPACE1
   } else if (pantalla==PANTALLA.WORKSPACE1) {
 
+    // CLICK SOBRE BOTÓ ADD ELEMENT
     if (addElement.mouseOverButton()) {
       enableCamera=false;
       jcam.setActive(enableCamera);
       tria1.v=true;
-
-      //START APARTAT ADDPOINT
-      if (tria1.addPoint1.mouseOverButton()) {
-        println("jcam");
-        enableCamera=false;
-        jcam.setActive(enableCamera);
-        //S'hauria d'obrir es PositionField i no ho fa
-        tria1.v=false;
-        PF.visible=true;
-        PF.display();
-        if (PF.closePF.mouseOverButton()) { //No s'executa
-          PF.visible=false;
-
-          println("executed");
-        } else if (PF.add.mouseOverButton()) {
-          //aquí se fa s'insert de ses dades
-          /*  String idFigura = "1";
-           String nombrePunto = PF.name.text;
-           String x = PF.tpf[0].text;
-           String y = PF.tpf[0].text;
-           String z = PF.tpf[0].text;
-           insertPoint(nombrePunto, x, y, z, idFigura);*/
-        }
-      }
     }
 
+    //  CLICK SOBRE ADD POINT DEL TRIA1
+    else if (tria1.addPoint1.mouseOverButton()) {
+      enableCamera=false;
+      jcam.setActive(enableCamera);
+      tria1.v=false;
+      PF.visible=true;
+    }
+    // CLICK SOBRE BOTÓ DE TANCAR DEL PF
+    else if (PF.visible && PF.closePF.mouseOverButton()) {
+      PF.visible=false;
+    }
+    // CLICK SOBRE EL BOTÓ ADD DEL PF
+    else if (PF.visible && PF.add.mouseOverButton()) { //ARREGLAR TEXTPOSITIONFIELD QUE NO EL DETECTA
+      //aquí se fa s'insert de ses dades
+      /*  String idFigura = "1";
+       String nombrePunto = PF.name.text;
+       String x = PF.tpf[0].text;
+       String y = PF.tpf[0].text;
+       String z = PF.tpf[0].text;
+       insertPoint(nombrePunto, x, y, z, idFigura);*/
+    }
+    // CLICK SOBRE CAMPS DEL PF
+    else if (PF.visible) {
+      PF.isPressed();
+    }
 
-    //END APARTAT ADDPOINT
-
-    //START APARTAT ADDRECT
+    //CLICK SOBRE BOTÓ ADD RECT
     else if (tria1.addRect1.mouseOverButton()) {
       //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
       //INSERT FIGURA
     }
-    //END APARTAT ADDRECT
 
-    //START APARTAT ADDPLANE
+    //CLICK SOBRE BOTÓ ADD PLANE
     else if (tria1.addPlane1.mouseOverButton()) {
       //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
       //INSERT FIGURA
     }
-    //END APARTAT ADDPLANE
 
-    //AFEGIR APARTAT ADD FIGURE A WORKSPACE2
+    //CLICK SOBRE TANCAR TRIA1
     else if (tria1.close.mouseOverButton()) {
-      tria1.v=false; //TANCAR ES TRIA1
+      tria1.v=false;
       enableCamera=true;
       jcam.setActive(enableCamera);
     }
