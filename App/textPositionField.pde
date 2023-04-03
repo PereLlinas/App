@@ -19,8 +19,6 @@ class TextPositionField {
   String labelText="";
 
   boolean selected = false;
-  
-  char[] name;
 
   // Constructor
   TextPositionField(String lt, float x, float y, float w, float h) {
@@ -52,8 +50,8 @@ class TextPositionField {
 
     fill(0);
     textAlign(LEFT);
-    text(labelText, x + w/2, y - textSize/2);  
-        
+    text(labelText, x + w/2, y - textSize/2);
+
     popStyle();
   }
 
@@ -77,43 +75,35 @@ class TextPositionField {
 
   // Afegeix la lletra c al final del text
   void addText(char c) {
-    int count=0;
     if (this.text.length()<3) {
       this.text += c;
     }
-    name[count]=c; //HA DE SER UNA COL·LECCIÓ QUE RECÓRRER AMB ES HASNEXT(), GETNEXT(), ETC.
-    count++;
-  }
-  
-  String getName(){
-    
-    String name=
   }
 
-  // Lleva la darrera lletra del text
-  void removeText() {
-    if (this.text.length()> 0) {
-      text = text.substring(0, text.length() - 1);
-    }
-  }
-
-  // Indica si el ratolí està sobre el camp de text
-  boolean mouseOverTextField() {
-    if (mouseX >= this.x && mouseX <= this.x + this.w) {
-      if (mouseY >= this.y && mouseY <= this.y + this.h) {
-        return true;
+    // Lleva la darrera lletra del text
+    void removeText() {
+      if (this.text.length()> 0) {
+        text = text.substring(0, text.length() - 1);
       }
     }
-    return false;
-  }
 
-  // Selecciona el camp de text si pitjam a sobre
-  // Deselecciona el camp de text si pitjam a fora
-  void isPressed() {
-    if (mouseOverTextField()) {
-      selected = true;
-    } else {
-      selected = false;
+    // Indica si el ratolí està sobre el camp de text
+    boolean mouseOverTextField() {
+      if (mouseX >= this.x && mouseX <= this.x + this.w) {
+        if (mouseY >= this.y && mouseY <= this.y + this.h) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    // Selecciona el camp de text si pitjam a sobre
+    // Deselecciona el camp de text si pitjam a fora
+    void isPressed() {
+      if (mouseOverTextField()) {
+        selected = true;
+      } else {
+        selected = false;
+      }
     }
   }
-}

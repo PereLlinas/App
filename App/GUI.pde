@@ -7,6 +7,11 @@ TextField userText, passText;
 
 Tria1 tria1;
 
+//Tria2 tria2;
+
+Confirm confirm;
+
+
 PositionField PF;
 
 Button loginButton, createButton, createFolderButton, FAQS, TUTORIAL, ABOUTUS,
@@ -16,6 +21,13 @@ Button loginButton, createButton, createFolderButton, FAQS, TUTORIAL, ABOUTUS,
 // PUNTS
 int numPunts;
 Punt[] punts;
+
+void setConfirm() {
+  float Cheight=800.0;
+  float Cwidth=400.0;
+  // Confirm(String title, String message, float x, float y, float w, float h){
+  confirm=new Confirm("CHOOSE LEVEL", "", (width/2)-(Cheight/2), (height/2)-(Cwidth/2), Cheight, Cwidth);
+}
 
 void setPunts() {
   numPunts=0;
@@ -42,6 +54,7 @@ void setPositionField() {
   PF=new PositionField((width/2)-(w/2), (height/2)-(h/2), w, h);
 }
 
+
 void setTria() {
   float Theight=800.0;
   float Twidth=400.0;
@@ -56,7 +69,6 @@ void setTextFields() {
 void setButtons() {
   loginButton = new Button("LOGIN", width/2-200/2, (height/2)+140, 200, 50);
   createButton=new Button("CREATE", 1900-200, 280-80, 200, 50);
-  createFolderButton=new Button("CREATE FOLDER", marginH+(sidebarWidth/2)-100, 990, 200, 50);
   HOME=new Button("HOME", 4*marginH+logoSize, marginV+(bannerHeight/2)-50, 350, 100);
   FAQS=new Button("FAQ's", (4*marginH+logoSize)+400, marginV+(bannerHeight/2)-50, 350, 100);
   ABOUTUS=new Button("ABOUT US", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100);
@@ -69,6 +81,7 @@ void setButtons() {
   addLine=new Button ("ADD Line", marginH+(sidebarWidth/2)-100, (2*sidebarHeight/4+logoSize+marginV), 200, 50);
   addPlane=new Button ("ADD PLANE", marginH+(sidebarWidth/2)-100, (3*sidebarHeight/4+logoSize+marginV), 200, 50);
   addFigure=new Button ("ADD FIGURE", marginH+(sidebarWidth/2)-100, (sidebarHeight+logoSize+marginV), 200, 50);
+  //botons level
 }
 
 void setWORKSPACE1() {
@@ -113,5 +126,6 @@ void setGUI ( ) {
   setColors();
   setTria();
   setPositionField();
+  setConfirm();
   /*setCheckboxes();*/
 }

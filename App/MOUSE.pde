@@ -20,7 +20,9 @@ void mousePressed() {
   } else if (pantalla==PANTALLA.HOME) {
 
     if (createButton.mouseOverButton()) {
-      pantalla=PANTALLA.WORKSPACE1; //AFEGIR OPCIONALITAT ENTRE NIVELLS
+      confirm.visible=true;
+      
+      //pantalla=PANTALLA.WORKSPACE1; //AFEGIR OPCIONALITAT ENTRE NIVELLS
     } else if (FAQS.mouseOverButton()) {
       pantalla=PANTALLA.FAQS;
     } else if (ABOUTUS.mouseOverButton()) {
@@ -77,14 +79,9 @@ void mousePressed() {
       PF.visible=false;
     }
     // CLICK SOBRE EL BOTÓ ADD DEL PF
-    else if (PF.visible && PF.add.mouseOverButton()) { 
-      //aquí se fa s'insert de ses dades
-       /*String idFigura = "1";
-       String nombrePunto = PF.name.text;
-       String x = PF.tpf[0].text;
-       String y = PF.tpf[0].text;
-       String z = PF.tpf[0].text;
-       insertPoint(nombrePunto, x, y, z, idFigura);*/
+    else if (PF.visible && PF.add.mouseOverButton()) {
+      PF.addPoint();
+      PF.visible=false;
     }
     // CLICK SOBRE CAMPS DEL PF
     else if (PF.visible) {

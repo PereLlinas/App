@@ -6,7 +6,7 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
   dibuixaZonaLogo();
   dibuixaZonaCarpetes();
   createButton.display();
-  createFolderButton.display();
+  confirm.display();
   HOME.display();
   FAQS.display();
   ABOUTUS.display();

@@ -22,10 +22,6 @@ class PositionField {
     name = new TextField((width/2)-(300/2), 340+50, 300, 50);
     this.closePF=new Button("X", 1130-5, 315-15, 30, 30);
     this.add=new Button("ADD POINT", 1100-75, 710, 105, 55);
-
-    //INSERT
-    
-    //insertPoint(nombrePunto, x, y, z, idFigura);
   }
 
   // Dibuixa el Camp de Text
@@ -72,5 +68,14 @@ class PositionField {
     position[1] = Float.parseFloat(tpf[1].text);
     position[2] = Float.parseFloat(tpf[2].text);
     return position;
+  }
+  void addPoint() {
+    //aquí se fa s'insert de ses dades
+    String idFigura = "1";
+    String nombrePunto = PF.name.text;
+    String x = PF.tpf[0].text;
+    String y = PF.tpf[1].text;
+    String z = PF.tpf[2].text;
+    insertPoint(nombrePunto, x, y, z, idFigura);
   }
 }

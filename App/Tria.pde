@@ -42,7 +42,7 @@ class Tria1 {
   }
   //Setters
 
-  void setTextButtons(String txt1, String txt2, String txt3, String txt4) {
+  void setTextButtons(String txt1, String txt2, String txt3) {
     this.addPoint1.textBoto = txt1;
     this.addRect1.textBoto = txt2;
     this.addPlane1.textBoto = txt3;
@@ -90,27 +90,15 @@ class Tria1 {
       popStyle();
     }
   }
-  
+
   /*void isPressed() {
-    if (this.v) {
-      for (int i=0; i<buttons.length; i++) {
-        //buttons[i].isPressed();
-      }
-    }
-  }*/
+   if (this.v) {
+   for (int i=0; i<buttons.length; i++) {
+   //buttons[i].isPressed();
+   }
+   }
+   }*/
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
