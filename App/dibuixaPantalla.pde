@@ -68,6 +68,9 @@ void WORKSPACE2() {
   dibuixaSideBar(); //pop-ups que se generin a una altura concreta
   dibuixaZonaLogo();
   dibuixaProjeccions();
+
+  //BOTONS
+  addElement.display(); //CREAR TRIA2 (GUI)
   SAVE.display(); //pendent
   PRINT.display(); //pendent
   TUTORIAL.display(); //pendent

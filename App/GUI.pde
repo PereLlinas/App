@@ -74,6 +74,7 @@ void setButtons() {
   ABOUTUS=new Button("ABOUT US", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100);
   TUTORIAL=new Button("TUTORIAL", (4*marginH+logoSize)+1200, marginV+(bannerHeight/2)-50, 350, 100);
   SAVE=new Button("SAVE", (4*marginH+logoSize)+400, marginV+(bannerHeight/2)-50, 350, 100);
+  //ES BOTÓ SAVE ÉS ES QUE FA S'INSERT D'ES DIÈDRIC I D'ES LEVEL
   NAME=new Button("NAME", (4*marginH+logoSize), marginV+(bannerHeight/2)-50, 350, 100);
   PRINT=new Button("PRINT PROJECTIONS", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100);
   addElement=new Button("ADD ELEMENT", marginH+(sidebarWidth/2)-100, 350, 200, 50);
@@ -81,7 +82,6 @@ void setButtons() {
   addLine=new Button ("ADD Line", marginH+(sidebarWidth/2)-100, (2*sidebarHeight/4+logoSize+marginV), 200, 50);
   addPlane=new Button ("ADD PLANE", marginH+(sidebarWidth/2)-100, (3*sidebarHeight/4+logoSize+marginV), 200, 50);
   addFigure=new Button ("ADD FIGURE", marginH+(sidebarWidth/2)-100, (sidebarHeight+logoSize+marginV), 200, 50);
-  //botons level
 }
 
 void setWORKSPACE1() {

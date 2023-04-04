@@ -21,8 +21,12 @@ void mousePressed() {
 
     if (createButton.mouseOverButton()) {
       confirm.visible=true;
-      
-      //pantalla=PANTALLA.WORKSPACE1; //AFEGIR OPCIONALITAT ENTRE NIVELLS
+    } else if (confirm.visible==true && confirm.level1.mouseOverButton()) {
+      pantalla=PANTALLA.WORKSPACE1;
+      //confirm.visible=false;
+    } else if (confirm.level2.mouseOverButton() && confirm.visible==true) {
+      pantalla=PANTALLA.WORKSPACE2;
+      confirm.visible=false;
     } else if (FAQS.mouseOverButton()) {
       pantalla=PANTALLA.FAQS;
     } else if (ABOUTUS.mouseOverButton()) {
@@ -30,6 +34,8 @@ void mousePressed() {
     } else if (TUTORIAL.mouseOverButton()) {
       pantalla=PANTALLA.TUTORIAL;
     }
+    
+  // FINAL PANTALLA HOME
   } else if (pantalla==PANTALLA.ABOUTUS) {
 
     if (FAQS.mouseOverButton()) {

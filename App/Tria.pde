@@ -40,8 +40,8 @@ class Tria1 {
     this.buttons[2]=this.addPlane1;
     this.buttons[3]=this.close;
   }
+  
   //Setters
-
   void setTextButtons(String txt1, String txt2, String txt3) {
     this.addPoint1.textBoto = txt1;
     this.addRect1.textBoto = txt2;
