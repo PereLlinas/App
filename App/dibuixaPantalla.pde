@@ -30,18 +30,24 @@ void WORKSPACE1() {
   PP.display();
   LT.display();
 
+  for(int i=0; i<numPunts; i++){
+    punts[i].display();
+    println("dibuixant punt "+i);
+  }
+
   jcam.beginHUD();
   //ELEMENTS DECORATIUS
   dibuixaBanner();
   dibuixaSideBar(); //pop-ups que se generin a una altura concreta
   dibuixaZonaLogo();
   dibuixaProjeccions();
+  
 
   //BOTONS
   SAVE.display(); //pendent
   PRINT.display(); //pendent
   TUTORIAL.display(); //pendent
-  NAME.display(); //fer setter per canviar es nom d'es boto i ja
+  NAME.display(); //fer setter per canviar es nom i sa funció d'es boto
   addElement.display(); //pendent
   // addRect.display(); checkboxSelector, esperar a arrayList
   // addPoint.display(); positionField

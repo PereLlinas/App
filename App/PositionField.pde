@@ -8,6 +8,7 @@ class PositionField {
   TextField name;
   boolean visible  = false;
   Button closePF, add;
+  Punt punt;
 
   // Constructor
   PositionField(int x, int y, int w, int h) {
@@ -69,7 +70,9 @@ class PositionField {
     position[2] = Float.parseFloat(tpf[2].text);
     return position;
   }
-  void addPoint() {
+  
+
+  void addPointDataBase() {
     //aquí se fa s'insert de ses dades
     String idFigura = "1";
     String nombrePunto = PF.name.text;
@@ -77,5 +80,17 @@ class PositionField {
     String y = PF.tpf[1].text;
     String z = PF.tpf[2].text;
     insertPoint(nombrePunto, x, y, z, idFigura);
+  }
+  
+  void addPoint() {
+    //aquí se fa s'insert de ses dades
+    String nombrePunto = PF.name.text;
+    float x = Float.valueOf(PF.tpf[0].text);
+    float y =  Float.valueOf(PF.tpf[1].text);
+    float z =  Float.valueOf(PF.tpf[2].text);
+    if (numPunts<punts.length) {
+       punts[numPunts] = new Punt(nombrePunto, x, y, z, 10, color(255));
+       numPunts++;
+    }
   }
 }

@@ -27,8 +27,8 @@ class Punt {
   void display() {
     pushMatrix();
     translate(x, y, z);
-    fill(c);
-    //stroke(0, 255, 100);
+    fill(59, 131, 189);
+    stroke(59, 131, 189);
     sphereDetail(2, 2);
     sphere(r);
     popMatrix();

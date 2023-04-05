@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 
 enum PANTALLA {LOGIN, HOME, WORKSPACE1, WORKSPACE2, FAQS, ABOUTUS, TUTORIAL};
-PANTALLA pantalla=PANTALLA.WORKSPACE1;
+  PANTALLA pantalla=PANTALLA.WORKSPACE1;
 
 
 //càmera (origen de coordenades se posa al centre)
@@ -19,7 +19,6 @@ void setup() {
   jcam=new PeasyCam(this, 3000); //profunditat màx.
   setMedias();
   setGUI();
-  setPunts();
   connexioBBDD();
 }
 

@@ -5,7 +5,8 @@ void mousePressed() {
   println("MOUSE PRESSED");
 
   // ELEMENTS COMUNA A TOTES LES PANTALLES
-  if (HOME.mouseOverButton()) {
+  if (HOME.mouseOverButton() && pantalla==PANTALLA.HOME && pantalla==PANTALLA.FAQS
+    && pantalla==PANTALLA.ABOUTUS && pantalla==PANTALLA.TUTORIAL) {
     pantalla=PANTALLA.HOME;
     fonsPantalla = color(255, 0, 0);
   }
@@ -34,8 +35,8 @@ void mousePressed() {
     } else if (TUTORIAL.mouseOverButton()) {
       pantalla=PANTALLA.TUTORIAL;
     }
-    
-  // FINAL PANTALLA HOME
+
+    // FINAL PANTALLA HOME
   } else if (pantalla==PANTALLA.ABOUTUS) {
 
     if (FAQS.mouseOverButton()) {
@@ -80,15 +81,21 @@ void mousePressed() {
       tria1.v=false;
       PF.visible=true;
     }
+
     // CLICK SOBRE BOTÓ DE TANCAR DEL PF
     else if (PF.visible && PF.closePF.mouseOverButton()) {
       PF.visible=false;
     }
+
     // CLICK SOBRE EL BOTÓ ADD DEL PF
     else if (PF.visible && PF.add.mouseOverButton()) {
       PF.addPoint();
+      PF.addPointDataBase();
       PF.visible=false;
+      enableCamera=true;
+      jcam.setActive(enableCamera);
     }
+
     // CLICK SOBRE CAMPS DEL PF
     else if (PF.visible) {
       PF.isPressed();

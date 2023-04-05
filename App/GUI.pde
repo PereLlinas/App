@@ -62,12 +62,12 @@ void setTria() {
 }
 
 void setTextFields() {
-  userText = new TextField(width/2-300/2, height/2, 300, 50);
+  userText = new TextField(width/2-300/2, height/2-15, 300, 50);
   passText = new TextField(width/2-300/2, (height/2)+70, 300, 50);
 }
 
 void setButtons() {
-  loginButton = new Button("LOGIN", width/2-200/2, (height/2)+140, 200, 50);
+  loginButton = new Button("LOGIN", width/2-200/2, (height/2)+150, 200, 50);
   createButton=new Button("CREATE", 1900-200, 280-80, 200, 50);
   HOME=new Button("HOME", 4*marginH+logoSize, marginV+(bannerHeight/2)-50, 350, 100);
   FAQS=new Button("FAQ's", (4*marginH+logoSize)+400, marginV+(bannerHeight/2)-50, 350, 100);
@@ -127,5 +127,6 @@ void setGUI ( ) {
   setTria();
   setPositionField();
   setConfirm();
+  setPunts();
   /*setCheckboxes();*/
 }
