@@ -29,6 +29,10 @@ class TextPositionField {
     this.h = h;
   }
 
+  void setText() {
+    this.text="";
+  }
+
   // Dibuixa el Camp de Text
   void display() {
     pushStyle();
@@ -46,7 +50,11 @@ class TextPositionField {
     fill(fgColor);
     textSize(textSize);
     textAlign(LEFT);
-    text(text, x + w/2, y + textSize +5);
+    if (selected != true) {
+      text(text, x+w/2, y + textSize + 5);
+    } else {
+      text(text, x+w/text.length(), y + textSize + 5);
+    }
 
     fill(0);
     textAlign(LEFT);
@@ -80,30 +88,31 @@ class TextPositionField {
     }
   }
 
-    // Lleva la darrera lletra del text
-    void removeText() {
-      if (this.text.length()> 0) {
-        text = text.substring(0, text.length() - 1);
-      }
-    }
-
-    // Indica si el ratolí està sobre el camp de text
-    boolean mouseOverTextField() {
-      if (mouseX >= this.x && mouseX <= this.x + this.w) {
-        if (mouseY >= this.y && mouseY <= this.y + this.h) {
-          return true;
-        }
-      }
-      return false;
-    }
-
-    // Selecciona el camp de text si pitjam a sobre
-    // Deselecciona el camp de text si pitjam a fora
-    void isPressed() {
-      if (mouseOverTextField()) {
-        selected = true;
-      } else {
-        selected = false;
-      }
+  // Lleva la darrera lletra del text
+  void removeText() {
+    if (this.text.length()> 0) {
+      text = text.substring(0, text.length() - 1);
     }
   }
+
+  // Indica si el ratolí està sobre el camp de text
+  boolean mouseOverTextField() {
+    if (mouseX >= this.x && mouseX <= this.x + this.w) {
+      if (mouseY >= this.y && mouseY <= this.y + this.h) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  // Selecciona el camp de text si pitjam a sobre
+  // Deselecciona el camp de text si pitjam a fora
+  void isPressed() {
+    if (mouseOverTextField()) {
+      selected = true;
+      setText();
+    } else {
+      selected = false;
+    }
+  }
+}

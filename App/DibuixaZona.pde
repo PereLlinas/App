@@ -3,6 +3,7 @@
 //HOME
 void dibuixaZonaLogo() {
   pushStyle();
+  stroke(0);
   fill(200, 50, 100);
   rect(2*marginH, 4*marginV, logoSize, logoSize);
   fill(0);

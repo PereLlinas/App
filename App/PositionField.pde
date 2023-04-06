@@ -49,7 +49,6 @@ class PositionField {
       for (int i=0; i<tpf.length; i++) {
         tpf[i].keyPressed(key, keyCode);
       }
-      name.keyPressed(key, keyCode);
     }
   }
 

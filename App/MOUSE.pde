@@ -85,6 +85,8 @@ void mousePressed() {
     // CLICK SOBRE BOTÓ DE TANCAR DEL PF
     else if (PF.visible && PF.closePF.mouseOverButton()) {
       PF.visible=false;
+      enableCamera=true;
+      jcam.setActive(enableCamera);
     }
 
     // CLICK SOBRE EL BOTÓ ADD DEL PF
