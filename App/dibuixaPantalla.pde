@@ -12,8 +12,10 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
   ABOUTUS.display();
   TUTORIAL.display();
   pushStyle();
-  fill(0); //textFont(getSecondFont());
-  text("APP Name", 335, 250);
+  getColor("obscur");
+  fill(colors[indexColor]); 
+  textFont(getFontAt(0));
+  text("Dihedral Previewer", 335, 250);
   popStyle();
   //afegir cards per cada creació
   jcam.endHUD();
@@ -38,7 +40,7 @@ void WORKSPACE1() {
   jcam.beginHUD();
   //ELEMENTS DECORATIUS
   dibuixaBanner();
-  dibuixaSideBar(); //pop-ups que se generin a una altura concreta
+  dibuixaSideBar();
   dibuixaZonaLogo();
   dibuixaProjeccions();
   

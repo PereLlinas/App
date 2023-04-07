@@ -69,7 +69,7 @@ class PositionField {
     position[2] = Float.parseFloat(tpf[2].text);
     return position;
   }
-  
+
 
   void addPointDataBase() {
     //aquí se fa s'insert de ses dades
@@ -80,7 +80,7 @@ class PositionField {
     String z = PF.tpf[2].text;
     insertPoint(nombrePunto, x, y, z, idFigura);
   }
-  
+
   void addPoint() {
     //aquí se fa s'insert de ses dades
     String nombrePunto = PF.name.text;
@@ -88,8 +88,12 @@ class PositionField {
     float y =  Float.valueOf(PF.tpf[1].text);
     float z =  Float.valueOf(PF.tpf[2].text);
     if (numPunts<punts.length) {
-       punts[numPunts] = new Punt(nombrePunto, x, y, z, 10, color(255));
-       numPunts++;
+      punts[numPunts] = new Punt(nombrePunto, x, y, z, 10, color(255));
+      numPunts++;
     }
+  }
+  
+  void sideBarButton(){
+    
   }
 }

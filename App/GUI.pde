@@ -118,6 +118,23 @@ void setColors() {
   color granate=color(140, 57, 38);
 }
 
+int indexColor;
+color[] colors={color(81, 101, 140), color(217, 215, 197), color(166, 130, 86), color(146, 120, 87), color(140, 57, 38)};
+
+void getColor(String c) {
+  if (c=="blau") {
+    indexColor=0;
+  } else if (c=="beige") {
+    indexColor=1;
+  } else if (c=="clar") {
+    indexColor=2;
+  } else if (c=="obscur") {
+    indexColor=2;
+  } else if (c=="granate") {
+    indexColor=3;
+  }
+}
+
 
 void setGUI ( ) {
   setTextFields();
