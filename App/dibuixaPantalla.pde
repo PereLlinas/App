@@ -7,13 +7,9 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
   dibuixaZonaCarpetes();
   createButton.display();
   confirm.display();
-  HOME.display();
-  FAQS.display();
-  ABOUTUS.display();
-  TUTORIAL.display();
   pushStyle();
   getColor("obscur");
-  fill(colors[indexColor]); 
+  fill(colors[indexColor]);
   textFont(getFontAt(0));
   text("Dihedral Previewer", 335, 250);
   popStyle();
@@ -32,7 +28,7 @@ void WORKSPACE1() {
   PP.display();
   LT.display();
 
-  for(int i=0; i<numPunts; i++){
+  for (int i=0; i<numPunts; i++) {
     punts[i].display();
     println("dibuixant punt "+i);
   }
@@ -43,13 +39,13 @@ void WORKSPACE1() {
   dibuixaSideBar();
   dibuixaZonaLogo();
   dibuixaProjeccions();
-  
+
 
   //BOTONS
   SAVE.display(); //pendent
   PRINT.display(); //pendent
   TUTORIAL.display(); //pendent
-  NAME.display(); //fer setter per canviar es nom i sa funció d'es boto
+  HOME.display(); //fer setter per canviar es nom i sa funció d'es boto
   addElement.display(); //pendent
   // addRect.display(); checkboxSelector, esperar a arrayList
   // addPoint.display(); positionField
@@ -82,7 +78,6 @@ void WORKSPACE2() {
   SAVE.display(); //pendent
   PRINT.display(); //pendent
   TUTORIAL.display(); //pendent
-  NAME.display(); //pendent
   jcam.endHUD();
 }
 void FAQS() {

@@ -29,6 +29,12 @@ void dibuixaBanner() {
   rect(marginH, marginV, bannerWidth, bannerHeight);
   fill(0);
   text("BANNER", marginH + bannerWidth/2, bannerHeight/2+marginV);
+  HOME.setButtonColor("blau");
+  HOME.display();
+  FAQS.setButtonColor("blau");
+  FAQS.display();
+  ABOUTUS.display();
+  TUTORIAL.display();
   popStyle();
 }
 
@@ -77,13 +83,5 @@ void dibuixaProjeccions() {
   fill(0);
   textAlign(CENTER);
   text("PROJECCIONS", (1900-4*logoSize/3)+(4*logoSize/3)/2, 190+logoSize/2);
-  popStyle();
-}
-
-void popupElements() {
-  pushStyle();
-  rectMode(CENTER);
-  fill(166, 130, 86);
-  rect(0, 0, 1000, 800);
   popStyle();
 }

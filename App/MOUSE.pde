@@ -4,9 +4,8 @@ void mousePressed() {
   // sidebar
   println("MOUSE PRESSED");
 
-  // ELEMENTS COMUNA A TOTES LES PANTALLES
-  if (HOME.mouseOverButton() && pantalla==PANTALLA.HOME && pantalla==PANTALLA.FAQS
-    && pantalla==PANTALLA.ABOUTUS && pantalla==PANTALLA.TUTORIAL) {
+  // ELEMENTS COMUNs A TOTES LES PANTALLES
+  if (HOME.mouseOverButton()) {
     pantalla=PANTALLA.HOME;
     fonsPantalla = color(255, 0, 0);
   }

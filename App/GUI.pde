@@ -14,8 +14,8 @@ Confirm confirm;
 
 PositionField PF;
 
-Button loginButton, createButton, createFolderButton, FAQS, TUTORIAL, ABOUTUS,
-  HOME, PRINT, SAVE, NAME, addElement, addPoint, addLine, addPlane, addFigure,
+Button loginButton, createButton, FAQS, TUTORIAL, ABOUTUS,
+  HOME, PRINT, SAVE, addElement, addPoint, addLine, addPlane, addFigure,
   level1, level2, closeAdd;
 
 // PUNTS
@@ -75,7 +75,6 @@ void setButtons() {
   TUTORIAL=new Button("TUTORIAL", (4*marginH+logoSize)+1200, marginV+(bannerHeight/2)-50, 350, 100);
   SAVE=new Button("SAVE", (4*marginH+logoSize)+400, marginV+(bannerHeight/2)-50, 350, 100);
   //ES BOTÓ SAVE ÉS ES QUE FA S'INSERT D'ES DIÈDRIC I D'ES LEVEL
-  NAME=new Button("NAME", (4*marginH+logoSize), marginV+(bannerHeight/2)-50, 350, 100);
   PRINT=new Button("PRINT PROJECTIONS", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100);
   addElement=new Button("ADD ELEMENT", marginH+(sidebarWidth/2)-100, 350, 200, 50);
   addPoint=new Button ("ADD POINT", marginH+(sidebarWidth/2)-100, 520, 200, 50);
@@ -119,7 +118,9 @@ void setColors() {
 }
 
 int indexColor;
-color[] colors={color(81, 101, 140), color(217, 215, 197), color(166, 130, 86), color(146, 120, 87), color(140, 57, 38)};
+color[] colors={color(81, 101, 140), color(217, 215, 197), color(166, 130, 86), color(146, 120, 87), color(140, 57, 38),
+                color(81, 101, 140, 100), color(217, 215, 197, 100), color(166, 130, 86, 100), 
+                color(146, 120, 87, 100), color(140, 57, 38, 100)};
 
 void getColor(String c) {
   if (c=="blau") {
@@ -129,9 +130,19 @@ void getColor(String c) {
   } else if (c=="clar") {
     indexColor=2;
   } else if (c=="obscur") {
-    indexColor=2;
-  } else if (c=="granate") {
     indexColor=3;
+  } else if (c=="granate") {
+    indexColor=4;
+  } else if (c=="blau1") {
+    indexColor=5;
+  } else if (c=="beige1") {
+    indexColor=6;
+  } else if (c=="clar1") {
+    indexColor=7;
+  } else if (c=="obscur1") {
+    indexColor=8;
+  } else if (c=="granate1") {
+    indexColor=9;
   }
 }
 

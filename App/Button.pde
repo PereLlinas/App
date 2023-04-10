@@ -8,6 +8,7 @@ class Button {
   // Colors de contorn, farciment, actiu i desactiu
   color fillColor, strokeColor;
   color fillColorOver, fillColorDisabled;
+  color c1, c2;
 
   String textBoto;  // Text
   boolean enabled;  // Abilitat / desabilitat
@@ -20,8 +21,8 @@ class Button {
     this.w = w;
     this.h = h;
     this.enabled = true;
-    fillColor = color(155, 55, 155);
-    fillColorOver = color(255, 55, 155);
+    fillColor = c1;
+    fillColorOver = c2;
     fillColorDisabled = color(150);
     strokeColor = color(0);
   }
@@ -31,10 +32,17 @@ class Button {
   void setEnabled(boolean b) {
     this.enabled = b;
   }
-  
+
   void setButtonName(String t) {
     this.textBoto = t;
-  } 
+  }
+
+  void setButtonColor(String f) {
+    getColor(f);
+    this.c1=colors[indexColor];
+    this.c2=colors[indexColor+5];
+    println("información planta calle");
+  }
 
   // Dibuixa el botó
   void display() {
