@@ -1,4 +1,5 @@
 // Classe Botó. Canviar constructor (o emplear setters i getters) perquè es colors són terribles i han de ser diferents en cada cas.
+color c1, c2;
 
 class Button {
 
@@ -8,24 +9,29 @@ class Button {
   // Colors de contorn, farciment, actiu i desactiu
   color fillColor, strokeColor;
   color fillColorOver, fillColorDisabled;
-  color c1, c2;
 
   String textBoto;  // Text
   boolean enabled;  // Abilitat / desabilitat
+  String colorButton;
 
   // Mètode Constructor
-  Button(String text, float x, float y, float w, float h) {
+  Button(String text, float x, float y, float w, float h, String colorButton) {
     this.textBoto = text;
     this.x = x;
     this.y = y;
     this.w = w;
     this.h = h;
     this.enabled = true;
+    this.colorButton=colorButton;
+    getColor(colorButton);
+    c1=color (colors[indexColor]);
+    c2=color (colors[indexColor+6]);
     fillColor = c1;
     fillColorOver = c2;
     fillColorDisabled = color(150);
     strokeColor = color(0);
   }
+  
 
   // Setters
 
@@ -39,14 +45,15 @@ class Button {
 
   void setButtonColor(String f) {
     getColor(f);
-    this.c1=colors[indexColor];
-    this.c2=colors[indexColor+5];
-    println("información planta calle");
+    c1=colors[indexColor];
+    c2=colors[indexColor+5];
   }
 
   // Dibuixa el botó
+  //String f
   void display() {
     pushStyle();
+    //setButtonColor(f);
     if (!enabled) {
       fill(fillColorDisabled);  // Color desabilitat
     } else if (mouseOverButton()) {

@@ -21,8 +21,8 @@ class PositionField {
     tpf[1] = new TextPositionField("Y", x + w/3, y+50, w/3.1, h);
     tpf[2] = new TextPositionField("Z", x + 2*w/3, y+50, w/3.1, h);
     name = new TextField((width/2)-(300/2), 340+50, 300, 50);
-    this.closePF=new Button("X", 1130-5, 315-15, 30, 30);
-    this.add=new Button("ADD POINT", 1100-75, 710, 105, 55);
+    this.closePF=new Button("X", 1130-5, 315-15, 30, 30, "vermell");
+    this.add=new Button("ADD POINT", 1100-75, 710, 105, 55, "granate");
   }
 
   // Dibuixa el Camp de Text

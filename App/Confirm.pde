@@ -23,10 +23,10 @@ class Confirm {
     this.h = h;
     this.level1 = new Button("Level 1", x + w/4 - buttonW/2,
       y + h - buttonH*1.5,
-      buttonW, buttonH);
+      buttonW, buttonH, "");
     this.level2 = new Button("Level 2", x + 3*w/4 - buttonW/2,
       y + h - buttonH*1.5,
-      buttonW, buttonH);
+      buttonW, buttonH, "");
   }
 
   //Setters

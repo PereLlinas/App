@@ -26,21 +26,21 @@ class Tria1 {
 
     this.addPoint1 = new Button("ADD POINT", x + m,
       y + h - buttonH*1.5,
-      wButton, buttonH);
+      wButton, buttonH, "");
     this.addRect1 = new Button("ADD LINE", x + 2*m + wButton,
       y + h - buttonH*1.5,
-      wButton, buttonH);
+      wButton, buttonH, "");
     this.addPlane1 = new Button("ADD PLANE", x + 3*m +2*wButton,
       y + h - buttonH*1.5,
-      wButton, buttonH);
-    this.close=new Button("X", 1330-15, 370-15, 30, 30);
+      wButton, buttonH, "");
+    this.close=new Button("X", 1330-15, 370-15, 30, 30, "vermell");
 
     this.buttons[0]=this.addPoint1;
     this.buttons[1]=this.addRect1;
     this.buttons[2]=this.addPlane1;
     this.buttons[3]=this.close;
   }
-  
+
   //Setters
   void setTextButtons(String txt1, String txt2, String txt3) {
     this.addPoint1.textBoto = txt1;
@@ -64,9 +64,11 @@ class Tria1 {
       pushStyle();
 
       // Rectangle
-      stroke(0);
+      getColor("clar1");
+      stroke(colors[indexColor]);
       strokeWeight(10);
-      fill(200, 200, 100);
+      getColor("beige");
+      fill(colors[indexColor]);
       rect(x, y, w, h, b/2);
 
       line(x, y + 2*b, x+w, y + 2*b);
@@ -90,14 +92,6 @@ class Tria1 {
       popStyle();
     }
   }
-
-  /*void isPressed() {
-   if (this.v) {
-   for (int i=0; i<buttons.length; i++) {
-   //buttons[i].isPressed();
-   }
-   }
-   }*/
 }
 
 
@@ -148,17 +142,17 @@ class Tria2 {
 
     this.addPoint2 = new Button("ADD POINT", x + m,
       y + h - buttonH*1.5,
-      wButton, buttonH);
+      wButton, buttonH, "");
     this.addRect2 = new Button("ADD LINE", x + 2*m + wButton,
       y + h - buttonH*1.5,
-      wButton, buttonH);
+      wButton, buttonH, "");
     this.addPlane2 = new Button("ADD PLANE", x + 3*m +2*wButton,
       y + h - buttonH*1.5,
-      wButton, buttonH);
+      wButton, buttonH, "");
     this.addFigure2 = new Button("ADD FIGURE", x + 3*m +2*wButton,
       y + h - buttonH*1.5,
-      wButton, buttonH);
-    this.close=new Button("X", 1330-15, 370-15, 30, 30);
+      wButton, buttonH, "");
+    this.close=new Button("X", 1330-15, 370-15, 30, 30, "vermell");
   }
 
   //Setters

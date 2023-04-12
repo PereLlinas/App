@@ -7,12 +7,10 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
   dibuixaZonaCarpetes();
   createButton.display();
   confirm.display();
-  pushStyle();
   getColor("obscur");
   fill(colors[indexColor]);
   textFont(getFontAt(0));
   text("Dihedral Previewer", 335, 250);
-  popStyle();
   //afegir cards per cada creació
   jcam.endHUD();
 }

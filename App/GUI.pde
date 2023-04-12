@@ -67,20 +67,19 @@ void setTextFields() {
 }
 
 void setButtons() {
-  loginButton = new Button("LOGIN", width/2-200/2, (height/2)+150, 200, 50);
-  createButton=new Button("CREATE", 1900-200, 280-80, 200, 50);
-  HOME=new Button("HOME", 4*marginH+logoSize, marginV+(bannerHeight/2)-50, 350, 100);
-  FAQS=new Button("FAQ's", (4*marginH+logoSize)+400, marginV+(bannerHeight/2)-50, 350, 100);
-  ABOUTUS=new Button("ABOUT US", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100);
-  TUTORIAL=new Button("TUTORIAL", (4*marginH+logoSize)+1200, marginV+(bannerHeight/2)-50, 350, 100);
-  SAVE=new Button("SAVE", (4*marginH+logoSize)+400, marginV+(bannerHeight/2)-50, 350, 100);
-  //ES BOTÓ SAVE ÉS ES QUE FA S'INSERT D'ES DIÈDRIC I D'ES LEVEL
-  PRINT=new Button("PRINT PROJECTIONS", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100);
-  addElement=new Button("ADD ELEMENT", marginH+(sidebarWidth/2)-100, 350, 200, 50);
-  addPoint=new Button ("ADD POINT", marginH+(sidebarWidth/2)-100, 520, 200, 50);
-  addLine=new Button ("ADD Line", marginH+(sidebarWidth/2)-100, (2*sidebarHeight/4+logoSize+marginV), 200, 50);
-  addPlane=new Button ("ADD PLANE", marginH+(sidebarWidth/2)-100, (3*sidebarHeight/4+logoSize+marginV), 200, 50);
-  addFigure=new Button ("ADD FIGURE", marginH+(sidebarWidth/2)-100, (sidebarHeight+logoSize+marginV), 200, 50);
+  loginButton = new Button("LOGIN", width/2-200/2, (height/2)+150, 200, 50, "granate");
+  createButton=new Button("CREATE", 1900-200, 280-80, 200, 50, "granate");
+  HOME=new Button("HOME", 4*marginH+logoSize, marginV+(bannerHeight/2)-50, 350, 100, "blau");
+  FAQS=new Button("FAQ's", (4*marginH+logoSize)+400, marginV+(bannerHeight/2)-50, 350, 100, "blau");
+  ABOUTUS=new Button("ABOUT US", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100, "blau");
+  TUTORIAL=new Button("TUTORIAL", (4*marginH+logoSize)+1200, marginV+(bannerHeight/2)-50, 350, 100, "blau");
+  SAVE=new Button("SAVE", (4*marginH+logoSize)+400, marginV+(bannerHeight/2)-50, 350, 100, "blau");
+  PRINT=new Button("PRINT PROJECTIONS", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100, "blau");
+  addElement=new Button("ADD ELEMENT", marginH+(sidebarWidth/2)-100, 350, 200, 50, "granate");
+  addPoint=new Button ("ADD POINT", marginH+(sidebarWidth/2)-100, 520, 200, 50, "granate");
+  addLine=new Button ("ADD Line", marginH+(sidebarWidth/2)-100, (2*sidebarHeight/4+logoSize+marginV), 200, 50, "granate");
+  addPlane=new Button ("ADD PLANE", marginH+(sidebarWidth/2)-100, (3*sidebarHeight/4+logoSize+marginV), 200, 50, "granate");
+  addFigure=new Button ("ADD FIGURE", marginH+(sidebarWidth/2)-100, (sidebarHeight+logoSize+marginV), 200, 50, "granate");
 }
 
 void setWORKSPACE1() {
@@ -109,18 +108,11 @@ void setWORKSPACE1() {
   LT=new Pla(plt1, plt2, plt3);
 }
 
-void setColors() {
-  color blau=color(81, 101, 140);
-  color beige=color(217, 215, 197);
-  color clar=color(166, 130, 86);
-  color obscur=color(146, 120, 87);
-  color granate=color(140, 57, 38);
-}
-
 int indexColor;
-color[] colors={color(81, 101, 140), color(217, 215, 197), color(166, 130, 86), color(146, 120, 87), color(140, 57, 38),
-                color(81, 101, 140, 100), color(217, 215, 197, 100), color(166, 130, 86, 100), 
-                color(146, 120, 87, 100), color(140, 57, 38, 100)};
+int i=200;
+color[] colors={color(81, 101, 140), color(217, 215, 197), color(166, 130, 86), color(146, 120, 87), color(140, 57, 38), color(210, 0, 0),
+  color(81, 101, 140, i), color(217, 215, 197, i), color(166, 130, 86, i),
+  color(146, 120, 87, i), color(140, 57, 38, i), color(210, 0, 0, i)};
 
 void getColor(String c) {
   if (c=="blau") {
@@ -133,16 +125,20 @@ void getColor(String c) {
     indexColor=3;
   } else if (c=="granate") {
     indexColor=4;
-  } else if (c=="blau1") {
+  } else if (c=="vermell") {
     indexColor=5;
-  } else if (c=="beige1") {
+  } else if (c=="blau1") {
     indexColor=6;
-  } else if (c=="clar1") {
+  } else if (c=="beige1") {
     indexColor=7;
-  } else if (c=="obscur1") {
+  } else if (c=="clar1") {
     indexColor=8;
-  } else if (c=="granate1") {
+  } else if (c=="obscur1") {
     indexColor=9;
+  } else if (c=="granate1") {
+    indexColor=10;
+  } else if (c=="vermell1") {
+    indexColor=11;
   }
 }
 
@@ -151,7 +147,6 @@ void setGUI ( ) {
   setTextFields();
   setButtons();
   setWORKSPACE1();
-  setColors();
   setTria();
   setPositionField();
   setConfirm();

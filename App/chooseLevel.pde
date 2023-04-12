@@ -9,8 +9,8 @@ class chooseLevel {
   chooseLevel(int x, int y) {
     this.x=x;
     this.y=y;
-    this.level1=new Button ("Level 1", -750, 550, 500, 250);
-    this.level2=new Button ("Level 2", 750, 550, 500, 250);
+    this.level1=new Button ("Level 1", -750, 550, 500, 250, "");
+    this.level2=new Button ("Level 2", 750, 550, 500, 250, "");
     this.v=false;
   }
 

@@ -29,9 +29,7 @@ void dibuixaBanner() {
   rect(marginH, marginV, bannerWidth, bannerHeight);
   fill(0);
   text("BANNER", marginH + bannerWidth/2, bannerHeight/2+marginV);
-  HOME.setButtonColor("blau");
   HOME.display();
-  FAQS.setButtonColor("blau");
   FAQS.display();
   ABOUTUS.display();
   TUTORIAL.display();
