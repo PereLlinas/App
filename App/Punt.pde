@@ -1,4 +1,4 @@
-Button[] ButtonPunts=new Button[numPunts];
+Button[] ButtonPunts=new Button[20];
 
 class Punt {
   float x, y, z, r;

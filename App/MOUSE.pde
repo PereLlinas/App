@@ -92,7 +92,7 @@ void mousePressed() {
     else if (PF.visible && PF.add.mouseOverButton()) {
       PF.addPoint();
       PF.addPointDataBase();
-      //PF.pointButtons();
+      PF.createPointButton();
       PF.visible=false;
       enableCamera=true;
       jcam.setActive(enableCamera);

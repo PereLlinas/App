@@ -7,7 +7,7 @@ class PositionField {
   TextPositionField[] tpf;
   TextField name;
   boolean visible  = false;
-  Button closePF, add;
+  Button closePF, add, pointButton;
   Punt punt;
 
   // Constructor
@@ -88,8 +88,16 @@ class PositionField {
     float y =  Float.valueOf(PF.tpf[1].text);
     float z =  Float.valueOf(PF.tpf[2].text);
     if (numPunts<punts.length) {
-      punts[numPunts] = new Punt(nombrePunto, x, y, z, 10, color(255));
+      punts[numPunts] = new Punt(nombrePunto, x, y, z, 10, color(255));   
       numPunts++;
+    }
+  }
+  
+  void createPointButton() {
+    if (numPunts<punts.length) {
+        pointButton=new Button(PF.name.text, marginH+(sidebarWidth/2)-100, 350+(numPunts*70), 200, 50, "obscur");
+        println("creando punto papaaaaa");
+        ButtonPunts[numPunts]=pointButton;
     }
   }
 }
