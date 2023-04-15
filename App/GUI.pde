@@ -19,7 +19,6 @@ Button loginButton, createButton, FAQS, TUTORIAL, ABOUTUS,
   level1, level2, closeAdd;
 
 // PUNTS
-int numPunts;
 Punt[] punts;
 
 void setConfirm() {
@@ -30,7 +29,6 @@ void setConfirm() {
 }
 
 void setPunts() {
-  numPunts=0;
   punts = new Punt[10];
 }
 
@@ -142,6 +140,28 @@ void getColor(String c) {
   }
 }
 
+//APARTADO Figures
+CUBO cubo;
+OCTA octaedre;
+TETRA tetraedre;
+PIRAMIDE piramide;
+
+FIGURA[] figures;
+
+void setFigures(){
+  cubo=new CUBO("Cubo");
+  octaedre=new OCTA("Octaedro");
+  tetraedre=new TETRA("Tetraedro");
+  piramide=new PIRAMIDE("Piramide");
+  
+  figures=new FIGURA[numFigures];
+
+  figures[0]=cubo;
+  figures[1]=octaedre;
+  figures[2]=tetraedre;
+  figures[3]=piramide;
+}
+
 
 void setGUI ( ) {
   setTextFields();
@@ -151,5 +171,6 @@ void setGUI ( ) {
   setPositionField();
   setConfirm();
   setPunts();
+  setFigures();
   /*setCheckboxes();*/
 }

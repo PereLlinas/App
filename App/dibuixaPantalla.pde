@@ -28,7 +28,6 @@ void WORKSPACE1() {
 
   for (int i=0; i<numPunts; i++) {
     punts[i].display();
-    println("dibuixant punt "+i);
   }
 
   jcam.beginHUD();

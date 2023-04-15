@@ -64,7 +64,7 @@ class Tria1 {
       pushStyle();
 
       // Rectangle
-      getColor("clar1");
+      getColor("obscur");
       stroke(colors[indexColor]);
       strokeWeight(10);
       getColor("beige");

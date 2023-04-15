@@ -92,8 +92,4 @@ class PositionField {
       numPunts++;
     }
   }
-  
-  void sideBarButton(){
-    
-  }
 }

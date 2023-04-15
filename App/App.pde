@@ -7,6 +7,11 @@ import java.util.LinkedList;
 enum PANTALLA {LOGIN, HOME, WORKSPACE1, WORKSPACE2, FAQS, ABOUTUS, TUTORIAL};
 PANTALLA pantalla=PANTALLA.WORKSPACE1;
 
+//variables globales importantes
+int numFigures;
+int numPunts;
+
+
 
 //càmera (origen de coordenades se posa al centre)
 import peasy.*;
@@ -33,7 +38,9 @@ void draw() {
     
     case WORKSPACE1: WORKSPACE1();break;
     case WORKSPACE2: WORKSPACE2();break;
+    
   }
+  println("numPunts: "+numPunts);
   
-  println("X: "+mouseX+", Y:"+mouseY);
+  //println("X: "+mouseX+", Y:"+mouseY);
 }

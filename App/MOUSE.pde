@@ -2,7 +2,7 @@ void mousePressed() {
 
   // Elements comuns a totes les pantalles
   // sidebar
-  println("MOUSE PRESSED");
+  //println("MOUSE PRESSED");
 
   // ELEMENTS COMUNs A TOTES LES PANTALLES
   if (HOME.mouseOverButton()) {
@@ -92,6 +92,7 @@ void mousePressed() {
     else if (PF.visible && PF.add.mouseOverButton()) {
       PF.addPoint();
       PF.addPointDataBase();
+      //PF.pointButtons();
       PF.visible=false;
       enableCamera=true;
       jcam.setActive(enableCamera);

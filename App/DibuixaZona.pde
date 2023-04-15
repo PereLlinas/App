@@ -7,7 +7,7 @@ void dibuixaZonaLogo() {
   fill(200, 50, 100);
   rect(2*marginH, 4*marginV, logoSize, logoSize);
   fill(0);
-  text("LOGO", marginH + logoSize/2, marginV + logoSize/2);
+  text("", marginH + logoSize/2, marginV + logoSize/2);
   popStyle();
 }
 
@@ -18,7 +18,7 @@ void dibuixaSideBar() {
   rect(marginH, 2*marginV + 2*logoSize/3, sidebarWidth, sidebarHeight);
   fill(0);
   textAlign(CENTER);
-  text("SIDEBAR", marginH + sidebarWidth/2, marginV + logoSize + sidebarHeight/2);
+  text("", marginH + sidebarWidth/2, marginV + logoSize + sidebarHeight/2);
   popStyle();
 }
 
@@ -28,7 +28,7 @@ void dibuixaBanner() {
   noStroke();
   rect(marginH, marginV, bannerWidth, bannerHeight);
   fill(0);
-  text("BANNER", marginH + bannerWidth/2, bannerHeight/2+marginV);
+  text("", marginH + bannerWidth/2, bannerHeight/2+marginV);
   HOME.display();
   FAQS.display();
   ABOUTUS.display();
@@ -82,4 +82,23 @@ void dibuixaProjeccions() {
   textAlign(CENTER);
   text("PROJECCIONS", (1900-4*logoSize/3)+(4*logoSize/3)/2, 190+logoSize/2);
   popStyle();
+}
+
+boolean triaFiguresV=false;
+void triaFigures() {
+  if (triaFiguresV==true) {
+    pushStyle();
+    //Rectangle
+    int x=width/2;
+    int y=height/2;
+    int w=800;
+    int h=500;
+    getColor("obscur");
+    stroke(colors[indexColor]);
+    strokeWeight(10);
+    getColor("beige");
+    fill(colors[indexColor]);
+    rect(x-(w/2), y-(h/2), w, h);
+    popStyle();
+  }
 }
