@@ -2,11 +2,11 @@ Button[] ButtonPunts=new Button[20];
 
 class Punt {
   float x, y, z, r;
-  String Nom;
+  String nom;
   color c;
 
   Punt(String n, float x, float y, float z, float r, color c) {
-    this.Nom=n;
+    this.nom=n;
     this.x=-x;
     this.y=-y;
     this.z=z;
@@ -15,7 +15,7 @@ class Punt {
   }
 
   String getNom() {
-    return this.Nom;
+    return this.nom;
   }
   float getX() {
     return this.x;
@@ -40,6 +40,25 @@ class Punt {
     sphere(r-3);
     popMatrix();
     fill(0);
-    text(Nom, x+r+10, y+r+10, z+10);
+    text(nom, x+r+10, y+r+10, z+10);
+  }
+
+
+  String getInfo() {
+    return this.nom+":("+(-x)+", "+(-y)+", "+z+")";
+  }
+
+  void dibuixaInfo(float x, float y, float w, float h) {
+    getColor("clar");
+    fill(color(colors[indexColor]));
+    noStroke();
+    rect(x, y, w, h, 25);
+    fill(0);
+    textFont(getFontAt(0));
+    textSize(30);
+    text("PUNT:", x + 20, y + 50);
+    textFont(getFontAt(1));
+    textSize(24);
+    text(getInfo(), x+ 20, y + 100);
   }
 }

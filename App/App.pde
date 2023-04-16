@@ -5,14 +5,15 @@ import java.util.LinkedList;
 
 
 enum PANTALLA {LOGIN, HOME, WORKSPACE1, WORKSPACE2, TUTORIAL, FAQS, ABOUTUS};
-PANTALLA pantalla=PANTALLA.FAQS;
+PANTALLA pantalla=PANTALLA.WORKSPACE1;
 
 //variables globales importantes
 int numFigures;
-int numPunts;
+int numPunts=0;
 int numElements;
 String[] elements=new String[20];
 
+Punt[] punts= new Punt[20];
 
 
 //càmera (origen de coordenades se posa al centre)
@@ -45,5 +46,5 @@ void draw() {
   
   //println("numPunts: "+numPunts);
   
-  println("X: "+mouseX+", Y:"+mouseY);
+  //println("X: "+mouseX+", Y:"+mouseY);
 }

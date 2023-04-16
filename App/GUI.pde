@@ -16,15 +16,26 @@ TriaFigura triaFigura;
 
 Confirm confirm;
 
-
 PositionField PF;
 
 Button loginButton, createButton, FAQS, TUTORIAL, ABOUTUS,
   HOME, PRINT, SAVE, addElement1, addElement2, addPoint, addLine, addPlane, addFigure,
   level1, level2, closeAdd, infoElement;
 
-// PUNTS
-Punt[] punts;
+//SELECT
+Select selectPunts;
+String[] infoSelect;
+int n = -1;
+float selectW = 300, selectH = 30;
+
+
+void setSelectPunts() {
+  infoSelect = new String[punts.length];
+  // Crea l'array d'informació a partir dels punts
+  infoSelect = new String[punts.length];
+  // Creació dels selects
+  selectPunts = new Select(infoSelect, marginH+(sidebarWidth/2)-100, 2*marginV + 1.5*logoSize, selectW, selectH);
+}
 
 void setImages() {
   Pla=loadImage("Pla.png");
@@ -203,5 +214,6 @@ void setGUI ( ) {
   setPunts();
   setFigures();
   setImages();
+  setSelectPunts();
   /*setCheckboxes();*/
 }

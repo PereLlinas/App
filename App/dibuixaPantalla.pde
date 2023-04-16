@@ -33,10 +33,7 @@ void WORKSPACE1() {
   jcam.beginHUD();
   //ELEMENTS DECORATIUS
   dibuixaBanner();
-  dibuixaSideBar();
   dibuixaZonaLogo();
-  dibuixaProjeccions();
-
 
   //BOTONS
   SAVE.display(); //pendent
@@ -44,9 +41,17 @@ void WORKSPACE1() {
   TUTORIAL.display(); //pendent
   HOME.display(); //fer setter per canviar es nom i sa funció d'es boto
   addElement1.display(); //pendent
+
+  // Dibuixa el select
+  if (numPunts!=0) {
+    if (n!=-1) {
+      punts[n].dibuixaInfo(1520 , 900, 350, 150);
+    }
+    selectPunts.display();
+  }
+
   tria1.display();
   PF.display();
-  PF.infoElement();
   jcam.endHUD();
 }
 
@@ -62,11 +67,12 @@ void WORKSPACE2() {
   PP.display();
   LT.display();
 
+
   jcam.beginHUD();
+  // Dibuixa el select
+  selectPunts.display();
   dibuixaBanner();
-  dibuixaSideBar();
   dibuixaZonaLogo();
-  dibuixaProjeccions();
 
   //BOTONS
   addElement2.display();
@@ -76,6 +82,7 @@ void WORKSPACE2() {
 
   tria2.display();
   triaFigura.display();
+  PF.display();
   jcam.endHUD();
 }
 
@@ -96,8 +103,10 @@ void FAQS() {
 
 void TUTORIAL() {
   jcam.beginHUD();
-  background(230);
+  getColor("beige");
+  background(colors[indexColor]);
   dibuixaBanner();
+  TUTORIALdisplay();
   dibuixaZonaLogo();
   HOME.display();
   FAQS.display();
@@ -108,8 +117,10 @@ void TUTORIAL() {
 
 void ABOUTUS() {
   jcam.beginHUD();
-  background(100);
+  getColor("beige");
+  background(colors[indexColor]);
   dibuixaBanner();
+  ABOUTUSdisplay();
   dibuixaZonaLogo();
   HOME.display();
   FAQS.display();

@@ -92,11 +92,9 @@ void mousePressed() {
     else if (PF.visible && PF.add.mouseOverButton()) {
       PF.addPoint();
       PF.addPointDataBase();
-      //PF.createPointButton();
       PF.visible=false;
       enableCamera=true;
       jcam.setActive(enableCamera);
-      PF.infoElementVisible=true;
     }
 
     // CLICK SOBRE CAMPS DEL PF
@@ -122,12 +120,26 @@ void mousePressed() {
       enableCamera=true;
       jcam.setActive(enableCamera);
     }
+
+    // Si pitjam sobre el select
+    else if (selectPunts.mouseOverSelect() && selectPunts.enabled) {
+      if (!selectPunts.collapsed) {
+        selectPunts.update();      // Actualitzar valor
+        n = selectPunts.clickedOption();
+      }
+      selectPunts.toggle();        // Plegar o desplegar
+    }     
+    else {
+      selectPunts.reset();
+      n = -1;
+    }
   }
+
 
 
   //WORKSPACE2
   else if (pantalla==PANTALLA.WORKSPACE2) {
-    
+
     // CLICK SOBRE BOTÓ ADD ELEMENT
     if (addElement2.mouseOverButton()) {
       enableCamera=false;

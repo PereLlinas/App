@@ -100,7 +100,7 @@ void triaFigures() {
 }
 
 void FAQSdisplay() {
-  int x=335, titleY=250, mg=50, questionY=titleY+mg;
+  int x=335, titleY=250, mg=50;
   getColor("beige");
   fill(color(colors[indexColor]));
   noStroke();
@@ -133,5 +133,32 @@ void FAQSdisplay() {
   textFont(getFontAt(2));
   textSize(35);
   text("In this case, press the button HOME and then the button TUTORIAL, these one will lead you to a 5-minute video in which one of our developers shows the functioning of the whole application in detail.", x, 3*titleY+2.5*mg, columnWidth*3/4, columnHeight/5 );
+}
 
+void ABOUTUSdisplay() {
+  int x=335, titleY=250, mg=50;
+  getColor("beige");
+  fill(color(colors[indexColor]));
+  noStroke();
+  rect(marginH+sidebarWidth, 2*marginV + 2*logoSize/3+75, columnWidth, columnHeight);
+  getColor("obscur");
+  fill(colors[indexColor]);
+  textFont(getFontAt(0));
+  text("ABOUT US", 335, 250);
+
+  //ABOUT US
+  textFont(getFontAt(2));
+  textSize(40);
+  text("Dihedral Preview is an APP designed specifically to bring to the third dimension what the dihedral system represents in only two dimensions. The main objective behind this project is to allow the user to move freely across the screen and change the viewpoint of the system designed, encouraging understanding in the ones who find difficulties to comprehend a 2D representation. The type of users we aimed are those taking technical drawing as a subject in their baccalaureate diploma, so we tried to simplify as much as we could the interface, so it could be instinctive even if your knowledge about the topic is limited.\n\nDihedral Preview Team", x, titleY+mg, columnWidth*3/4, columnHeight);
+}
+
+void TUTORIALdisplay() {
+  getColor("blau");
+  fill(color(colors[indexColor], 200));
+  noStroke();
+  rect(marginH+sidebarWidth*1.5, 2*marginV + 2*logoSize/3+150, 2*columnWidth/3, 2*columnHeight/3);
+  getColor("obscur");
+  fill(colors[indexColor]);
+  textFont(getFontAt(0));
+  text("TUTORIAL", 335, 250);
 }

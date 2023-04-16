@@ -1,5 +1,6 @@
 // Classe Botó. Canviar constructor (o emplear setters i getters) perquè es colors són terribles i han de ser diferents en cada cas.
 color c1, c2;
+int ts=20;
 
 class Button {
 
@@ -31,7 +32,7 @@ class Button {
     fillColorDisabled = color(150);
     strokeColor = color(0);
   }
-  
+
 
   // Setters
 
@@ -47,6 +48,11 @@ class Button {
     getColor(f);
     c1=colors[indexColor];
     c2=colors[indexColor+5];
+  }
+  
+  int setTextSize(int i){
+    ts=i;
+    return ts;
   }
 
   // Dibuixa el botó
@@ -68,7 +74,7 @@ class Button {
     // Text (color, alineació i mida)
     fill(0);
     textAlign(CENTER);
-    textSize(20);
+    textSize(ts);
     text(textBoto, this.x + this.w/2, this.y + this.h/2 + 10);
     popStyle();
   }

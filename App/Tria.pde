@@ -264,10 +264,6 @@ class TriaFigura {
       textAlign(CENTER);
       text(message, x + w/2, y + 4*b);
 
-     /*fotos[4]=Octa;
-       fotos[5]=Pira;
-       fotos[6]=Tetra;
-       fotos[7]=Cubo;*/
 
       image(fotos[4], x + 40, 445, 150, 150); //Octa
       image(fotos[6], x + 3*40 + 2*150, 445, 150, 150); //Pira

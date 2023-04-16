@@ -6,7 +6,7 @@ class Confirm {
   // Propietats
   PImage img;
   String title, message;
-  
+
   Button level1, level2;
   float buttonW = 200, buttonH = 80;
 
@@ -23,10 +23,10 @@ class Confirm {
     this.h = h;
     this.level1 = new Button("Level 1", x + w/4 - buttonW/2,
       y + h - buttonH*1.5,
-      buttonW, buttonH, "");
+      buttonW, buttonH, "blau");
     this.level2 = new Button("Level 2", x + 3*w/4 - buttonW/2,
       y + h - buttonH*1.5,
-      buttonW, buttonH, "");
+      buttonW, buttonH, "blau");
   }
 
   //Setters
@@ -64,9 +64,10 @@ class Confirm {
       pushStyle();
 
       // Rectangle
-      stroke(0);
+      stroke(color(100, 75, 45));
       strokeWeight(10);
-      fill(200, 200, 100);
+      getColor("clar");
+      fill(color(colors[indexColor]));
       rect(x, y, w, h, b/2);
 
       line(x, y + 2*b, x+w, y + 2*b);
@@ -84,7 +85,9 @@ class Confirm {
       text(message, x + w/2, y + 4*b);
 
       // Botons d'Acceptar i Cancelar
+      level1.setTextSize(30);
       level1.display();
+      level2.setTextSize(28);
       level2.display();
       popStyle();
     }

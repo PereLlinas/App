@@ -6,7 +6,7 @@ class PositionField {
   int x, y, h, w;
   TextPositionField[] tpf;
   TextField name;
-  boolean visible  = false;
+  boolean visible  = false, addPoint=false;
   Button closePF, add, pointButton;
   Punt punt;
 
@@ -95,6 +95,9 @@ class PositionField {
       punts[numPunts] = new Punt(nombrePunto, x, y, z, 10, color(255));
       numPunts++;
     }
+    for (int i=0; i<numPunts; i++) {
+      infoSelect[i] = punts[i].getNom();
+    }
   }
 
   boolean infoElementVisible=false;
@@ -109,7 +112,8 @@ class PositionField {
       stroke(colors[indexColor]);
       fill(colors[indexColor]);
       rect(marginH+(sidebarWidth/2)-100, 350+(numElements*70), 200, 50);
-      textFont(getThirdFont()); textMode(LEFT);
+      textFont(getThirdFont());
+      textMode(LEFT);
       fill(0);
       textSize(32);
       text(PF.name.text, marginH+(sidebarWidth/2)-75, 355+(numElements*70), 250, 50);
