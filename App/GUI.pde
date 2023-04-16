@@ -3,8 +3,8 @@
 //creat per ses projeccions (donar-li background perquè sino és transparent))
 //https://processing.org/reference/PGraphics.html
 
-PImage Pla, Figura, Punt, Recta;
-PImage[] fotos=new PImage[4];
+PImage Pla, Figura, Punt, Recta, Pira, Octa, Tetra, Cubo;
+PImage[] fotos=new PImage[8];
 
 TextField userText, passText;
 
@@ -31,11 +31,19 @@ void setImages() {
   Recta=loadImage("Recta.png");
   Punt=loadImage("Punt.png");
   Figura=loadImage("Figura.png");
+  Octa=loadImage("Octa.png");
+  Tetra=loadImage("Tetra.png");
+  Pira=loadImage("Pira.png");
+  Cubo=loadImage("Cubo.png");
 
   fotos[0]=Pla;
   fotos[1]=Recta;
   fotos[2]=Punt;
   fotos[3]=Figura;
+  fotos[4]=Octa;
+  fotos[5]=Pira;
+  fotos[6]=Tetra;
+  fotos[7]=Cubo;
 }
 
 void setConfirm() {
@@ -192,5 +200,6 @@ void setGUI ( ) {
   setConfirm();
   setPunts();
   setFigures();
+  setImages();
   /*setCheckboxes();*/
 }

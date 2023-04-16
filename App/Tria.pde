@@ -169,8 +169,11 @@ class Tria2 {
       textSize(24);
       textAlign(CENTER);
       text(message, x + w/2, y + 4*b);
-      
-      //image(fotos[3], width/2, height/2);
+
+      image(fotos[0], x + 3*40 + 2*150, 445, 150, 150); //pla
+      image(fotos[1], x + 2*40 + 150, 445, 150, 150); //recta
+      image(fotos[2], x + 40, 445, 150, 150); //punt
+      image(fotos[3], x + 4*40 + 3*150, 445, 150, 150); //figura
 
       addPoint2.display();
       addRect2.display();
@@ -260,6 +263,16 @@ class TriaFigura {
       textSize(24);
       textAlign(CENTER);
       text(message, x + w/2, y + 4*b);
+
+     /*fotos[4]=Octa;
+       fotos[5]=Pira;
+       fotos[6]=Tetra;
+       fotos[7]=Cubo;*/
+
+      image(fotos[4], x + 40, 445, 150, 150); //Octa
+      image(fotos[6], x + 3*40 + 2*150, 445, 150, 150); //Pira
+      image(fotos[5], x + 2*40 + 150, 445, 150, 150); //Tetra
+      image(fotos[7], x + 4*40 + 3*150, 445, 150, 150); //Cubo
 
       addOcta.display();
       addPira.display();

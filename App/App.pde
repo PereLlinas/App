@@ -45,5 +45,5 @@ void draw() {
   
   //println("numPunts: "+numPunts);
   
-  //println("X: "+mouseX+", Y:"+mouseY);
+  println("X: "+mouseX+", Y:"+mouseY);
 }
