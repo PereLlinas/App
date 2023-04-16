@@ -82,8 +82,10 @@ void WORKSPACE2() {
 
 void FAQS() {
   jcam.beginHUD();
-  background(150);
+  getColor("beige");
+  background(colors[indexColor]);
   dibuixaBanner();
+  FAQSdisplay();
   dibuixaZonaLogo();
   HOME.display();
   FAQS.display();
