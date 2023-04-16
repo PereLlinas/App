@@ -84,6 +84,7 @@ void dibuixaProjeccions() {
   popStyle();
 }
 
+//PENDENT
 boolean triaFiguresV=false;
 void triaFigures() {
   if (triaFiguresV==true) {

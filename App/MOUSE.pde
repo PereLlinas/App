@@ -67,7 +67,7 @@ void mousePressed() {
   } else if (pantalla==PANTALLA.WORKSPACE1) {
 
     // CLICK SOBRE BOTÓ ADD ELEMENT
-    if (addElement.mouseOverButton()) {
+    if (addElement1.mouseOverButton()) {
       enableCamera=false;
       jcam.setActive(enableCamera);
       tria1.v=true;
@@ -92,10 +92,11 @@ void mousePressed() {
     else if (PF.visible && PF.add.mouseOverButton()) {
       PF.addPoint();
       PF.addPointDataBase();
-      PF.createPointButton();
+      //PF.createPointButton();
       PF.visible=false;
       enableCamera=true;
       jcam.setActive(enableCamera);
+      PF.infoElementVisible=true;
     }
 
     // CLICK SOBRE CAMPS DEL PF
@@ -126,8 +127,69 @@ void mousePressed() {
 
   //WORKSPACE2
   else if (pantalla==PANTALLA.WORKSPACE2) {
-    if (addElement.mouseOverButton()) {
-      //tria2.v = true;
+    
+    // CLICK SOBRE BOTÓ ADD ELEMENT
+    if (addElement2.mouseOverButton()) {
+      enableCamera=false;
+      jcam.setActive(enableCamera);
+      tria2.v=true;
+    }
+
+    //  CLICK SOBRE ADD POINT DEL TRIA2
+    else if (tria2.addPoint2.mouseOverButton()) {
+      enableCamera=false;
+      jcam.setActive(enableCamera);
+      tria2.v=false;
+      PF.visible=true;
+    }
+
+    // CLICK SOBRE BOTÓ DE TANCAR DEL PF
+    else if (PF.visible && PF.closePF.mouseOverButton()) {
+      PF.visible=false;
+      enableCamera=true;
+      jcam.setActive(enableCamera);
+    }
+
+    // CLICK SOBRE EL BOTÓ ADD DEL PF
+    else if (PF.visible && PF.add.mouseOverButton()) {
+      PF.addPoint();
+      PF.addPointDataBase();
+      //PF.createPointButton();
+      PF.visible=false;
+      enableCamera=true;
+      jcam.setActive(enableCamera);
+      PF.infoElementVisible=true;
+    }
+
+    // CLICK SOBRE CAMPS DEL PF
+    else if (PF.visible) {
+      PF.isPressed();
+    }
+
+    //CLICK SOBRE BOTÓ ADD RECT
+    else if (tria2.addRect2.mouseOverButton()) {
+      //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
+      //INSERT FIGURA
+    }
+
+    //CLICK SOBRE BOTÓ ADD PLANE
+    else if (tria2.addPlane2.mouseOverButton()) {
+      //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
+      //INSERT FIGURA
+    }
+
+    //CLICK SOBRE BOTÓ ADD PLANE
+    else if (tria2.addFigure2.mouseOverButton()) {
+      enableCamera=false;
+      jcam.setActive(enableCamera);
+      triaFigura.v=true;
+    }
+
+    //CLICK SOBRE TANCAR TRIA2
+    else if (tria2.close.mouseOverButton()) {
+      tria2.v=false;
+      enableCamera=true;
+      jcam.setActive(enableCamera);
     }
   }
 }

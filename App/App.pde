@@ -5,11 +5,13 @@ import java.util.LinkedList;
 
 
 enum PANTALLA {LOGIN, HOME, WORKSPACE1, WORKSPACE2, FAQS, ABOUTUS, TUTORIAL};
-PANTALLA pantalla=PANTALLA.WORKSPACE1;
+PANTALLA pantalla=PANTALLA.WORKSPACE2;
 
 //variables globales importantes
 int numFigures;
 int numPunts;
+int numElements;
+String[] elements=new String[20];
 
 
 
@@ -40,7 +42,8 @@ void draw() {
     case WORKSPACE2: WORKSPACE2();break;
     
   }
-  println("numPunts: "+numPunts);
+  
+  //println("numPunts: "+numPunts);
   
   //println("X: "+mouseX+", Y:"+mouseY);
 }

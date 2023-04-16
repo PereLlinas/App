@@ -3,9 +3,14 @@
 //creat per ses projeccions (donar-li background perquè sino és transparent))
 //https://processing.org/reference/PGraphics.html
 
+PImage Pla, Figura, Punt, Recta;
+PImage[] fotos=new PImage[4];
+
 TextField userText, passText;
 
 Tria1 tria1;
+Tria2 tria2;
+TriaFigura triaFigura;
 
 //Tria2 tria2;
 
@@ -15,11 +20,23 @@ Confirm confirm;
 PositionField PF;
 
 Button loginButton, createButton, FAQS, TUTORIAL, ABOUTUS,
-  HOME, PRINT, SAVE, addElement, addPoint, addLine, addPlane, addFigure,
-  level1, level2, closeAdd;
+  HOME, PRINT, SAVE, addElement1, addElement2, addPoint, addLine, addPlane, addFigure,
+  level1, level2, closeAdd, infoElement;
 
 // PUNTS
 Punt[] punts;
+
+void setImages() {
+  Pla=loadImage("Pla.png");
+  Recta=loadImage("Recta.png");
+  Punt=loadImage("Punt.png");
+  Figura=loadImage("Figura.png");
+
+  fotos[0]=Pla;
+  fotos[1]=Recta;
+  fotos[2]=Punt;
+  fotos[3]=Figura;
+}
 
 void setConfirm() {
   float Cheight=800.0;
@@ -57,6 +74,8 @@ void setTria() {
   float Theight=800.0;
   float Twidth=400.0;
   tria1=new Tria1("ADD ELEMENT", "", (width/2)-(Theight/2), (height/2)-(Twidth/2), Theight, Twidth);
+  tria2=new Tria2("ADD ELEMENT", "", (width/2)-(Theight/2), (height/2)-(Twidth/2), Theight, Twidth);
+  triaFigura=new TriaFigura("CHOOSE POLYHEDRON", "", (width/2)-(Theight/2), (height/2)-(Twidth/2), Theight, Twidth);
 }
 
 void setTextFields() {
@@ -73,7 +92,8 @@ void setButtons() {
   TUTORIAL=new Button("TUTORIAL", (4*marginH+logoSize)+1200, marginV+(bannerHeight/2)-50, 350, 100, "blau");
   SAVE=new Button("SAVE", (4*marginH+logoSize)+400, marginV+(bannerHeight/2)-50, 350, 100, "blau");
   PRINT=new Button("PRINT PROJECTIONS", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100, "blau");
-  addElement=new Button("ADD ELEMENT", marginH+(sidebarWidth/2)-100, 350, 200, 50, "granate");
+  addElement1=new Button("ADD ELEMENT", marginH+(sidebarWidth/2)-100, 350, 200, 50, "granate");
+  addElement2=new Button("ADD ELEMENT", marginH+(sidebarWidth/2)-100, 350, 200, 50, "granate");
   addPoint=new Button ("ADD POINT", marginH+(sidebarWidth/2)-100, 520, 200, 50, "granate");
   addLine=new Button ("ADD Line", marginH+(sidebarWidth/2)-100, (2*sidebarHeight/4+logoSize+marginV), 200, 50, "granate");
   addPlane=new Button ("ADD PLANE", marginH+(sidebarWidth/2)-100, (3*sidebarHeight/4+logoSize+marginV), 200, 50, "granate");
@@ -148,12 +168,12 @@ PIRAMIDE piramide;
 
 FIGURA[] figures;
 
-void setFigures(){
+void setFigures() {
   cubo=new CUBO("Cubo");
   octaedre=new OCTA("Octaedro");
   tetraedre=new TETRA("Tetraedro");
   piramide=new PIRAMIDE("Piramide");
-  
+
   figures=new FIGURA[numFigures];
 
   figures[0]=cubo;

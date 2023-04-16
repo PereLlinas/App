@@ -87,17 +87,34 @@ class PositionField {
     float x = Float.valueOf(PF.tpf[0].text);
     float y =  Float.valueOf(PF.tpf[1].text);
     float z =  Float.valueOf(PF.tpf[2].text);
+    if (numElements<elements.length) {
+      elements[numElements]=nombrePunto;
+      numElements++;
+    }
     if (numPunts<punts.length) {
-      punts[numPunts] = new Punt(nombrePunto, x, y, z, 10, color(255));   
+      punts[numPunts] = new Punt(nombrePunto, x, y, z, 10, color(255));
       numPunts++;
     }
   }
-  
-  void createPointButton() {
-    if (numPunts<punts.length) {
-        pointButton=new Button(PF.name.text, marginH+(sidebarWidth/2)-100, 350+(numPunts*70), 200, 50, "obscur");
-        println("creando punto papaaaaa");
-        ButtonPunts[numPunts]=pointButton;
+
+  boolean infoElementVisible=false;
+  void infoElement() {
+    Button info;
+    textSize(32);
+    info=new Button ("i", marginH+(sidebarWidth/2)+50, 360+(numElements*70), 30, 30, "clar");
+    if (infoElementVisible) {
+      pushStyle();
+      getColor("obscur");
+      strokeWeight(3);
+      stroke(colors[indexColor]);
+      fill(colors[indexColor]);
+      rect(marginH+(sidebarWidth/2)-100, 350+(numElements*70), 200, 50);
+      textFont(getThirdFont()); textMode(LEFT);
+      fill(0);
+      textSize(32);
+      text(PF.name.text, marginH+(sidebarWidth/2)-75, 355+(numElements*70), 250, 50);
+      info.display();
+      popStyle();
     }
   }
 }

@@ -43,12 +43,10 @@ void WORKSPACE1() {
   PRINT.display(); //pendent
   TUTORIAL.display(); //pendent
   HOME.display(); //fer setter per canviar es nom i sa funció d'es boto
-  addElement.display(); //pendent
-  // addRect.display(); checkboxSelector, esperar a arrayList
-  // addPoint.display(); positionField
-  //addPlane.display(); checkboxSelector, esperar a arrayList
+  addElement1.display(); //pendent
   tria1.display();
   PF.display();
+  PF.infoElement();
   jcam.endHUD();
 }
 
@@ -66,17 +64,22 @@ void WORKSPACE2() {
 
   jcam.beginHUD();
   dibuixaBanner();
-  dibuixaSideBar(); //pop-ups que se generin a una altura concreta
+  dibuixaSideBar();
   dibuixaZonaLogo();
   dibuixaProjeccions();
 
   //BOTONS
-  addElement.display(); //CREAR TRIA2 (GUI)
+  addElement2.display();
   SAVE.display(); //pendent
   PRINT.display(); //pendent
   TUTORIAL.display(); //pendent
+
+  tria2.display();
+  triaFigura.display();
   jcam.endHUD();
 }
+
+
 void FAQS() {
   jcam.beginHUD();
   background(150);
