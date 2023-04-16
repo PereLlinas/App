@@ -4,8 +4,8 @@ import de.bezier.data.sql.mapper.*;
 import java.util.LinkedList;
 
 
-enum PANTALLA {LOGIN, HOME, WORKSPACE1, WORKSPACE2, FAQS, ABOUTUS, TUTORIAL};
-PANTALLA pantalla=PANTALLA.WORKSPACE2;
+enum PANTALLA {LOGIN, HOME, WORKSPACE1, WORKSPACE2, TUTORIAL, FAQS, ABOUTUS};
+PANTALLA pantalla=PANTALLA.FAQS;
 
 //variables globales importantes
 int numFigures;

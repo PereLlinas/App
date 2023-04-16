@@ -3,8 +3,8 @@
 //creat per ses projeccions (donar-li background perquè sino és transparent))
 //https://processing.org/reference/PGraphics.html
 
-PImage Pla, Figura, Punt, Recta, Pira, Octa, Tetra, Cubo;
-PImage[] fotos=new PImage[8];
+PImage Pla, Figura, Punt, Recta, Pira, Octa, Tetra, Cubo, logo;
+PImage[] fotos=new PImage[9];
 
 TextField userText, passText;
 
@@ -35,6 +35,7 @@ void setImages() {
   Tetra=loadImage("Tetra.png");
   Pira=loadImage("Pira.png");
   Cubo=loadImage("Cubo.png");
+  logo=loadImage("logoapp.png");
 
   fotos[0]=Pla;
   fotos[1]=Recta;
@@ -44,6 +45,7 @@ void setImages() {
   fotos[5]=Pira;
   fotos[6]=Tetra;
   fotos[7]=Cubo;
+  fotos[8]=logo;
 }
 
 void setConfirm() {
@@ -99,11 +101,11 @@ void setButtons() {
   ABOUTUS=new Button("ABOUT US", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100, "blau");
   TUTORIAL=new Button("TUTORIAL", (4*marginH+logoSize)+1200, marginV+(bannerHeight/2)-50, 350, 100, "blau");
   SAVE=new Button("SAVE", (4*marginH+logoSize)+400, marginV+(bannerHeight/2)-50, 350, 100, "blau");
-  PRINT=new Button("PRINT PROJECTIONS", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100, "blau");
+  PRINT=new Button("VIEW PROJECTIONS", (4*marginH+logoSize)+800, marginV+(bannerHeight/2)-50, 350, 100, "blau");
   addElement1=new Button("ADD ELEMENT", marginH+(sidebarWidth/2)-100, 350, 200, 50, "granate");
   addElement2=new Button("ADD ELEMENT", marginH+(sidebarWidth/2)-100, 350, 200, 50, "granate");
   addPoint=new Button ("ADD POINT", marginH+(sidebarWidth/2)-100, 520, 200, 50, "granate");
-  addLine=new Button ("ADD Line", marginH+(sidebarWidth/2)-100, (2*sidebarHeight/4+logoSize+marginV), 200, 50, "granate");
+  addLine=new Button ("ADD LINE", marginH+(sidebarWidth/2)-100, (2*sidebarHeight/4+logoSize+marginV), 200, 50, "granate");
   addPlane=new Button ("ADD PLANE", marginH+(sidebarWidth/2)-100, (3*sidebarHeight/4+logoSize+marginV), 200, 50, "granate");
   addFigure=new Button ("ADD FIGURE", marginH+(sidebarWidth/2)-100, (sidebarHeight+logoSize+marginV), 200, 50, "granate");
 }
