@@ -45,7 +45,7 @@ class Punt {
 
 
   String getInfo() {
-    return this.nom+":("+(-x)+", "+(-y)+", "+z+")";
+    return this.nom+":("+x+", "+y+", "+z+")";
   }
 
   void dibuixaInfo(float x, float y, float w, float h) {

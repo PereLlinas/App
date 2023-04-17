@@ -1,7 +1,10 @@
-//PGraphics per ses figures (fer-ne dos: PH i PV amb ses coordenades reals i
-//després ajustar cadascun a la meitat d'es tamany d'es requadre que tenc
-//creat per ses projeccions (donar-li background perquè sino és transparent))
-//https://processing.org/reference/PGraphics.html
+CheckBoxSelector cbsr;
+String[] info=new String[20];
+
+
+void setCBSR() {
+  cbsr= new CheckBoxSelector(info, width/3, height/4, 50, 50);
+}
 
 PImage Pla, Figura, Punt, Recta, Pira, Octa, Tetra, Cubo, logo;
 PImage[] fotos=new PImage[9];
@@ -71,11 +74,8 @@ void setPunts() {
   punts = new Punt[10];
 }
 
-void savePunt(float x, float y, float z) {
-  if (numPunts<punts.length) {
-    punts[numPunts] = new Punt("A", x, y, z, 50, color(255));
-    numPunts++;
-  }
+void setPira() {
+  piramide=new PIRAMIDE[20];
 }
 
 
@@ -184,20 +184,20 @@ void getColor(String c) {
 }
 
 /*//APARTADO Figures
-CUBO cubo;
-OCTA octaedre;
-TETRA tetraedre;
-PIRAMIDE piramide;
-
-
-void setFigures() {
-  cubo=new CUBO("Cubo");
-  octaedre=new OCTA("Octaedro");
-  tetraedre=new TETRA("Tetraedro");
-  piramide=new PIRAMIDE("Piramide");
-
-  figures=new FIGURA[numFigures];
-}*/
+ CUBO cubo;
+ OCTA octaedre;
+ TETRA tetraedre;
+ PIRAMIDE piramide;
+ 
+ 
+ void setFigures() {
+ cubo=new CUBO("Cubo");
+ octaedre=new OCTA("Octaedro");
+ tetraedre=new TETRA("Tetraedro");
+ piramide=new PIRAMIDE("Piramide");
+ 
+ figures=new FIGURA[numFigures];
+ }*/
 
 
 void setGUI ( ) {
@@ -208,8 +208,8 @@ void setGUI ( ) {
   setPositionField();
   setConfirm();
   setPunts();
-  //setFigures();
+  setPira();
   setImages();
   setSelectPunts();
-  /*setCheckboxes();*/
+  setCBSR();
 }

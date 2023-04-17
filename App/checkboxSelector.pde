@@ -1,4 +1,3 @@
-//afegir setter per canviar número màxim de seleccions
 class CheckBoxSelector {
 
   // Propietats (posició i dimensions)
@@ -10,16 +9,20 @@ class CheckBoxSelector {
   CheckBoxText[] cbs;
   int numMaxChecked = 2;
 
+  boolean v;
+
   // Constructor
   CheckBoxSelector(String[] info, float x, float y, float w, float h) {
-    this.x = x; 
+    this.x = x;
     this.y = y;
-    this.w = w; 
+    this.w = w;
     this.h = h;
 
+    this.v = false;
+
     this.info = info;
-    this.cbs = new CheckBoxText[ info.length ];
-    for (int i=0; i<info.length; i++) {
+    this.cbs = new CheckBoxText[ 20 ];
+    for (int i=0; i<numPunts; i++) {
       cbs[i] = new CheckBoxText(info[i], x, y + (h+margeV)*i, w, h);
     }
   }
@@ -27,8 +30,8 @@ class CheckBoxSelector {
   // Actualitzam la informació del checkboxlist
   void setInfo(String[] info) {
     this.info = info;
-    this.cbs = new CheckBoxText[ info.length ];
-    for (int i=0; i<info.length; i++) {
+    this.cbs = new CheckBoxText[ numPunts ];
+    for (int i=0; i<numPunts; i++) {
       cbs[i] = new CheckBoxText(info[i], x, y + h*i, w, h);
     }
   }
@@ -40,8 +43,10 @@ class CheckBoxSelector {
 
   // Dibuixam el checkboxlist
   void display() {
-    for (CheckBoxText cb : cbs) {
-      cb.display();
+    if (this.v==true) {
+      for (CheckBoxText cb : cbs) {
+        cb.display();
+      }
     }
   }
 

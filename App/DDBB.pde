@@ -39,6 +39,14 @@ void insertPoint(String nomPunto, String x, String y, String z, String figura_id
   msql.query(q);
 }
 
+void insertFigura(String nomFigura, String level, String tipo){
+  String q="INSERT INTO `figura` (`nomFigura`, `nivel_idLevel`, `tipo_idtipo`) VALUES ('"+nomFigura+"', '"+level+"', '"+tipo+"')";
+  println(q);
+  msql.query(q);
+}
+
+//void insert
+
 /*void selectPoint() {
   String q ="SELECT * FROM `punto` WHERE 1"
   println(q);

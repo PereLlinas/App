@@ -16,12 +16,12 @@ class OCTA extends FIGURA {
     this.v=false;
 
     this.nomFigura=nomFigura;
-    a=new Punt("", -100, 0, 100, 5, color(0));
-    b=new Punt(nomFigura, 100, 0, 100, 5, color(0));
-    c=new Punt("", 100, 0, -100, 5, color(0));
-    d=new Punt("", -100, 0, -100, 5, color(0));
-    e=new Punt("", 0, -141.213562, 0, 5, color(0));
-    f=new Punt("", 0, 141.213562, 0, 5, color(0));
+    a=new Punt("", 5*-100, 0, 5*100, 5, color(0));
+    b=new Punt(nomFigura, 5*100, 0,5* 100, 5, color(0));
+    c=new Punt("", 5*100, 0, 5*-100, 5, color(0));
+    d=new Punt("", 5*-100, 0, 5*-100, 5, color(0));
+    e=new Punt("", 0, 5*-141.213562, 0, 5, color(0));
+    f=new Punt("", 0, 5*141.213562, 0, 5, color(0));
 
     base=new Poligon (a, b, c, d);
     c1=new Poligon(a, b, e);
@@ -50,12 +50,7 @@ class OCTA extends FIGURA {
 
   void display() {
     if (this.v==true) {
-      translate(0, 0, 0);
-      translate(figuresPF.valor[0], figuresPF.valor[1], figuresPF.valor[2]);
-      rotateX(figuresPF.valor[3]);
-      rotateY(figuresPF.valor[4]);
-      rotateZ(figuresPF.valor[5]);
-      scale(figuresPF.valor[6]);
+      translate(-150, 0, 300);
       octaedre.display();
     }
   }

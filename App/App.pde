@@ -5,13 +5,24 @@ import java.util.LinkedList;
 
 
 enum PANTALLA {LOGIN, HOME, WORKSPACE1, WORKSPACE2, TUTORIAL, FAQS, ABOUTUS};
-PANTALLA pantalla=PANTALLA.WORKSPACE2;
+  PANTALLA pantalla=PANTALLA.WORKSPACE1;
 
 //variables globales importantes
 int numFigures=0;
 FIGURA[] figures=new FIGURA[20];
+
 int numPira=0;
 PIRAMIDE[] piramide=new PIRAMIDE[20];
+
+int numOcta=0;
+OCTA[] octa=new OCTA[20];
+
+int numTetra=0;
+TETRA[] tetra=new TETRA[20];
+
+int numCubo=0;
+CUBO[] cubo=new CUBO[20];
+
 int numPunts=0;
 int numElements;
 String[] elements=new String[20];

@@ -14,8 +14,8 @@ class CheckBoxList {
     this.w = w; this.h = h;
     
     this.info = info;
-    this.cbs = new CheckBoxText[ info.length ];
-    for(int i=0; i<info.length; i++){
+    this.cbs = new CheckBoxText[ numPunts ];
+    for(int i=0; i<numPunts; i++){
       cbs[i] = new CheckBoxText(info[i], x, y + (h+margeV)*i, w, h);
       cbs[i].setImage(info[i].toLowerCase()+".png");
     }
@@ -24,7 +24,7 @@ class CheckBoxList {
   // Actualitzam la informació del checkboxlist
   void setInfo(String[] info){
     this.info = info;
-    this.cbs = new CheckBoxText[ info.length ];
+    this.cbs = new CheckBoxText[ numPunts ];
     for(int i=0; i<info.length; i++){
       cbs[i] = new CheckBoxText(info[i], x, y + h*i, w, h);
       cbs[i].setImage(info[i].toLowerCase()+".png");

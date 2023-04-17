@@ -17,14 +17,14 @@ class CUBO extends FIGURA {
     this.v=false;
 
     this.nomFigura=nomFigura;
-    this.a=new Punt("", -100, 100, 100, 5, color(0));
-    this.b=new Punt(nomFigura, 100, 100, 100, 5, color(0));
-    this.c=new Punt("", 100, 100, -100, 5, color(0));
-    this.d=new Punt("", -100, 100, -100, 5, color(0));
-    this.e=new Punt("", -100, -100, +100, 5, color(0));
-    this.f=new Punt("", 100, -100, 100, 5, color(0));
-    this.g=new Punt("", 100, -100, -100, 5, color(0));
-    this.h=new Punt("", -100, -100, -100, 5, color(0));
+    this.a=new Punt("", 5*-100, 5*100, 5*100, 5, color(0));
+    this.b=new Punt(nomFigura, 5*100, 5*100, 5*100, 5, color(0));
+    this.c=new Punt("", 5*100, 5*100, 5*-100, 5, color(0));
+    this.d=new Punt("", 5*-100, 5*100, 5*-100, 5, color(0));
+    this.e=new Punt("", 5*-100, 5*-100, 5*+100, 5, color(0));
+    this.f=new Punt("", 5*100, 5*-100, 5*100, 5, color(0));
+    this.g=new Punt("", 5*100, 5*-100, 5*-100, 5, color(0));
+    this.h=new Punt("", 5*-100, 5*-100, 5*-100, 5, color(0));
 
     base=new Poligon (a, b, c, d);
     sostre=new Poligon(e, f, g, h);
@@ -47,12 +47,7 @@ class CUBO extends FIGURA {
 
   void display() {
     if (this.v==true) {
-      translate(0, 0, 0);
-      translate(figuresPF.valor[0], figuresPF.valor[1], figuresPF.valor[2]);
-      rotateX(figuresPF.valor[3]);
-      rotateY(figuresPF.valor[4]);
-      rotateZ(figuresPF.valor[5]);
-      scale(figuresPF.valor[6]);
+      translate(-150, 0, 300);
       cub.display();
     }
   }

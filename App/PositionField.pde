@@ -99,6 +99,8 @@ class PositionField {
     }
     if (numPunts<punts.length) {
       punts[numPunts] = new Punt(nombrePunto, x, y, z, 10, color(255));
+      info[numPunts]=punts[numPunts].getInfo();
+      printArray(info);
       numPunts++;
     }
     for (int i=0; i<numPunts; i++) {
@@ -210,10 +212,52 @@ class PositionFieldFigura {
       elements[numElements]=nombrePunto;
       numElements++;
     }
-    if (numFigures<figures.length) {
+    if (numPira<piramide.length) {
       piramide[numPira] = new PIRAMIDE(nombrePunto);
-      piramide[numPira].setTransformacions(figuresPF.valor);
+      piramide[numPira].v=true;
       numPira++;
+    }
+  }
+  
+  void addTetra() {
+    //aquí se fa s'insert de ses dades
+    String nombrePunto = "";
+    if (numElements<elements.length) {
+      elements[numElements]=nombrePunto;
+      numElements++;
+    }
+    if (numTetra<tetra.length) {
+      tetra[numTetra] = new TETRA(nombrePunto);
+      tetra[numTetra].v=true;
+      numTetra++;
+    }
+  }
+  
+  void addOcta() {
+    //aquí se fa s'insert de ses dades
+    String nombrePunto = "";
+    if (numElements<elements.length) {
+      elements[numElements]=nombrePunto;
+      numElements++;
+    }
+    if (numOcta<octa.length) {
+      octa[numOcta] = new OCTA(nombrePunto);
+      octa[numOcta].v=true;
+      numOcta++;
+    }
+  }
+  
+  void addCubo() {
+    //aquí se fa s'insert de ses dades
+    String nombrePunto = "";
+    if (numElements<elements.length) {
+      elements[numElements]=nombrePunto;
+      numElements++;
+    }
+    if (numCubo<cubo.length) {
+      cubo[numCubo] = new CUBO(nombrePunto);
+      cubo[numCubo].v=true;
+      numCubo++;
     }
   }
 }

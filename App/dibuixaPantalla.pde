@@ -52,6 +52,7 @@ void WORKSPACE1() {
 
   tria1.display();
   PF.display();
+  cbsr.display();
   jcam.endHUD();
 }
 
@@ -66,19 +67,31 @@ void WORKSPACE2() {
   PV.display();
   PP.display();
   LT.display();
-  
+
   for (int i=0; i<numPunts; i++) {
     punts[i].display();
   }
-  
-  for (int i=0; i<numPira-1; i++) {
+
+  for (int i=0; i<numPira; i++) {
     piramide[i].display();
+  }
+
+  for (int i=0; i<numOcta; i++) {
+    octa[i].display();
+  }
+  
+  for (int i=0; i<numCubo; i++) {
+    cubo[i].display();
+  }
+  
+  for (int i=0; i<numTetra; i++) {
+    tetra[i].display();
   }
 
   //Figures
   /*cubo.display();
-  tetraedre.display();
-  octaedre.display();*/
+   tetraedre.display();
+   octaedre.display();*/
 
   jcam.beginHUD();
   // Dibuixa el select
