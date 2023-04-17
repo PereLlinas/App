@@ -17,6 +17,7 @@ TriaFigura triaFigura;
 Confirm confirm;
 
 PositionField PF;
+PositionFieldFigura figuresPF;
 
 Button loginButton, createButton, FAQS, TUTORIAL, ABOUTUS,
   HOME, PRINT, SAVE, addElement1, addElement2, addPoint, addLine, addPlane, addFigure,
@@ -87,7 +88,8 @@ color fonsPantalla = color(255);
 
 void setPositionField() {
   int w=300, h=200;
-  PF=new PositionField((width/2)-(w/2), (height/2)-(h/2), w, h);
+  PF=new PositionField("ADD POINT", (width/2)-(w/2), (height/2)-(h/2), w, h);
+  figuresPF=new PositionFieldFigura("ADD POINT", (width/2)-500, height/2-h/2);
 }
 
 

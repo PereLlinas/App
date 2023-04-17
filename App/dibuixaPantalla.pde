@@ -70,7 +70,12 @@ void WORKSPACE2() {
 
   jcam.beginHUD();
   // Dibuixa el select
-  selectPunts.display();
+  if (numPunts!=0) {
+    if (n!=-1) {
+      punts[n].dibuixaInfo(1520 , 900, 350, 150);
+    }
+    selectPunts.display();
+  }
   dibuixaBanner();
   dibuixaZonaLogo();
 
@@ -83,6 +88,7 @@ void WORKSPACE2() {
   tria2.display();
   triaFigura.display();
   PF.display();
+  figuresPF.display();
   jcam.endHUD();
 }
 

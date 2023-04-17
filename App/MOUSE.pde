@@ -128,8 +128,7 @@ void mousePressed() {
         n = selectPunts.clickedOption();
       }
       selectPunts.toggle();        // Plegar o desplegar
-    }     
-    else {
+    } else {
       selectPunts.reset();
       n = -1;
     }
@@ -166,7 +165,6 @@ void mousePressed() {
     else if (PF.visible && PF.add.mouseOverButton()) {
       PF.addPoint();
       PF.addPointDataBase();
-      //PF.createPointButton();
       PF.visible=false;
       enableCamera=true;
       jcam.setActive(enableCamera);
@@ -190,18 +188,45 @@ void mousePressed() {
       //INSERT FIGURA
     }
 
+    //CLICK SOBRE TANCAR TRIA2
+    else if (tria2.close.mouseOverButton() && tria2.v) {
+      tria2.v=false;
+      enableCamera=true;
+      jcam.setActive(enableCamera);
+    }
+
     //CLICK SOBRE BOTÓ ADD PLANE
     else if (tria2.addFigure2.mouseOverButton()) {
       enableCamera=false;
       jcam.setActive(enableCamera);
       triaFigura.v=true;
+      tria2.v=false;
     }
 
-    //CLICK SOBRE TANCAR TRIA2
-    else if (tria2.close.mouseOverButton()) {
-      tria2.v=false;
+    //Botons triaFigura
+
+    //CLICK SOBRE TANCAR TRIAFIGURA
+    else if (triaFigura.close.mouseOverButton() && triaFigura.v==true) {
+      triaFigura.v=false;
       enableCamera=true;
       jcam.setActive(enableCamera);
+      
+    } else if (triaFigura.v==true && (triaFigura.addOcta.mouseOverButton() || triaFigura.addTetra.mouseOverButton()
+      || triaFigura.addPira.mouseOverButton() || triaFigura.addOcta.mouseOverButton())) {
+
+      figuresPF.visible=true;
+      
+    }
+    // Si pitjam sobre el select
+    else if (selectPunts.mouseOverSelect() && selectPunts.enabled) {
+      if (!selectPunts.collapsed) {
+        selectPunts.update();      // Actualitzar valor
+        n = selectPunts.clickedOption();
+      }
+      selectPunts.toggle();        // Plegar o desplegar
+    } else {
+      selectPunts.reset();
+      n = -1;
     }
   }
 }
