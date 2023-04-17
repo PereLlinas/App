@@ -1,4 +1,4 @@
-class CUBO extends FIGURA{
+class CUBO extends FIGURA {
 
   //atributs
   Poliedre cub;
@@ -6,12 +6,16 @@ class CUBO extends FIGURA{
   Poligon base, c1, c2, c3, c4, sostre;
 
   String nomFigura;
-  
+
+  boolean v;
+
   //constructor
 
   CUBO(String nomFigura) {
     super(nomFigura, Tipus.CUB);
-    
+
+    this.v=false;
+
     this.nomFigura=nomFigura;
     this.a=new Punt("", -100, 100, 100, 5, color(0));
     this.b=new Punt(nomFigura, 100, 100, 100, 5, color(0));
@@ -37,12 +41,19 @@ class CUBO extends FIGURA{
     cub.setCaraAt(3, c2);
     cub.setCaraAt(4, c3);
     cub.setCaraAt(5, c4);
-    
+
     numFigures++;
   }
 
   void display() {
-    translate(-(width/2), -(height/2), 0);
-    cub.display();
+    if (this.v==true) {
+      translate(0, 0, 0);
+      translate(figuresPF.valor[0], figuresPF.valor[1], figuresPF.valor[2]);
+      rotateX(figuresPF.valor[3]);
+      rotateY(figuresPF.valor[4]);
+      rotateZ(figuresPF.valor[5]);
+      scale(figuresPF.valor[6]);
+      cub.display();
+    }
   }
 }

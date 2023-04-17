@@ -11,7 +11,7 @@ void keyPressed() {
       PF.name.keyPressed(key, keyCode);
     }
     if (figuresPF.visible) {
-      PF.keyPressed(key, (int)keyCode);
+      figuresPF.keyPressed(key, (int)keyCode);
     }
   }
 }

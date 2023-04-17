@@ -6,11 +6,14 @@ class OCTA extends FIGURA {
   Poligon base, c1, c2, c3, c4, c5, c6, c7, c8;
 
   String nomFigura;
+  boolean v;
 
   //constructor
 
   OCTA(String nomFigura) {
     super(nomFigura, Tipus.OCTAEDRE);
+
+    this.v=false;
 
     this.nomFigura=nomFigura;
     a=new Punt("", -100, 0, 100, 5, color(0));
@@ -46,7 +49,14 @@ class OCTA extends FIGURA {
   }
 
   void display() {
-    translate(-(width/2), -(height/2), 0);
-    octaedre.display();
+    if (this.v==true) {
+      translate(0, 0, 0);
+      translate(figuresPF.valor[0], figuresPF.valor[1], figuresPF.valor[2]);
+      rotateX(figuresPF.valor[3]);
+      rotateY(figuresPF.valor[4]);
+      rotateZ(figuresPF.valor[5]);
+      scale(figuresPF.valor[6]);
+      octaedre.display();
+    }
   }
 }

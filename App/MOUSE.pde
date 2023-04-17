@@ -1,7 +1,5 @@
 void mousePressed() {
 
-  // Elements comuns a totes les pantalles
-  // sidebar
   //println("MOUSE PRESSED");
 
   // ELEMENTS COMUNs A TOTES LES PANTALLES
@@ -147,43 +145,42 @@ void mousePressed() {
     }
 
     //  CLICK SOBRE ADD POINT DEL TRIA2
-    else if (tria2.addPoint2.mouseOverButton()) {
+    else if (tria2.addPoint2.mouseOverButton() && tria2.v) {
       enableCamera=false;
       jcam.setActive(enableCamera);
       tria2.v=false;
       PF.visible=true;
     }
+    
+    // CLICK SOBRE CAMPS DEL PF
+    else if (PF.visible) {
+      PF.isPressed();
+    }
 
     // CLICK SOBRE BOTÓ DE TANCAR DEL PF
-    else if (PF.visible && PF.closePF.mouseOverButton()) {
+    else if (PF.visible && PF.closePF.mouseOverButton() && tria2.v==false) {
       PF.visible=false;
       enableCamera=true;
       jcam.setActive(enableCamera);
     }
 
     // CLICK SOBRE EL BOTÓ ADD DEL PF
-    else if (PF.visible && PF.add.mouseOverButton()) {
+    else if (PF.visible && PF.add.mouseOverButton() && tria2.v==false) {
       PF.addPoint();
       PF.addPointDataBase();
       PF.visible=false;
       enableCamera=true;
       jcam.setActive(enableCamera);
-      PF.infoElementVisible=true;
-    }
-
-    // CLICK SOBRE CAMPS DEL PF
-    else if (PF.visible) {
-      PF.isPressed();
     }
 
     //CLICK SOBRE BOTÓ ADD RECT
-    else if (tria2.addRect2.mouseOverButton()) {
+    else if (tria2.addRect2.mouseOverButton() && tria2.v) {
       //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
       //INSERT FIGURA
     }
 
     //CLICK SOBRE BOTÓ ADD PLANE
-    else if (tria2.addPlane2.mouseOverButton()) {
+    else if (tria2.addPlane2.mouseOverButton() && tria2.v) {
       //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
       //INSERT FIGURA
     }
@@ -205,18 +202,30 @@ void mousePressed() {
 
     //Botons triaFigura
 
+    else if (triaFigura.addPira.mouseOverButton() && triaFigura.v==true) {
+      figuresPF.visible=true;
+      triaFigura.v=false;
+    }
+    
+    else if(figuresPF.add.mouseOverButton()){     
+      figuresPF.visible=false;
+      enableCamera=true;
+      jcam.setActive(enableCamera);
+      figuresPF.addPira();
+    } 
+    
+    // CLICK SOBRE CAMPS DEL PF
+    else if (figuresPF.visible) {
+      figuresPF.isPressed();
+    }
+
     //CLICK SOBRE TANCAR TRIAFIGURA
     else if (triaFigura.close.mouseOverButton() && triaFigura.v==true) {
       triaFigura.v=false;
       enableCamera=true;
       jcam.setActive(enableCamera);
-      
-    } else if (triaFigura.v==true && (triaFigura.addOcta.mouseOverButton() || triaFigura.addTetra.mouseOverButton()
-      || triaFigura.addPira.mouseOverButton() || triaFigura.addOcta.mouseOverButton())) {
-
-      figuresPF.visible=true;
-      
     }
+
     // Si pitjam sobre el select
     else if (selectPunts.mouseOverSelect() && selectPunts.enabled) {
       if (!selectPunts.collapsed) {

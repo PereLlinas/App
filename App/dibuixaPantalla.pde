@@ -45,7 +45,7 @@ void WORKSPACE1() {
   // Dibuixa el select
   if (numPunts!=0) {
     if (n!=-1) {
-      punts[n].dibuixaInfo(1520 , 900, 350, 150);
+      punts[n].dibuixaInfo(1520, 900, 350, 150);
     }
     selectPunts.display();
   }
@@ -66,13 +66,25 @@ void WORKSPACE2() {
   PV.display();
   PP.display();
   LT.display();
+  
+  for (int i=0; i<numPunts; i++) {
+    punts[i].display();
+  }
+  
+  for (int i=0; i<numPira-1; i++) {
+    piramide[i].display();
+  }
 
+  //Figures
+  /*cubo.display();
+  tetraedre.display();
+  octaedre.display();*/
 
   jcam.beginHUD();
   // Dibuixa el select
   if (numPunts!=0) {
     if (n!=-1) {
-      punts[n].dibuixaInfo(1520 , 900, 350, 150);
+      punts[n].dibuixaInfo(1520, 900, 350, 150);
     }
     selectPunts.display();
   }

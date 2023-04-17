@@ -6,11 +6,17 @@ class PIRAMIDE extends FIGURA {
   Poligon c1, c2, c3, c4, base;
 
   String nomFigura;
+  
+  float[] trans=new float[7];
+  
+  boolean v;
 
   //constructor
 
   PIRAMIDE(String nomFigura) {
     super(nomFigura, Tipus.PIRAMIDE);
+
+    this.v=false;
 
     this.nomFigura=nomFigura;
     a=new Punt("", 0, 0, 0, 5, color(0));
@@ -37,7 +43,18 @@ class PIRAMIDE extends FIGURA {
   }
 
   void display() {
-    translate(-(width/2), -(height/2), 0);
+    translate(0, 0, 0);
+    translate(-trans[0], -trans[1], trans[2]);
+    rotateX(trans[3]);
+    rotateY(trans[4]);
+    rotateZ(trans[5]);
+    scale(trans[6]);
     pira.display();
+  }
+
+  void setTransformacions(float[] a) {
+    for (int i=0; i<a.length; i++) {
+      trans[i]=a[i];
+    }
   }
 }

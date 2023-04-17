@@ -49,7 +49,7 @@ class TextPositionField {
 
     fill(fgColor);
     textSize(textSize);
-    textAlign(LEFT);
+    textAlign(CENTER);
     if (selected != true) {
       text(text, x+w/2, y + textSize + 5);
     } else {
@@ -58,7 +58,8 @@ class TextPositionField {
 
     fill(0);
     textAlign(LEFT);
-    text(labelText, x + w/2, y - textSize/2);
+    textSize(24);
+    text(labelText, x, y - textSize/2);
 
     popStyle();
   }

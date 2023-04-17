@@ -105,28 +105,6 @@ class PositionField {
       infoSelect[i] = punts[i].getNom();
     }
   }
-
-  boolean infoElementVisible=false;
-  void infoElement() {
-    Button info;
-    textSize(32);
-    info=new Button ("i", marginH+(sidebarWidth/2)+50, 360+(numElements*70), 30, 30, "clar");
-    if (infoElementVisible) {
-      pushStyle();
-      getColor("obscur");
-      strokeWeight(3);
-      stroke(colors[indexColor]);
-      fill(colors[indexColor]);
-      rect(marginH+(sidebarWidth/2)-100, 350+(numElements*70), 200, 50);
-      textFont(getThirdFont());
-      textMode(LEFT);
-      fill(0);
-      textSize(32);
-      text(PF.name.text, marginH+(sidebarWidth/2)-75, 355+(numElements*70), 250, 50);
-      info.display();
-      popStyle();
-    }
-  }
 }
 
 
@@ -141,26 +119,38 @@ class PositionFieldFigura {
   Button closePF, add, pointButton;
   Punt punt;
   String n;
+  float[] valor = new float[7];
 
   // Constructor
-  PositionFieldFigura(String n, int x, int y) {
+  PositionFieldFigura(String n, int x, int y, int w, int h) {
     this.n=n;
     this.x = x;
     this.y = y;
+    this.w = w;
+    this.h = h;
+
 
     float mg=37.5;
     float size=100;
     tpf = new TextPositionField[7];
-    tpf[0] = new TextPositionField("X", x+mg, y+70, size, size);
-    tpf[1] = new TextPositionField("Y", x + size+2*mg, y+70, size, size);
-    tpf[2] = new TextPositionField("Z", x + 2*size+3*mg, y+70, size, size);
-    tpf[3] = new TextPositionField("Rotate X", x + 3*size+4*mg, y+70, size, size);
-    tpf[4] = new TextPositionField("Rotate Y", x + 4*size+5*mg, y+70, size, size);
-    tpf[5] = new TextPositionField("Rotate Z", x + 5*size+6*mg, y+70, size, size);
-    tpf[6] = new TextPositionField("Escale", x + 6*size+7*mg, y+70, size, size);
+    tpf[0] = new TextPositionField("Translate X", x+mg, y-45, size, size);
+    tpf[1] = new TextPositionField("Translate Y", x + size+2*mg, y-45, size, size);
+    tpf[2] = new TextPositionField("Translate Z", x + 2*size+3*mg, y-45, size, size);
+    tpf[3] = new TextPositionField("Rotate X", x + 3*size+4*mg, y-45, size, size);
+    tpf[4] = new TextPositionField("Rotate Y", x + 4*size+5*mg, y-45, size, size);
+    tpf[5] = new TextPositionField("Rotate Z", x + 5*size+6*mg, y-45, size, size);
+    tpf[6] = new TextPositionField("Escale", x + 6*size+7*mg, y-45, size, size);
 
-    this.closePF=new Button("X", 1130-5, 315-15, 30, 30, "vermell");
-    this.add=new Button("ADD FIGURE", 1100-75, 710, 105, 55, "granate");
+    this.valor[0] = Float.parseFloat(tpf[0].text); //translate x
+    this.valor[1] = Float.parseFloat(tpf[1].text); //translate y
+    this.valor[2] = Float.parseFloat(tpf[2].text); //translate z
+    this.valor[3] = Float.parseFloat(tpf[3].text); //rotate x
+    this.valor[4] = Float.parseFloat(tpf[4].text); //rotate y
+    this.valor[5] = Float.parseFloat(tpf[5].text); //rotate z
+    this.valor[6] = Float.parseFloat(tpf[6].text); //escale
+
+    this.closePF=new Button("X", 1415, 255, 30, 30, "vermell");
+    this.add=new Button("ADD POLYHEDRON", 1265, 570, 180, 55, "granate");
   }
 
   // Dibuixa el Camp de Text
@@ -170,11 +160,11 @@ class PositionFieldFigura {
       fill(166, 130, 86);
       strokeWeight(10);
       stroke(166, 130, 86, 450);
-      rect((width/2)-200, (height/2)-250, 400, 490);
+      rect(this.x, this.y-200, 1000, 400);
       textFont(getFontAt(0));
-      textSize(34);
+      textSize(40);
       fill(0);
-      text(this.n, (width/2)-(300/2), 365);
+      text(this.n, this.x+30, this.y-150);
       for (int i=0; i<tpf.length; i++) {
         tpf[i].display();
       }
@@ -202,14 +192,6 @@ class PositionFieldFigura {
     }
   }
 
-  float[] getPosition() {
-    float[] position = new float[3];
-    position[0] = Float.parseFloat(tpf[0].text);
-    position[1] = Float.parseFloat(tpf[1].text);
-    position[2] = Float.parseFloat(tpf[2].text);
-    return position;
-  }
-
 
   void addPointDataBase() {
     //aquí se fa s'insert de ses dades
@@ -221,44 +203,17 @@ class PositionFieldFigura {
     insertPoint(nombrePunto, x, y, z, idFigura);
   }
 
-  void addPoint() {
+  void addPira() {
     //aquí se fa s'insert de ses dades
-    String nombrePunto = PF.name.text;
-    float x = Float.valueOf(PF.tpf[0].text);
-    float y =  Float.valueOf(PF.tpf[1].text);
-    float z =  Float.valueOf(PF.tpf[2].text);
+    String nombrePunto = "";
     if (numElements<elements.length) {
       elements[numElements]=nombrePunto;
       numElements++;
     }
-    if (numPunts<punts.length) {
-      punts[numPunts] = new Punt(nombrePunto, x, y, z, 10, color(255));
-      numPunts++;
-    }
-    for (int i=0; i<numPunts; i++) {
-      infoSelect[i] = punts[i].getNom();
-    }
-  }
-
-  boolean infoElementVisible=false;
-  void infoElement() {
-    Button info;
-    textSize(32);
-    info=new Button ("i", marginH+(sidebarWidth/2)+50, 360+(numElements*70), 30, 30, "clar");
-    if (infoElementVisible) {
-      pushStyle();
-      getColor("obscur");
-      strokeWeight(3);
-      stroke(colors[indexColor]);
-      fill(colors[indexColor]);
-      rect(marginH+(sidebarWidth/2)-100, 350+(numElements*70), 200, 50);
-      textFont(getThirdFont());
-      textMode(LEFT);
-      fill(0);
-      textSize(32);
-      text(PF.name.text, marginH+(sidebarWidth/2)-75, 355+(numElements*70), 250, 50);
-      info.display();
-      popStyle();
+    if (numFigures<figures.length) {
+      piramide[numPira] = new PIRAMIDE(nombrePunto);
+      piramide[numPira].setTransformacions(figuresPF.valor);
+      numPira++;
     }
   }
 }

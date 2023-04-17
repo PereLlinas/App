@@ -89,7 +89,7 @@ color fonsPantalla = color(255);
 void setPositionField() {
   int w=300, h=200;
   PF=new PositionField("ADD POINT", (width/2)-(w/2), (height/2)-(h/2), w, h);
-  figuresPF=new PositionFieldFigura("ADD POINT", (width/2)-500, height/2-h/2);
+  figuresPF=new PositionFieldFigura("ADD POLYHEDRON", (width/2)-500, height/2-h/2, 100, 100);
 }
 
 
@@ -183,13 +183,12 @@ void getColor(String c) {
   }
 }
 
-//APARTADO Figures
+/*//APARTADO Figures
 CUBO cubo;
 OCTA octaedre;
 TETRA tetraedre;
 PIRAMIDE piramide;
 
-FIGURA[] figures;
 
 void setFigures() {
   cubo=new CUBO("Cubo");
@@ -198,12 +197,7 @@ void setFigures() {
   piramide=new PIRAMIDE("Piramide");
 
   figures=new FIGURA[numFigures];
-
-  figures[0]=cubo;
-  figures[1]=octaedre;
-  figures[2]=tetraedre;
-  figures[3]=piramide;
-}
+}*/
 
 
 void setGUI ( ) {
@@ -214,7 +208,7 @@ void setGUI ( ) {
   setPositionField();
   setConfirm();
   setPunts();
-  setFigures();
+  //setFigures();
   setImages();
   setSelectPunts();
   /*setCheckboxes();*/

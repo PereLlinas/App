@@ -8,7 +8,10 @@ enum PANTALLA {LOGIN, HOME, WORKSPACE1, WORKSPACE2, TUTORIAL, FAQS, ABOUTUS};
 PANTALLA pantalla=PANTALLA.WORKSPACE2;
 
 //variables globales importantes
-int numFigures;
+int numFigures=0;
+FIGURA[] figures=new FIGURA[20];
+int numPira=0;
+PIRAMIDE[] piramide=new PIRAMIDE[20];
 int numPunts=0;
 int numElements;
 String[] elements=new String[20];

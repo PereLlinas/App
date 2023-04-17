@@ -7,10 +7,14 @@ class TETRA extends FIGURA {
 
   String nomFigura;
 
+  boolean v;
+
   //constructor
 
   TETRA(String nomFigura) {
     super(nomFigura, Tipus.TETRAEDRE);
+
+    this.v=false;
 
     this.nomFigura=nomFigura;
     a=new Punt(nomFigura, 0, 100, 100, 5, color(0));
@@ -35,7 +39,14 @@ class TETRA extends FIGURA {
   }
 
   void display() {
-    translate(-(width/2), -(height/2), 0);
-    tetra.display();
+    if (this.v==true) {
+      translate(0, 0, 0);
+      translate(figuresPF.valor[0], figuresPF.valor[1], figuresPF.valor[2]);
+      rotateX(figuresPF.valor[3]);
+      rotateY(figuresPF.valor[4]);
+      rotateZ(figuresPF.valor[5]);
+      scale(figuresPF.valor[6]);
+      tetra.display();
+    }
   }
 }
