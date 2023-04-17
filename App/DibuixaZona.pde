@@ -162,3 +162,14 @@ void TUTORIALdisplay() {
   textFont(getFontAt(0));
   text("TUTORIAL", 335, 250);
 }
+
+void dibuixaPlans(){
+  
+  ph1.display();
+  pv1.display();
+  pp1.display();
+  PH.display();
+  PV.display();
+  PP.display();
+  LT.display();
+}

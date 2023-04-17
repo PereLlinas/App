@@ -1,4 +1,6 @@
 class CheckBoxSelector {
+  
+  Button create1, create2;
 
   // Propietats (posició i dimensions)
   float x, y, w, h;
@@ -11,6 +13,9 @@ class CheckBoxSelector {
 
   boolean v;
 
+  Recta r1;
+  Pla p1;
+
   // Constructor
   CheckBoxSelector(String[] info, float x, float y, float w, float h) {
     this.x = x;
@@ -18,11 +23,18 @@ class CheckBoxSelector {
     this.w = w;
     this.h = h;
 
-    this.v = false;
+    this.v=false;
+
+    create1=new Button("CREATE LINE", 1045, 670, 120, 50, "blau");
+    create2=new Button("CREATE PLANE", 1025, 670, 140, 50, "blau");
+
+    r1=new Recta("AB", puntsCreats[0], puntsCreats[1]);
+    p1=new Pla(puntsCreats[0], puntsCreats[1], puntsCreats[2]);
+
 
     this.info = info;
-    this.cbs = new CheckBoxText[ 20 ];
-    for (int i=0; i<numPunts; i++) {
+    this.cbs = new CheckBoxText[ info.length ];
+    for (int i=0; i<info.length; i++) {
       cbs[i] = new CheckBoxText(info[i], x, y + (h+margeV)*i, w, h);
     }
   }
@@ -30,8 +42,8 @@ class CheckBoxSelector {
   // Actualitzam la informació del checkboxlist
   void setInfo(String[] info) {
     this.info = info;
-    this.cbs = new CheckBoxText[ numPunts ];
-    for (int i=0; i<numPunts; i++) {
+    this.cbs = new CheckBoxText[ info.length ];
+    for (int i=0; i<info.length; i++) {
       cbs[i] = new CheckBoxText(info[i], x, y + h*i, w, h);
     }
   }
@@ -44,8 +56,23 @@ class CheckBoxSelector {
   // Dibuixam el checkboxlist
   void display() {
     if (this.v==true) {
+      getColor("obscur");
+      stroke(color(colors[indexColor]));
+      strokeWeight(2);
+      getColor("clar");
+      fill(color(colors[indexColor]));
+      rect(width/2-250, height/2-200, 500, 400);
+      fill(0);
+      textFont(getFontAt(0));
+      textSize(34);
+      text("CHOOSE POINTS", width/2-230, height/2-150);
       for (CheckBoxText cb : cbs) {
         cb.display();
+      }
+      if (numMaxChecked==2) {
+        create1.display();
+      } else if (numMaxChecked==3) {
+        create2.display();
       }
     }
   }

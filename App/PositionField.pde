@@ -99,8 +99,8 @@ class PositionField {
     }
     if (numPunts<punts.length) {
       punts[numPunts] = new Punt(nombrePunto, x, y, z, 10, color(255));
-      info[numPunts]=punts[numPunts].getInfo();
-      printArray(info);
+      //info[numPunts]=punts[numPunts].getInfo();
+      //printArray(info);
       numPunts++;
     }
     for (int i=0; i<numPunts; i++) {

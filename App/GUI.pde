@@ -1,9 +1,19 @@
-CheckBoxSelector cbsr;
-String[] info=new String[20];
+Punt[] puntsCreats=new Punt[4];
+String[] info;
 
+CheckBoxSelector cb1, cb2;
 
 void setCBSR() {
-  cbsr= new CheckBoxSelector(info, width/3, height/4, 50, 50);
+  puntsCreats[0] = new Punt("A", 50, -370, 0, 2, color(255));
+  puntsCreats[1] = new Punt("B", 170, 150, 250, 2, color(255));
+  puntsCreats[2] = new Punt("C", -300, -100, 0, 2, color(255));
+  puntsCreats[3] = new Punt("D", 800, 400, 50, 2, color(255));
+  info = new String[puntsCreats.length];
+  for (int i=0; i<puntsCreats.length; i++) {
+    info[i] = puntsCreats[i].getInfo();
+  }
+  cb1 = new CheckBoxSelector(info, width/2-210, height/2-130, 50, 50);
+  cb2 = new CheckBoxSelector(info, width/2-210, height/2-130, 50, 50);
 }
 
 PImage Pla, Figura, Punt, Recta, Pira, Octa, Tetra, Cubo, logo;
@@ -121,6 +131,7 @@ void setButtons() {
   addLine=new Button ("ADD LINE", marginH+(sidebarWidth/2)-100, (2*sidebarHeight/4+logoSize+marginV), 200, 50, "granate");
   addPlane=new Button ("ADD PLANE", marginH+(sidebarWidth/2)-100, (3*sidebarHeight/4+logoSize+marginV), 200, 50, "granate");
   addFigure=new Button ("ADD FIGURE", marginH+(sidebarWidth/2)-100, (sidebarHeight+logoSize+marginV), 200, 50, "granate");
+  
 }
 
 void setWORKSPACE1() {

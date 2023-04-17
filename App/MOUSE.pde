@@ -63,8 +63,8 @@ void mousePressed() {
     } else if (TUTORIAL.mouseOverButton()) {
       pantalla=PANTALLA.TUTORIAL;
     }
-    
-    
+
+
     //WORKSPACE1
   } else if (pantalla==PANTALLA.WORKSPACE1) {
 
@@ -81,13 +81,32 @@ void mousePressed() {
       jcam.setActive(enableCamera);
       tria1.v=false;
       PF.visible=true;
-    }
-    
-    else if (tria1.addRect1.mouseOverButton()) {
+    } else if (tria1.addRect1.mouseOverButton()) {
+      cb1.v=true;
       enableCamera=false;
       jcam.setActive(enableCamera);
       tria1.v=false;
-      cbsr.v=true;
+    } else if (cb1.v || cb2.v) {
+      cb1.checkMouse();
+      cb2.checkMouse();
+    } else if (cb1.create1.mouseOverButton()) {
+      //r1.v=true;
+      print("merda");
+      cb1.v=false;
+      enableCamera=true;
+      jcam.setActive(enableCamera);
+    } else if (cb2.v && cb2.create2.mouseOverButton()) {
+      //p1.display();
+      cb1.v=false;
+      enableCamera=true;
+      jcam.setActive(enableCamera);
+    } else if (tria1.addPlane1.mouseOverButton()) {
+      cb2.setNumMaxChecked(3);
+      cb2.checkMouse();
+      cb2.v=true;
+      enableCamera=false;
+      jcam.setActive(enableCamera);
+      tria1.v=false;
     }
 
     // CLICK SOBRE BOTÓ DE TANCAR DEL PF
@@ -111,11 +130,6 @@ void mousePressed() {
       PF.isPressed();
     }
 
-    //CLICK SOBRE BOTÓ ADD RECT
-    else if (tria1.addRect1.mouseOverButton()) {
-      //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
-      //INSERT FIGURA
-    }
 
     //CLICK SOBRE BOTÓ ADD PLANE
     else if (tria1.addPlane1.mouseOverButton()) {

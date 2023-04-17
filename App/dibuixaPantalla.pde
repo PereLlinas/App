@@ -18,13 +18,7 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
 void WORKSPACE1() {
   background(217, 215, 197, 150);
   //Display plans i punts base
-  ph1.display();
-  pv1.display();
-  pp1.display();
-  PH.display();
-  PV.display();
-  PP.display();
-  LT.display();
+  dibuixaPlans();
 
   for (int i=0; i<numPunts; i++) {
     punts[i].display();
@@ -52,7 +46,8 @@ void WORKSPACE1() {
 
   tria1.display();
   PF.display();
-  cbsr.display();
+  cb1.display();
+  cb2.display();
   jcam.endHUD();
 }
 
@@ -79,11 +74,11 @@ void WORKSPACE2() {
   for (int i=0; i<numOcta; i++) {
     octa[i].display();
   }
-  
+
   for (int i=0; i<numCubo; i++) {
     cubo[i].display();
   }
-  
+
   for (int i=0; i<numTetra; i++) {
     tetra[i].display();
   }
