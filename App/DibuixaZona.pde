@@ -36,8 +36,10 @@ void dibuixaBanner() {
 
 void dibuixaZonaCarpetes() {
   pushStyle();
-  fill(217, 215, 197);
-  stroke(166, 130, 86, 200);
+  getColor("clar");
+  fill(color(colors[indexColor]));
+  getColor("clar");
+  stroke(color(colors[indexColor]));
   strokeWeight(7);
   rect(2*marginH + sidebarWidth, 2*marginV + 2*logoSize/3+75, columnWidth, columnHeight);
   popStyle();
@@ -46,12 +48,14 @@ void dibuixaZonaCarpetes() {
 //LOGIN/REGISTER
 void dibuixaLogin() {
   userText.display();
-  textSize(24);
+  textFont(getFontAt(1));
+  textSize(22);
   fill(0);
   text("User", width/2-300/2, height/2-25);
   passText.display();
-  textSize(24);
-  fill(0);
+  
+  textFont(getFontAt(1));
+  fill(0); textSize(22);
   text("Password", width/2-300/2, (height/2)+60);
   loginButton.display();
 }
@@ -115,7 +119,7 @@ void FAQSdisplay() {
   textSize(40);
   text("What’s the difference between Level 1 and Level 2?", x, titleY+2*mg);
   textFont(getFontAt(2));
-  textSize(35);
+  textSize(30);
   text("The main difference between Level 1 and Level 2 is one of the featurings the WORKSPACE offers, the POLYHEDRONS. There are 4 types of polyhedrons that can be displaced around the interface: tetrahedrons, 5 sided pyramids, cubes and octahedrons. These, appear on the origin coordinates but can be translated, on the x, y and z axes, rotated and escalated.", x, titleY+2.5*mg, columnWidth*3/4, columnHeight/5 );
 
   //Pregunta 2
@@ -123,7 +127,7 @@ void FAQSdisplay() {
   textSize(40);
   text("How do I know which level to choose?", x, 2*titleY+2*mg);
   textFont(getFontAt(2));
-  textSize(35);
+  textSize(30);
   text("This APP was originally thought for those Baccalaureate Students that take the subject of technical drawing, a subject that usually divides the content among the two years, leaving the application of polyhedrons for the second year of the course. If you’re taking technical drawing I, then we recommend choosing Level 1 because of how simpler the interface is. In case you’re taking technical drawing II, then you should consider choosing Level 2.", x, 2*titleY+2.5*mg, columnWidth*3/4, columnHeight/5 );
 
   //Pregunta 3
@@ -131,7 +135,7 @@ void FAQSdisplay() {
   textSize(40);
   text("I don’t know how to use the APP, what should I do?", x, 3*titleY+2*mg);
   textFont(getFontAt(2));
-  textSize(35);
+  textSize(30);
   text("In this case, press the button HOME and then the button TUTORIAL, these one will lead you to a 5-minute video in which one of our developers shows the functioning of the whole application in detail.", x, 3*titleY+2.5*mg, columnWidth*3/4, columnHeight/5 );
 }
 
@@ -163,8 +167,8 @@ void TUTORIALdisplay() {
   text("TUTORIAL", 335, 250);
 }
 
-void dibuixaPlans(){
-  
+void dibuixaPlans() {
+
   ph1.display();
   pv1.display();
   pp1.display();
@@ -172,4 +176,24 @@ void dibuixaPlans(){
   PV.display();
   PP.display();
   LT.display();
+}
+
+boolean diedricV=false;
+void dibuixaDiedric() {
+  if (diedricV==true) {
+    pushStyle();
+    getColor("beige");
+    fill(color(colors[indexColor]));
+    stroke(color(colors[indexColor+1]));
+    rect(360, 315, 300, 300);
+    fill(0);
+    textAlign(LEFT);
+    textFont(getFontAt(1));
+    textSize(34);
+    text("PROJECT 1", 385, 360);
+    imageMode(CENTER);
+    image(fotos[8], 360+140, 330+150, 160, 160);
+    openDiedric.display();
+    popStyle();
+  }
 }

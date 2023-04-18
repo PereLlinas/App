@@ -24,7 +24,7 @@ class PositionField {
     tpf[2] = new TextPositionField("Z", x + 2*w/3, y+50, w/3.1, h);
     name = new TextField((width/2)-(300/2), 340+50, 300, 50);
     this.closePF=new Button("X", 1130-5, 315-15, 30, 30, "vermell");
-    this.add=new Button("ADD POINT", 1100-75, 710, 105, 55, "granate");
+    this.add=new Button("ADD POINT", 1100-95, 710, 150, 60, "granate");
   }
 
   // Dibuixa el Camp de Text
@@ -78,7 +78,6 @@ class PositionField {
 
 
   void addPointDataBase() {
-    //aquí se fa s'insert de ses dades
     String idFigura = "1";
     String nombrePunto = PF.name.text;
     String x = PF.tpf[0].text;
@@ -88,7 +87,6 @@ class PositionField {
   }
 
   void addPoint() {
-    //aquí se fa s'insert de ses dades
     String nombrePunto = PF.name.text;
     float x = Float.valueOf(PF.tpf[0].text);
     float y =  Float.valueOf(PF.tpf[1].text);
@@ -99,8 +97,6 @@ class PositionField {
     }
     if (numPunts<punts.length) {
       punts[numPunts] = new Punt(nombrePunto, x, y, z, 10, color(255));
-      //info[numPunts]=punts[numPunts].getInfo();
-      //printArray(info);
       numPunts++;
     }
     for (int i=0; i<numPunts; i++) {

@@ -50,16 +50,6 @@ void displayLogo(float x, float y, float w, float h){
     image(getLogo(), x, y, w, h);
 }
 
-/*// Dibuixa la Icona
-void displayIcon(float x, float y, float w, float h){    
-    image(getIcon(), x, y, w, h);
-}
-
-// Dibuixa el Banner
-void displayBanner(float x, float y, float w, float h){    
-    image(getBanner(), x, y, w, h);
-}*/
-
 // Getter de la imatge i-èssima
 PImage getImgAt(int i){
   return this.imgs[i];

@@ -4,10 +4,10 @@ String[] info;
 CheckBoxSelector cb1, cb2;
 
 void setCBSR() {
-  puntsCreats[0] = new Punt("A", 50, -370, 0, 2, color(255));
-  puntsCreats[1] = new Punt("B", 170, 150, 250, 2, color(255));
-  puntsCreats[2] = new Punt("C", -300, -100, 0, 2, color(255));
-  puntsCreats[3] = new Punt("D", 800, 400, 50, 2, color(255));
+  puntsCreats[0] = new Punt("A", 50, 370, 0, 5, color(255));
+  puntsCreats[1] = new Punt("B", 170, 150, 250, 5, color(255));
+  puntsCreats[2] = new Punt("C", 300, 100, 0, 5, color(255));
+  puntsCreats[3] = new Punt("D", 800, 400, 50, 5, color(255));
   info = new String[puntsCreats.length];
   for (int i=0; i<puntsCreats.length; i++) {
     info[i] = puntsCreats[i].getInfo();
@@ -34,7 +34,7 @@ PositionFieldFigura figuresPF;
 
 Button loginButton, createButton, FAQS, TUTORIAL, ABOUTUS,
   HOME, PRINT, SAVE, addElement1, addElement2, addPoint, addLine, addPlane, addFigure,
-  level1, level2, closeAdd, infoElement;
+  level1, level2, closeAdd, infoElement, openDiedric;
 
 //SELECT
 Select selectPunts;
@@ -76,7 +76,6 @@ void setImages() {
 void setConfirm() {
   float Cheight=800.0;
   float Cwidth=400.0;
-  // Confirm(String title, String message, float x, float y, float w, float h){
   confirm=new Confirm("CHOOSE LEVEL", "", (width/2)-(Cheight/2), (height/2)-(Cwidth/2), Cheight, Cwidth);
 }
 
@@ -131,7 +130,8 @@ void setButtons() {
   addLine=new Button ("ADD LINE", marginH+(sidebarWidth/2)-100, (2*sidebarHeight/4+logoSize+marginV), 200, 50, "granate");
   addPlane=new Button ("ADD PLANE", marginH+(sidebarWidth/2)-100, (3*sidebarHeight/4+logoSize+marginV), 200, 50, "granate");
   addFigure=new Button ("ADD FIGURE", marginH+(sidebarWidth/2)-100, (sidebarHeight+logoSize+marginV), 200, 50, "granate");
-  
+  openDiedric=new Button ("OPEN", 580, 565, 70, 40, "blau");
+
 }
 
 void setWORKSPACE1() {

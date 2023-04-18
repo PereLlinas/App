@@ -1,5 +1,5 @@
 class CheckBoxSelector {
-  
+
   Button create1, create2;
 
   // Propietats (posició i dimensions)
@@ -28,8 +28,9 @@ class CheckBoxSelector {
     create1=new Button("CREATE LINE", 1045, 670, 120, 50, "blau");
     create2=new Button("CREATE PLANE", 1025, 670, 140, 50, "blau");
 
-    r1=new Recta("AB", puntsCreats[0], puntsCreats[1]);
+    r1=new Recta("AB", puntsCreats[3], puntsCreats[1]);
     p1=new Pla(puntsCreats[0], puntsCreats[1], puntsCreats[2]);
+    p1.setV();
 
 
     this.info = info;

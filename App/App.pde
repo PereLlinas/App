@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 
 enum PANTALLA {LOGIN, HOME, WORKSPACE1, WORKSPACE2, TUTORIAL, FAQS, ABOUTUS};
-  PANTALLA pantalla=PANTALLA.WORKSPACE1;
+PANTALLA pantalla=PANTALLA.WORKSPACE2;
 
 //variables globales importantes
 int numFigures=0;

@@ -11,7 +11,9 @@ void HOME() { // + botó CREATE + Textos + POP-UPS
   fill(colors[indexColor]);
   textFont(getFontAt(0));
   text("Dihedral Previewer", 335, 250);
-  //afegir cards per cada creació
+  dibuixaDiedric();
+  cb1.display();
+  cb2.display();
   jcam.endHUD();
 }
 
@@ -19,9 +21,17 @@ void WORKSPACE1() {
   background(217, 215, 197, 150);
   //Display plans i punts base
   dibuixaPlans();
+  cb1.r1.display();
+  cb2.p1.display();
 
   for (int i=0; i<numPunts; i++) {
     punts[i].display();
+  }
+  
+  if (numPunts>=4) {
+    for (int i=0; i<puntsCreats.length; i++) {
+      puntsCreats[i].display();
+    }
   }
 
   jcam.beginHUD();
@@ -54,14 +64,9 @@ void WORKSPACE1() {
 void WORKSPACE2() {
   background(217, 215, 197, 150);
 
-  //Display plans i punts base
-  ph1.display();
-  pv1.display();
-  pp1.display();
-  PH.display();
-  PV.display();
-  PP.display();
-  LT.display();
+  dibuixaPlans();
+  cb1.r1.display();
+  cb2.p1.display();
 
   for (int i=0; i<numPunts; i++) {
     punts[i].display();
@@ -83,10 +88,12 @@ void WORKSPACE2() {
     tetra[i].display();
   }
 
-  //Figures
-  /*cubo.display();
-   tetraedre.display();
-   octaedre.display();*/
+  if (numPunts>=4) {
+    for (int i=0; i<puntsCreats.length; i++) {
+      puntsCreats[i].display();
+    }
+  }
+
 
   jcam.beginHUD();
   // Dibuixa el select
@@ -107,6 +114,8 @@ void WORKSPACE2() {
 
   tria2.display();
   triaFigura.display();
+  cb1.display();
+  cb2.display();
   PF.display();
   figuresPF.display();
   jcam.endHUD();

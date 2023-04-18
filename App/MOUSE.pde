@@ -35,7 +35,6 @@ void mousePressed() {
       pantalla=PANTALLA.TUTORIAL;
     }
 
-    // FINAL PANTALLA HOME
   } else if (pantalla==PANTALLA.ABOUTUS) {
 
     if (FAQS.mouseOverButton()) {
@@ -68,8 +67,15 @@ void mousePressed() {
     //WORKSPACE1
   } else if (pantalla==PANTALLA.WORKSPACE1) {
 
+    if (PRINT.mouseOverButton()) {
+      jcam.reset();
+    } else if (SAVE.mouseOverButton()) {
+      diedricV=true;
+      pantalla=PANTALLA.HOME;
+    }
+
     // CLICK SOBRE BOTÓ ADD ELEMENT
-    if (addElement1.mouseOverButton()) {
+    else if (addElement1.mouseOverButton()) {
       enableCamera=false;
       jcam.setActive(enableCamera);
       tria1.v=true;
@@ -89,15 +95,11 @@ void mousePressed() {
     } else if (cb1.v || cb2.v) {
       cb1.checkMouse();
       cb2.checkMouse();
-    } else if (cb1.create1.mouseOverButton()) {
-      //r1.v=true;
-      print("merda");
+    }
+    if (cb1.create1.mouseOverButton()) {
+      cb1.r1.v=true;
       cb1.v=false;
-      enableCamera=true;
-      jcam.setActive(enableCamera);
-    } else if (cb2.v && cb2.create2.mouseOverButton()) {
-      //p1.display();
-      cb1.v=false;
+      cb2.create2.setEnabled(false);
       enableCamera=true;
       jcam.setActive(enableCamera);
     } else if (tria1.addPlane1.mouseOverButton()) {
@@ -107,6 +109,12 @@ void mousePressed() {
       enableCamera=false;
       jcam.setActive(enableCamera);
       tria1.v=false;
+    }
+    if (cb2.create2.mouseOverButton()) {
+      cb2.p1.v=true;
+      cb2.v=false;
+      enableCamera=true;
+      jcam.setActive(enableCamera);
     }
 
     // CLICK SOBRE BOTÓ DE TANCAR DEL PF
@@ -128,13 +136,6 @@ void mousePressed() {
     // CLICK SOBRE CAMPS DEL PF
     else if (PF.visible) {
       PF.isPressed();
-    }
-
-
-    //CLICK SOBRE BOTÓ ADD PLANE
-    else if (tria1.addPlane1.mouseOverButton()) {
-      //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
-      //INSERT FIGURA
     }
 
     //CLICK SOBRE TANCAR TRIA1
@@ -162,8 +163,15 @@ void mousePressed() {
   //WORKSPACE2
   else if (pantalla==PANTALLA.WORKSPACE2) {
 
+    if (PRINT.mouseOverButton()) {
+      jcam.reset();
+    } else if (SAVE.mouseOverButton()) {
+      diedricV=true;
+      pantalla=PANTALLA.HOME;
+    }
+
     // CLICK SOBRE BOTÓ ADD ELEMENT
-    if (addElement2.mouseOverButton()) {
+    else if (addElement2.mouseOverButton()) {
       enableCamera=false;
       jcam.setActive(enableCamera);
       tria2.v=true;
@@ -183,14 +191,14 @@ void mousePressed() {
     }
 
     // CLICK SOBRE BOTÓ DE TANCAR DEL PF
-    else if (PF.visible && PF.closePF.mouseOverButton() && tria2.v==false) {
+    if (PF.visible && PF.closePF.mouseOverButton()&& tria2.v==false) {
       PF.visible=false;
       enableCamera=true;
       jcam.setActive(enableCamera);
     }
 
     // CLICK SOBRE EL BOTÓ ADD DEL PF
-    else if (PF.visible && PF.add.mouseOverButton() && tria2.v==false) {
+    if (PF.visible && PF.add.mouseOverButton() && tria2.v==false) {
       PF.addPoint();
       PF.addPointDataBase();
       PF.visible=false;
@@ -200,14 +208,33 @@ void mousePressed() {
 
     //CLICK SOBRE BOTÓ ADD RECT
     else if (tria2.addRect2.mouseOverButton() && tria2.v) {
-      //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
-      //INSERT FIGURA
+      cb1.v=true;
+      enableCamera=false;
+      jcam.setActive(enableCamera);
+      tria2.v=false;
+    } else if (cb1.v || cb2.v) {
+      cb1.checkMouse();
+      cb2.checkMouse();
     }
 
-    //CLICK SOBRE BOTÓ ADD PLANE
-    else if (tria2.addPlane2.mouseOverButton() && tria2.v) {
-      //CREAR I VISIBILITZAR CHECKBOXES (FENT UN SELECT POINT)
-      //INSERT FIGURA
+    if (cb1.create1.mouseOverButton()&&cb1.v) {
+      cb1.r1.v=true;
+      cb1.v=false;
+      enableCamera=true;
+      jcam.setActive(enableCamera);
+    } else if (tria2.addPlane2.mouseOverButton()) {
+      cb2.setNumMaxChecked(3);
+      cb2.checkMouse();
+      cb2.v=true;
+      enableCamera=false;
+      jcam.setActive(enableCamera);
+      tria2.v=false;
+    }
+    if (cb2.create2.mouseOverButton()) {
+      cb2.p1.v=true;
+      cb2.v=false;
+      enableCamera=true;
+      jcam.setActive(enableCamera);
     }
 
     //CLICK SOBRE TANCAR TRIA2

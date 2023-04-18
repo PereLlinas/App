@@ -35,10 +35,6 @@ class Confirm {
     this.level2.textBoto=nomBoto2;
   }
 
-  void setImage(PImage img) {
-    this.img = img;
-  }
-
   void setTexts(String title, String message) {
     this.title = title;
     this.message = message;
@@ -66,9 +62,13 @@ class Confirm {
       // Rectangle
       stroke(color(100, 75, 45));
       strokeWeight(10);
-      getColor("clar");
+      getColor("beige");
       fill(color(colors[indexColor]));
       rect(x, y, w, h, b/2);
+
+      image(fotos[1], x + w/4 - 150/2, y +110, 150, 150);
+      image(fotos[3], x + 3*w/4 - 150/2, y + 110, 150, 150);
+
 
       line(x, y + 2*b, x+w, y + 2*b);
 

@@ -49,8 +49,8 @@ class Button {
     c1=colors[indexColor];
     c2=colors[indexColor+5];
   }
-  
-  int setTextSize(int i){
+
+  int setTextSize(int i) {
     ts=i;
     return ts;
   }
@@ -59,24 +59,25 @@ class Button {
   //String f
   void display() {
     pushStyle();
-    //setButtonColor(f);
-    if (!enabled) {
-      fill(fillColorDisabled);  // Color desabilitat
-    } else if (mouseOverButton()) {
-      fill(fillColorOver);      // Color quan ratolí a sobre
-    } else {
-      fill(fillColor);          // Color actiu però ratolí fora
-    }
-    stroke(strokeColor);
-    strokeWeight(2);        //Color i gruixa del contorn
-    rect(this.x, this.y, this.w, this.h, 10);    // Rectangle del botó
+    if (this.enabled==true) {
+      if (!enabled) {
+        fill(fillColorDisabled);  // Color desabilitat
+      } else if (mouseOverButton()) {
+        fill(fillColorOver);      // Color quan ratolí a sobre
+      } else {
+        fill(fillColor);          // Color actiu però ratolí fora
+      }
+      stroke(strokeColor);
+      strokeWeight(2);        //Color i gruixa del contorn
+      rect(this.x, this.y, this.w, this.h, 10);    // Rectangle del botó
 
-    // Text (color, alineació i mida)
-    fill(0);
-    textAlign(CENTER);
-    textSize(ts);
-    text(textBoto, this.x + this.w/2, this.y + this.h/2 + 10);
-    popStyle();
+      // Text (color, alineació i mida)
+      fill(0);
+      textAlign(CENTER);
+      textSize(ts);
+      text(textBoto, this.x + this.w/2, this.y + this.h/2 + 10);
+      popStyle();
+    }
   }
 
   // Indica si el cursor està sobre el botó

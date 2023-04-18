@@ -190,6 +190,7 @@ class Tria2 {
 
       addPoint2.display();
       addRect2.display();
+      addFigure2.setTextSize(18);
       addPlane2.display();
       addFigure2.display();
       close.display();

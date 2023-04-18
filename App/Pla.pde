@@ -16,7 +16,7 @@ class Pla {
       this.punts[i]=p[i];
     }
 
-    this.v=false;
+    this.v=true;
   }
 
   Punt getPunt(int i) {
@@ -36,20 +36,26 @@ class Pla {
     }
   }
 
-  void display() {
-    // Dibuixa la línia entre els punts i l'interior
-    stroke(255, 0, 0);
-    strokeWeight(3);
-    fill(255, 0, 0, 50);
-    beginShape();
-    for (int i=0; i<numPunts; i++) {
-      vertex(this.punts[i].x, this.punts[i].y, this.punts[i].z);
-    }
-    endShape(CLOSE);
+  void setV() {
+    this.v=false;
+  }
 
-    // Dibuixa els punts del poligon
-    for (int i=0; i<numPunts; i++) {
-      this.punts[i].display();
+  void display() {
+    if (this.v==true) {
+      // Dibuixa la línia entre els punts i l'interior
+      stroke(255, 0, 0);
+      strokeWeight(3);
+      fill(255, 0, 0, 50);
+      beginShape();
+      for (int i=0; i<numPunts; i++) {
+        vertex(this.punts[i].x, this.punts[i].y, this.punts[i].z);
+      }
+      endShape(CLOSE);
+
+      // Dibuixa els punts del poligon
+      for (int i=0; i<numPunts; i++) {
+        this.punts[i].display();
+      }
     }
   }
 }
